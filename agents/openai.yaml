@@ -1,0 +1,4 @@
+interface:
+  display_name: "xBloom 冲煮闭环"
+  short_description: "从豆子信息拟方，经审核与明确授权后冲煮，保存图表、日志与个人品饮反馈"
+  default_prompt: "用 $xbloom-brewing 为这支豆子拟定配方，先展示参数和依据供我审核。"
