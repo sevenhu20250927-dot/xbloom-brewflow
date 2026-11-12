@@ -66,6 +66,8 @@ BLE核心从已有macOS／Studio固件`V12.0D.500`的实冲项目抽取，包含
 
 ## 开发验证
 
+跨机器开发先读[开发目录](development/README.md)：[设计目标](development/GOALS.md)与[当前进度／剩余缺口](development/STATUS.md)。运行测试与长期知识闭环的验收范围分开记录。
+
 获得所在环境要求的测试授权后，从本目录执行：
 
 ```sh
