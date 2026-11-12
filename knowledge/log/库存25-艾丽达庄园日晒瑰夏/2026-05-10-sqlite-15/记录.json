@@ -1,0 +1,88 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 15,
+  "brew_date": "2026-05-10",
+  "bean_snapshot": {
+    "id": 25,
+    "bean_name": "艾丽达庄园日晒瑰夏",
+    "roaster": "fcr",
+    "origin": "巴拿马",
+    "process": "冷发酵日晒",
+    "plot": "",
+    "batch": "",
+    "estate": "艾丽达庄园",
+    "roast_date": "2026-04-27",
+    "country": "巴拿马",
+    "region": "中美洲",
+    "producer": "艾丽达庄园",
+    "lot_info": "波奎特",
+    "variety_name": "瑰夏",
+    "storage_state": "常温",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "2",
+      "warming_time": "0"
+    },
+    "technique": {
+      "grind_size": "zp6#4.8",
+      "roaster_recommended_grind": "/",
+      "dose": "15g",
+      "yield": "256",
+      "ratio": "17",
+      "water_temperature": "94",
+      "bloom": "32g/30s",
+      "pour_method": "32/120/180/240/bypass 15",
+      "total_time": "3min",
+      "water_type": "tww",
+      "water_tds": "/",
+      "water_mg_ca": "/",
+      "grinder": "zp6",
+      "dripper": "kalita",
+      "filter_paper": "蛋糕纸",
+      "kettle": "c",
+      "flow_judgement": [
+        "正常"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "萃取速度正常，但是萃取过程中，因为分心，120g到流干我才进行下一步的，所以总萃取时长拉到了3min，但是并非研磨度有问题",
+      "grind_notes": "4.8感觉流速刚刚好，不快不慢"
+    },
+    "tasting": {
+      "acidity_style": "较低",
+      "sweetness_style": "特有的艾力达的甜，立体，醇厚，很喜欢",
+      "clarity_style": "层次一般（相较于价格）",
+      "finish_style": "苦味还是多",
+      "score": 8,
+      "flavor_direction": [
+        "浆果",
+        "柑橘"
+      ],
+      "flavor_description": "典型巴拿马的风味+艾力达的高甜，基本满意，但是苦味较为明显，感觉是水温94高了，日晒还是92比较好。也可以说这个豆子没烘好，按道理，艾力达瑰夏这个级别，94也不该出这个苦味的，我加到17的粉水比才压下去",
+      "structure_acidity": 3,
+      "structure_sweetness": 4.8,
+      "structure_body": 4.5,
+      "structure_cleanliness": 4,
+      "structure_clarity": 3.5,
+      "structure_balance": 3.5,
+      "aftertaste_length": "长",
+      "aftertaste_type": "无",
+      "retronasal": "无",
+      "defects": "苦味高了些，日晒应该温度低一点。又或者，kalita的滤杯的问题？高温+细粉过度萃取了？"
+    },
+    "improvement": {
+      "next_adjustment": "降低水温到92"
+    }
+  },
+  "created_at": "2026-05-11T07:11:53",
+  "updated_at": "2026-05-11T07:11:53",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

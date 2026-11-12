@@ -1,0 +1,54 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 28,
+  "brew_date": "2026-11-12",
+  "bean_snapshot": {
+    "id": 64,
+    "bean_name": "玻利维亚 Takesi 水洗瑰夏",
+    "roaster": "Monogram Coffee",
+    "origin": "玻利维亚",
+    "process": "水洗",
+    "plot": "",
+    "batch": "",
+    "estate": "Finca Takesi",
+    "roast_date": "",
+    "country": "玻利维亚",
+    "region": "安第斯山脉",
+    "producer": "Finca Takesi",
+    "lot_info": "",
+    "variety_name": "瑰夏（Gesha）",
+    "storage_state": "待补",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {},
+    "technique": {
+      "grinder": "C40",
+      "grind_size": "22格（朋友提供的方案）",
+      "dripper": "V60",
+      "water_temperature": "96℃",
+      "ratio": "初始1:15，最终1:17（用户确认）",
+      "total_time": "2分15秒（用户报告；是否包含追加尾段待确认）",
+      "pour_method": "采用朋友提供的V60方案；具体分段未提供。先按1:15冲煮，品尝觉得苦，再萃取尾段30g并合并。",
+      "extraction_notes": "用户补充粉量15g、最终粉水比1:17。按此口径计算初始用水225g、总用水255g；不是实测出液重量。原话为又萃取尾段30g并合并，非旁通加水。2026-11-12补记。",
+      "dose": "15g"
+    },
+    "tasting": {},
+    "improvement": {}
+  },
+  "created_at": "2026-11-12T14:05:06",
+  "updated_at": "2026-11-12T14:08:28",
+  "personal_tastings": [
+    {
+      "person_id": 1,
+      "person_name": "胡琪",
+      "feedback": {
+        "taste": "分阶段记录：初始粉水比1:15时觉得苦；随后又萃取尾段30g并合并，最终粉水比1:17（用户确认）。合并后花香很好、复杂度很好，但body似乎很差；补充确认苦味仍有点明显。",
+        "next": "用户提出的下一杯候选方案：平底滤杯＋ZP6，水温考虑94–95℃。具体滤杯、ZP6刻度及下一杯粉水比待定；尚未实冲验证。"
+      },
+      "revision": 2
+    }
+  ],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

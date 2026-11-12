@@ -1,0 +1,65 @@
+{
+  "ts": "2026-11-02T14:37:54",
+  "outcome": "completed_no_signal",
+  "pours_observed": 4,
+  "pours_planned": 4,
+  "duration_s": 149.3,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 15,
+    "recipe": {
+      "grinderSize": 48,
+      "rpm": 110,
+      "grandWater": 240,
+      "pours": [
+        {
+          "volume": 45,
+          "temperature": 94,
+          "flowRate": 3.0,
+          "pattern": 2,
+          "pausing": 12,
+          "vibBefore": false,
+          "vibAfter": true
+        },
+        {
+          "volume": 65,
+          "temperature": 94,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 93,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 93,
+          "flowRate": 3.5,
+          "pattern": 1,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "a73316402e75a0a53afb0a24268b95f3a086a71d6b6ec98792ee56e1b617116c",
+  "expected_cup_g": 231,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 50,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": "层次不够、口感偏薄；风味调性存在（栀子花/柑橘骨架），降温后甜感上升。二次反馈：低温酸质明亮，越喝越好喝——判断为高酸度轻盈型瑰夏的正常表现，非缺陷。结论：酸质是这支豆子的强项，下杯细研磨需谨慎，建议 48→47（半步）而非 46，兼顾层次与保住明亮酸质。"
+}

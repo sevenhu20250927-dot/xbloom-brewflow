@@ -1,0 +1,975 @@
+{
+  "model_version": "0.1",
+  "model_sha256": "cd12ecbbcd83894def786b79b0569b4d6dcf966a8ee1f5c49f8ce1db87bc52aa",
+  "status": "exploratory_uncalibrated_not_measured_EY",
+  "parameters_are": "prespecified illustrative grid, not physical confidence bounds",
+  "inputs": {
+    "V60": {
+      "path": "[source-path]/20261109T075733Z-c51e2edaff8d.jsonl",
+      "sha256": "9cf4c648d1de14ea74dbff0e630bba8825e7ff4569ccd233d9ab1d33c33f83ce",
+      "recipe_sha256": "4f6ec1f6e33d34f6c2c3560914f080e35f9accda54c0199855cb63182d8bdca7",
+      "dose_g": 15,
+      "original_warnings": [
+        "绘图排除 1 个孤立向上尖峰（相邻跨度≤2秒、两侧差<1g、尖峰高出>8g），原始日志未改。"
+      ],
+      "water_peak": 240.0,
+      "last_raw_beverage_g": 214.00900268554688,
+      "last_model_beverage_g": 214.00900268554688,
+      "end_s": 184.627259792,
+      "monotone_correction_count": 0,
+      "max_monotone_correction_g": 0
+    },
+    "Origami": {
+      "path": "[source-path]/20261110T010409Z-abc2784f15c1.jsonl",
+      "sha256": "d9be0f46737eb6c5707af231869590acfbce90f39f7b60be27046e53a93673a2",
+      "recipe_sha256": "4f6ec1f6e33d34f6c2c3560914f080e35f9accda54c0199855cb63182d8bdca7",
+      "dose_g": 15,
+      "original_warnings": [],
+      "water_peak": 240.0,
+      "last_raw_beverage_g": 202.44400024414062,
+      "last_model_beverage_g": 203.2449951171875,
+      "end_s": 157.202002917,
+      "monotone_correction_count": 5,
+      "max_monotone_correction_g": 0.800994873046875
+    }
+  },
+  "numerical_checks": {
+    "same_input_relative_cup_pct": 0.0,
+    "shared_amplitude_scaling_max_delta_percentage_points": 0.0,
+    "step_halving_max_delta_percentage_points": 0.00020080774259056966,
+    "max_conservation_error": 3.9968028886505635e-15,
+    "minimum_state": 0.0
+  },
+  "cases": [
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 5.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.0009198063577808592,
+        "liquid_solute": 0.018001755548953818,
+        "cup_solute": 0.9810784380932664,
+        "net_released": 0.9990801936422191,
+        "mass_error": 1.5543122344752192e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.0012829118757042577,
+        "liquid_solute": 0.03143547207759369,
+        "cup_solute": 0.9672816160467022,
+        "net_released": 0.9987170881242957,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -1.4062914351046674,
+      "relative_net_released_pct": -0.03634398121733495,
+      "relative_model_concentration_pct": 2.182467375478492,
+      "step_halving_max_delta_percentage_points": 1.4901050393589799e-07
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 5.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.01670878987838921,
+        "liquid_solute": 0.03270133275202168,
+        "cup_solute": 0.9505898773695892,
+        "net_released": 0.9832912101216108,
+        "mass_error": 1.9984014443252818e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.02004057853096506,
+        "liquid_solute": 0.0491060958499293,
+        "cup_solute": 0.9308533256191094,
+        "net_released": 0.9799594214690349,
+        "mass_error": 3.9968028886505635e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -2.0762425753042435,
+      "relative_net_released_pct": -0.3388404796340838,
+      "relative_model_concentration_pct": 1.4881303683504266,
+      "step_halving_max_delta_percentage_points": 4.799893860152338e-06
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 5.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.3098908852590437,
+        "liquid_solute": 0.0606498346149148,
+        "cup_solute": 0.6294592801260427,
+        "net_released": 0.6901091147409564,
+        "mass_error": 1.7763568394002505e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.3163169559694556,
+        "liquid_solute": 0.07750820847766243,
+        "cup_solute": 0.6061748355528814,
+        "net_released": 0.6836830440305444,
+        "mass_error": 1.1102230246251565e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -3.699118482850672,
+      "relative_net_released_pct": -0.9311673434170054,
+      "relative_model_concentration_pct": -0.19381736331607335,
+      "step_halving_max_delta_percentage_points": 0.0001920110652697815
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 15.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.0015696480468053269,
+        "liquid_solute": 0.02940486970203123,
+        "cup_solute": 0.9690254822511641,
+        "net_released": 0.9984303519531946,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.001904652002468729,
+        "liquid_solute": 0.044920788006135554,
+        "cup_solute": 0.9531745599913991,
+        "net_released": 0.9980953479975313,
+        "mass_error": 3.9968028886505635e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -1.6357590744612183,
+      "relative_net_released_pct": -0.0335530620646618,
+      "relative_model_concentration_pct": 1.9446472354961886,
+      "step_halving_max_delta_percentage_points": 1.5124888785855717e-06
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 15.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.02430950247726904,
+        "liquid_solute": 0.047308339961834006,
+        "cup_solute": 0.9283821575608961,
+        "net_released": 0.975690497522731,
+        "mass_error": 1.4432899320127035e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.026824337783003818,
+        "liquid_solute": 0.0653078487610975,
+        "cup_solute": 0.9078678134558995,
+        "net_released": 0.9731756622169961,
+        "mass_error": 2.4424906541753444e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -2.2096874587608673,
+      "relative_net_released_pct": -0.2577492875168841,
+      "relative_model_concentration_pct": 1.3498281617623231,
+      "step_halving_max_delta_percentage_points": 3.0550392160488826e-05
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 15.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.3309637891616941,
+        "liquid_solute": 0.06477404835635125,
+        "cup_solute": 0.6042621624819559,
+        "net_released": 0.6690362108383059,
+        "mass_error": 1.5543122344752192e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.33568566608541867,
+        "liquid_solute": 0.0822541809536303,
+        "cup_solute": 0.5820601529609513,
+        "net_released": 0.6643143339145814,
+        "mass_error": 1.9984014443252818e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -3.674234611978966,
+      "relative_net_released_pct": -0.7057729981173932,
+      "relative_model_concentration_pct": -0.16802773271453741,
+      "step_halving_max_delta_percentage_points": 7.769389321898856e-05
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 45.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.035373770807258786,
+        "liquid_solute": 0.09877018495134576,
+        "cup_solute": 0.8658560442413954,
+        "net_released": 0.9646262291927412,
+        "mass_error": 2.4424906541753444e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.03535208893696191,
+        "liquid_solute": 0.12189849174892603,
+        "cup_solute": 0.8427494193141135,
+        "net_released": 0.964647911063038,
+        "mass_error": 1.9984014443252818e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -2.6686451034162784,
+      "relative_net_released_pct": 0.0022476965316320374,
+      "relative_model_concentration_pct": 0.8741647017469045,
+      "step_halving_max_delta_percentage_points": 2.603592186289916e-06
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 45.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.07893702217405608,
+        "liquid_solute": 0.10395786551749588,
+        "cup_solute": 0.8171051123084485,
+        "net_released": 0.9210629778259439,
+        "mass_error": 1.1102230246251565e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.07885397066127325,
+        "liquid_solute": 0.127056874114851,
+        "cup_solute": 0.7940891552238764,
+        "net_released": 0.9211460293387268,
+        "mass_error": 1.6653345369377348e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -2.81676821474639,
+      "relative_net_released_pct": 0.00901692010017996,
+      "relative_model_concentration_pct": 0.7206499875592076,
+      "step_halving_max_delta_percentage_points": 1.4542786941351693e-05
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 45.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.39219983406506265,
+        "liquid_solute": 0.07659395989165213,
+        "cup_solute": 0.531206206043286,
+        "net_released": 0.6078001659349374,
+        "mass_error": 1.1102230246251565e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.39182208569757454,
+        "liquid_solute": 0.09563628626944554,
+        "cup_solute": 0.5125416280329815,
+        "net_released": 0.6081779143024255,
+        "mass_error": 2.6645352591003757e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -3.5136219791798706,
+      "relative_net_released_pct": 0.06215009285281958,
+      "relative_model_concentration_pct": -0.0015688850865447357,
+      "step_halving_max_delta_percentage_points": 5.6122002101144375e-05
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 150.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.35409082569799233,
+        "liquid_solute": 0.1457757028015092,
+        "cup_solute": 0.5001334715005007,
+        "net_released": 0.6459091743020077,
+        "mass_error": 3.3306690738754696e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.35377294405825666,
+        "liquid_solute": 0.16700154474385132,
+        "cup_solute": 0.4792255111978937,
+        "net_released": 0.6462270559417433,
+        "mass_error": 3.552713678800501e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.1804761116825295,
+      "relative_net_released_pct": 0.04921460359796903,
+      "relative_model_concentration_pct": -0.6926961550766331,
+      "step_halving_max_delta_percentage_points": 1.6384130718805068e-06
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 150.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.37846836780414583,
+        "liquid_solute": 0.13891658724103972,
+        "cup_solute": 0.48261504495481505,
+        "net_released": 0.6215316321958542,
+        "mass_error": 2.6645352591003757e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.37727850808964414,
+        "liquid_solute": 0.15979039231047887,
+        "cup_solute": 0.46293109959987716,
+        "net_released": 0.6227214919103559,
+        "mass_error": 1.9984014443252818e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.078601684864758,
+      "relative_net_released_pct": 0.19143992885735095,
+      "relative_model_concentration_pct": -0.5871135530402305,
+      "step_halving_max_delta_percentage_points": 8.1261244622155e-06
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 150.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.5496580857611862,
+        "liquid_solute": 0.08995184288922398,
+        "cup_solute": 0.36039007134958884,
+        "net_released": 0.45034191423881376,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.5451369148922087,
+        "liquid_solute": 0.10746541349349958,
+        "cup_solute": 0.347397671614291,
+        "net_released": 0.4548630851077913,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -3.6050936937979117,
+      "relative_net_released_pct": 1.0039418330890726,
+      "relative_model_concentration_pct": -0.09637012170484738,
+      "step_halving_max_delta_percentage_points": 0.00014505927986574463
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 450.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.7061405823298537,
+        "liquid_solute": 0.08196711383521627,
+        "cup_solute": 0.21189230383493113,
+        "net_released": 0.29385941767014634,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.7059728053111539,
+        "liquid_solute": 0.09245323211203771,
+        "cup_solute": 0.20157396257680746,
+        "net_released": 0.2940271946888461,
+        "mass_error": 1.5543122344752192e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.869615871542877,
+      "relative_net_released_pct": 0.05709431401925702,
+      "relative_model_concentration_pct": -1.406920237465481,
+      "step_halving_max_delta_percentage_points": 5.712200934482325e-07
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 450.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.711091180153243,
+        "liquid_solute": 0.08009264248158665,
+        "cup_solute": 0.20881617736517102,
+        "net_released": 0.288908819846757,
+        "mass_error": 1.1102230246251565e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.7106978014539493,
+        "liquid_solute": 0.09052310033512645,
+        "cup_solute": 0.19877909821092457,
+        "net_released": 0.28930219854605066,
+        "mass_error": 1.4432899320127035e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.806657836999828,
+      "relative_net_released_pct": 0.1361601558243608,
+      "relative_model_concentration_pct": -1.3416705637859017,
+      "step_halving_max_delta_percentage_points": 6.451417855934949e-06
+    },
+    {
+      "window": "common_observed",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        157.202002917,
+        157.202002917
+      ],
+      "tau_s": 450.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.7530960333606622,
+        "liquid_solute": 0.06443349763189765,
+        "cup_solute": 0.18247046900744,
+        "net_released": 0.24690396663933778,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.7511858018234108,
+        "liquid_solute": 0.0742171146958952,
+        "cup_solute": 0.17459708348069103,
+        "net_released": 0.24881419817658923,
+        "mass_error": 3.1086244689504383e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.314882057122316,
+      "relative_net_released_pct": 0.7736738956656053,
+      "relative_model_concentration_pct": -0.8319944057954665,
+      "step_halving_max_delta_percentage_points": 3.510090128511223e-05
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 5.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.0009198022599526817,
+        "liquid_solute": 0.015937725404039906,
+        "cup_solute": 0.9831424723360083,
+        "net_released": 0.9990801977400473,
+        "mass_error": 1.5543122344752192e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.0012829118757042577,
+        "liquid_solute": 0.03143547207759369,
+        "cup_solute": 0.9672816160467022,
+        "net_released": 0.9987170881242957,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -1.6132815675860002,
+      "relative_net_released_pct": -0.03634439122834898,
+      "relative_model_concentration_pct": 3.5973529241609015,
+      "step_halving_max_delta_percentage_points": 1.0738670397358874e-06
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 5.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.016708787172057784,
+        "liquid_solute": 0.02895189334490982,
+        "cup_solute": 0.9543393194830325,
+        "net_released": 0.9832912128279422,
+        "mass_error": 1.9984014443252818e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.02004057853096506,
+        "liquid_solute": 0.0491060958499293,
+        "cup_solute": 0.9308533256191094,
+        "net_released": 0.9799594214690349,
+        "mass_error": 3.9968028886505635e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -2.460968901149907,
+      "relative_net_released_pct": -0.3388407539334226,
+      "relative_model_concentration_pct": 2.704771432840114,
+      "step_halving_max_delta_percentage_points": 2.6963343113806104e-06
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 5.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.309890896583271,
+        "liquid_solute": 0.05369600129044527,
+        "cup_solute": 0.6364131021262851,
+        "net_released": 0.690109103416729,
+        "mass_error": 1.7763568394002505e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.3163169559694556,
+        "liquid_solute": 0.07750820847766243,
+        "cup_solute": 0.6061748355528814,
+        "net_released": 0.6836830440305444,
+        "mass_error": 1.1102230246251565e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.751358272225426,
+      "relative_net_released_pct": -0.9311657177639376,
+      "relative_model_concentration_pct": 0.29308132070315907,
+      "step_halving_max_delta_percentage_points": 0.00020080774259056966
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 15.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.0015151272573822247,
+        "liquid_solute": 0.026083561167258545,
+        "cup_solute": 0.9724013115753599,
+        "net_released": 0.9984848727426178,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.001904652002468729,
+        "liquid_solute": 0.044920788006135554,
+        "cup_solute": 0.9531745599913991,
+        "net_released": 0.9980953479975313,
+        "mass_error": 3.9968028886505635e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -1.9772445136681416,
+      "relative_net_released_pct": -0.039011582019921054,
+      "relative_model_concentration_pct": 3.2141142271360668,
+      "step_halving_max_delta_percentage_points": 2.436048907039634e-06
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 15.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.024225096879468614,
+        "liquid_solute": 0.04196136385850412,
+        "cup_solute": 0.9338135392620264,
+        "net_released": 0.9757749031205314,
+        "mass_error": 1.4432899320127035e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.026824337783003818,
+        "liquid_solute": 0.0653078487610975,
+        "cup_solute": 0.9078678134558995,
+        "net_released": 0.9731756622169961,
+        "mass_error": 2.4424906541753444e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -2.7784696532276887,
+      "relative_net_released_pct": -0.26637710144243876,
+      "relative_model_concentration_pct": 2.3704556025049284,
+      "step_halving_max_delta_percentage_points": 2.557664783298108e-05
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 15.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.33096378945517635,
+        "liquid_solute": 0.05734727412229812,
+        "cup_solute": 0.6116889364225264,
+        "net_released": 0.6690362105448237,
+        "mass_error": 1.5543122344752192e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.33568566608541867,
+        "liquid_solute": 0.0822541809536303,
+        "cup_solute": 0.5820601529609513,
+        "net_released": 0.6643143339145814,
+        "mass_error": 1.9984014443252818e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.843766446857711,
+      "relative_net_released_pct": -0.7057729545605684,
+      "relative_model_concentration_pct": 0.19577913974837546,
+      "step_halving_max_delta_percentage_points": 8.090562418860969e-05
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 45.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.02173272911176037,
+        "liquid_solute": 0.10011326354648002,
+        "cup_solute": 0.8781540073417596,
+        "net_released": 0.9782672708882396,
+        "mass_error": 2.4424906541753444e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.03535208893696191,
+        "liquid_solute": 0.12189849174892603,
+        "cup_solute": 0.8427494193141135,
+        "net_released": 0.964647911063038,
+        "mass_error": 1.9984014443252818e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.031706025554516,
+      "relative_net_released_pct": -1.3921921166631268,
+      "relative_model_concentration_pct": 1.0508468907810542,
+      "step_halving_max_delta_percentage_points": 3.4451992592110514e-06
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 45.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.06870097569500708,
+        "liquid_solute": 0.10152349779700418,
+        "cup_solute": 0.8297755265079896,
+        "net_released": 0.9312990243049929,
+        "mass_error": 1.1102230246251565e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.07885397066127325,
+        "liquid_solute": 0.127056874114851,
+        "cup_solute": 0.7940891552238764,
+        "net_released": 0.9211460293387268,
+        "mass_error": 1.6653345369377348e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -4.300725936603,
+      "relative_net_released_pct": -1.0901971011773592,
+      "relative_model_concentration_pct": 0.7675794832227689,
+      "step_halving_max_delta_percentage_points": 1.0428121421490744e-05
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 45.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.3920680074823604,
+        "liquid_solute": 0.06793197295719366,
+        "cup_solute": 0.5400000195604469,
+        "net_released": 0.6079319925176396,
+        "mass_error": 1.1102230246251565e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.39182208569757454,
+        "liquid_solute": 0.09563628626944554,
+        "cup_solute": 0.5125416280329815,
+        "net_released": 0.6081779143024255,
+        "mass_error": 2.6645352591003757e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -5.084887135710869,
+      "relative_net_released_pct": 0.040452186726924744,
+      "relative_model_concentration_pct": -0.05811148185618231,
+      "step_halving_max_delta_percentage_points": 5.5448956104875435e-05
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 150.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.29644010145889577,
+        "liquid_solute": 0.18277979690725038,
+        "cup_solute": 0.5207801016338559,
+        "net_released": 0.7035598985411042,
+        "mass_error": 3.3306690738754696e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.35377294405825666,
+        "liquid_solute": 0.16700154474385132,
+        "cup_solute": 0.4792255111978937,
+        "net_released": 0.6462270559417433,
+        "mass_error": 3.552713678800501e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -7.9792968866498555,
+      "relative_net_released_pct": -8.148963964297252,
+      "relative_model_concentration_pct": -3.105811346763654,
+      "step_halving_max_delta_percentage_points": 1.926528481632772e-06
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 150.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.32942742582722206,
+        "liquid_solute": 0.16865412530508578,
+        "cup_solute": 0.5019184488676923,
+        "net_released": 0.6705725741727779,
+        "mass_error": 2.6645352591003757e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.37727850808964414,
+        "liquid_solute": 0.15979039231047887,
+        "cup_solute": 0.46293109959987716,
+        "net_released": 0.6227214919103559,
+        "mass_error": 1.9984014443252818e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -7.767666113044669,
+      "relative_net_released_pct": -7.135854358710003,
+      "relative_model_concentration_pct": -2.882972448464105,
+      "step_halving_max_delta_percentage_points": 8.713530929682634e-06
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 150.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.5398729214911699,
+        "liquid_solute": 0.08869072435176173,
+        "cup_solute": 0.37143635415706666,
+        "net_released": 0.46012707850883006,
+        "mass_error": 1.6653345369377348e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.5451369148922087,
+        "liquid_solute": 0.10746541349349958,
+        "cup_solute": 0.347397671614291,
+        "net_released": 0.4548630851077913,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -6.471817385061495,
+      "relative_net_released_pct": -1.1440303444209876,
+      "relative_model_concentration_pct": -1.518494598728537,
+      "step_halving_max_delta_percentage_points": 0.0001326880993408608
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 450.0,
+      "capacity_g": 1.5,
+      "capacity_per_dose": 0.1,
+      "V60": {
+        "solid_remaining": 0.6647039400842527,
+        "liquid_solute": 0.11121669351054231,
+        "cup_solute": 0.2240793664052063,
+        "net_released": 0.3352960599157473,
+        "mass_error": 1.5543122344752192e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.7059728053111539,
+        "liquid_solute": 0.09245323211203771,
+        "cup_solute": 0.20157396257680746,
+        "net_released": 0.2940271946888461,
+        "mass_error": 1.5543122344752192e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -10.043496725933231,
+      "relative_net_released_pct": -12.308186752111306,
+      "relative_model_concentration_pct": -5.279332759647626,
+      "step_halving_max_delta_percentage_points": 4.645817952564357e-07
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 450.0,
+      "capacity_g": 15.0,
+      "capacity_per_dose": 1.0,
+      "V60": {
+        "solid_remaining": 0.672094525153536,
+        "liquid_solute": 0.10727326777412949,
+        "cup_solute": 0.22063220707233522,
+        "net_released": 0.32790547484646404,
+        "mass_error": 1.1102230246251565e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.7106978014539493,
+        "liquid_solute": 0.09052310033512645,
+        "cup_solute": 0.19877909821092457,
+        "net_released": 0.28930219854605066,
+        "mass_error": 1.4432899320127035e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -9.90476827993023,
+      "relative_net_released_pct": -11.772684283020496,
+      "relative_model_concentration_pct": -5.133257150966086,
+      "step_halving_max_delta_percentage_points": 6.078298486755784e-06
+    },
+    {
+      "window": "individual_record_end",
+      "start_s": 0.18128450000000385,
+      "ends_s": [
+        184.627259792,
+        157.202002917
+      ],
+      "tau_s": 450.0,
+      "capacity_g": 150.0,
+      "capacity_per_dose": 10.0,
+      "V60": {
+        "solid_remaining": 0.7316434731703488,
+        "liquid_solute": 0.07700550248589744,
+        "cup_solute": 0.1913510243437538,
+        "net_released": 0.26835652682965117,
+        "mass_error": 1.3322676295501878e-15,
+        "minimum": 0.0
+      },
+      "Origami": {
+        "solid_remaining": 0.7511858018234108,
+        "liquid_solute": 0.0742171146958952,
+        "cup_solute": 0.17459708348069103,
+        "net_released": 0.24881419817658923,
+        "mass_error": 3.1086244689504383e-15,
+        "minimum": 0.0
+      },
+      "relative_cup_pct": -8.755605526817067,
+      "relative_net_released_pct": -7.282225956615962,
+      "relative_model_concentration_pct": -3.9232338754835894,
+      "step_halving_max_delta_percentage_points": 2.9386799493380522e-05
+    }
+  ]
+}

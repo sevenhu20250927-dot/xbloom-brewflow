@@ -1,0 +1,89 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 13,
+  "brew_date": "2026-05-08",
+  "bean_snapshot": {
+    "id": 22,
+    "bean_name": "翡翠红标瑰夏",
+    "roaster": "BigSur",
+    "origin": "巴拿马",
+    "process": "日晒",
+    "plot": "",
+    "batch": "",
+    "estate": "翡翠庄园",
+    "roast_date": "2026-04-20",
+    "country": "巴拿马",
+    "region": "中美洲",
+    "producer": "翡翠庄园",
+    "lot_info": "Jaramilo农场/Noria地块/3NB批次（26产季）",
+    "variety_name": "瑰夏",
+    "storage_state": "常温",
+    "roaster_recommendation": "94度水，12g一次，v60"
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "2",
+      "warming_time": "0"
+    },
+    "technique": {
+      "grind_size": "zp6#4.8",
+      "roaster_recommended_grind": "c40#20-24",
+      "dose": "15g",
+      "yield": "240",
+      "ratio": "16",
+      "water_temperature": "92",
+      "bloom": "35g#30s",
+      "pour_method": "35/120/190/240",
+      "total_time": "2min30s",
+      "water_type": "tww",
+      "water_tds": "/",
+      "water_mg_ca": "/",
+      "grinder": "zp6",
+      "dripper": "kalita",
+      "filter_paper": "蛋糕纸",
+      "kettle": "c",
+      "flow_judgement": [
+        "正常"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "今天的研磨度流速是正常，稍微略微的慢点，或许可以再降到5.0的研磨度。",
+      "grind_notes": "研磨度可以再少许降低"
+    },
+    "tasting": {
+      "acidity_style": "依旧略高，但是比昨天好很多",
+      "sweetness_style": "高",
+      "clarity_style": "相当不错",
+      "finish_style": "长",
+      "score": 8.5,
+      "flavor_direction": [
+        "柑橘",
+        "花香",
+        "浆果"
+      ],
+      "flavor_description": "酸味略微突出，但是整体平衡感比昨天好很多了，风味层次突出，已经算是相当不错了。如果酸度再下去一些应该会更加完美的平衡。干净一如既往的高。",
+      "structure_acidity": 4,
+      "structure_sweetness": 4,
+      "structure_body": 4,
+      "structure_cleanliness": 4.5,
+      "structure_clarity": 4.5,
+      "structure_balance": 3.5,
+      "aftertaste_length": "长",
+      "aftertaste_type": "、",
+      "retronasal": "、",
+      "defects": "酸度依旧稍高，平衡感略微欠缺，但整体已经相当不错，风味很高级干净。"
+    },
+    "improvement": {
+      "next_adjustment": "还有2杯，感觉要么C40做一下试试，水温或许可以增加一下。下一杯研磨度5.0，水温94试试吧。最后一杯，用C40#22格差不多。"
+    }
+  },
+  "created_at": "2026-05-08T10:20:36",
+  "updated_at": "2026-05-08T10:20:36",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

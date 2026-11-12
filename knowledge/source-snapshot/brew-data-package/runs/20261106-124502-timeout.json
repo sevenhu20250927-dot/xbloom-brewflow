@@ -1,0 +1,92 @@
+{
+  "ts": "2026-11-06T12:45:02",
+  "outcome": "timeout",
+  "pours_observed": 0,
+  "pours_planned": 4,
+  "duration_s": 300.1,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 15,
+    "recipe": {
+      "grinderSize": 52,
+      "rpm": 100,
+      "grandWater": 240,
+      "pours": [
+        {
+          "volume": 45,
+          "temperature": 93,
+          "flowRate": 3.0,
+          "pattern": 2,
+          "pausing": 12,
+          "vibBefore": false,
+          "vibAfter": true
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 91,
+          "flowRate": 3.5,
+          "pattern": 1,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "1d667c581bb0b40685a3d8332017a32ffa180e86299e19c007ae559990e31704",
+  "expected_cup_g": 231,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 52,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": null,
+  "bean": "埃塞 花魁 日晒 AG75（重启后秤重验证杯）",
+  "events_seen": [
+    {
+      "t": -0.1,
+      "code": 8100
+    },
+    {
+      "t": 1.4,
+      "code": 11511
+    },
+    {
+      "t": 4.2,
+      "code": 8102
+    },
+    {
+      "t": 5.0,
+      "code": 8104
+    },
+    {
+      "t": 5.7,
+      "code": 8001
+    },
+    {
+      "t": 9.5,
+      "code": 8002
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "cupType": "xdripper",
+  "doseGrams": 16,
+  "recipe": {
+    "grinderSize": 51,
+    "rpm": 60,
+    "grandWater": 240,
+    "pours": [
+      {
+        "volume": 48,
+        "temperature": 94,
+        "flowRate": 3.0,
+        "pattern": 2,
+        "pausing": 20,
+        "vibBefore": false,
+        "vibAfter": true
+      },
+      {
+        "volume": 112,
+        "temperature": 93,
+        "flowRate": 3.5,
+        "pattern": 2,
+        "pausing": 8,
+        "vibBefore": false,
+        "vibAfter": false
+      },
+      {
+        "volume": 80,
+        "temperature": 92,
+        "flowRate": 3.5,
+        "pattern": 1,
+        "pausing": 0,
+        "vibBefore": false,
+        "vibAfter": false
+      }
+    ]
+  }
+}

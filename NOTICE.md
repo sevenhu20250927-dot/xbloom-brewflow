@@ -5,7 +5,7 @@
 - 命令编码参考 [ryunana/xbloom-studio-recipe-skill](https://github.com/ryunana/xbloom-studio-recipe-skill) 1.3.2 的 `scripts/xbloom_proto.py`，MIT，Copyright 2026 chengway.wang。
 - 状态与重量解释参考 [Janczykkkko/xbloom-ble](https://github.com/Janczykkkko/xbloom-ble) 的 `xbloom_ble/telemetry.py`，MIT，Copyright 2026 Janczykkkko。
 - 旁通沿用原编码器的8102结构，并参考花炉咖啡烘焙师一一的扩展传参方式：float32水量、float32摄氏度、整数粉量。
-- 拟方与复盘方法参考一一的六层框架及本地知识闭环实践：目标、解释工具、参数影响、类型起点、个人偏好、反馈。本文档为本包重新整理，未分发其私人总账、完整经验库或实冲数据，不宣称一一审核过本包或每条建议。
+- 拟方与复盘方法参考一一的六层框架及本地知识闭环实践：目标、解释工具、参数影响、类型起点、个人偏好、反馈。0.2.0补入完整经验库、总账、品鉴卡和25条运行资料，并适配知识闭环技能。另获发布者同意加入其冲煮和品饮数据。来源归属与改写记录见`knowledge/catalog.json`；不宣称一一审核过本包或每条建议，也不把来源文本中转述的第三方观点说成本项目原创。
 
 完整上游许可保存在[scripts/xbloom_bridge/PROTOCOL_LICENSE.txt](scripts/xbloom_bridge/PROTOCOL_LICENSE.txt)，本包遵循[MIT License](LICENSE)。测试中的固定字节是软件编码对照，不是实机接受证明；示例JSON与模拟通知不带真实用户身份。
 

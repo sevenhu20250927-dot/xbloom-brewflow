@@ -1,0 +1,67 @@
+{
+  "ts": "2026-11-04T15:16:22",
+  "outcome": "completed_no_signal",
+  "pours_observed": 4,
+  "pours_planned": 4,
+  "duration_s": 151.4,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 15,
+    "recipe": {
+      "grinderSize": 52,
+      "rpm": 100,
+      "grandWater": 240,
+      "pours": [
+        {
+          "volume": 45,
+          "temperature": 93,
+          "flowRate": 3.0,
+          "pattern": 2,
+          "pausing": 12,
+          "vibBefore": false,
+          "vibAfter": true
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 91,
+          "flowRate": 3.5,
+          "pattern": 1,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "1d667c581bb0b40685a3d8332017a32ffa180e86299e19c007ae559990e31704",
+  "expected_cup_g": 231,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 52,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": "高温：苦退了（50→52 生效）、酸质变高，但蜂蜜粘稠感不如 50 档；中温仍薄、甜还在 → 全程 body 变薄但萃取结构成立（甜在），非萃取不足。判定 52 略粗：治苦成功、代价 body。甜点定 51（不回 50，首冲 50 有微苦）。",
+  "duration_machine_s": 155,
+  "duration_source": "用户报机器屏显 2:35"
+}

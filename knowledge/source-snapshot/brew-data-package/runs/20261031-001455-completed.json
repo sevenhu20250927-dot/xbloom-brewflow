@@ -1,0 +1,56 @@
+{
+  "ts": "2026-10-31T00:14:55",
+  "outcome": "completed",
+  "pours_observed": 3,
+  "pours_planned": 3,
+  "duration_s": 48.4,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 5,
+    "recipe": {
+      "grinderSize": 0,
+      "rpm": 90,
+      "grandWater": 100,
+      "pours": [
+        {
+          "volume": 34,
+          "temperature": 60,
+          "flowRate": 3.0,
+          "pattern": 0,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 33,
+          "temperature": 60,
+          "flowRate": 3.0,
+          "pattern": 0,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 33,
+          "temperature": 60,
+          "flowRate": 3.0,
+          "pattern": 0,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "5f3dffe7bf0bda839d735a477eefeeca721002704423f2540d8aef5f3f381d70",
+  "expected_cup_g": 96,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 50,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": "只出水：100ml 60度（中心注水）"
+}

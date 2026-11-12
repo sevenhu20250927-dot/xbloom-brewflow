@@ -1,0 +1,77 @@
+{
+  "ts": "2026-11-05T13:44:47",
+  "outcome": "completed_no_signal",
+  "pours_observed": 4,
+  "pours_planned": 4,
+  "duration_s": 153.5,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 15,
+    "recipe": {
+      "grinderSize": 52,
+      "rpm": 100,
+      "grandWater": 240,
+      "pours": [
+        {
+          "volume": 45,
+          "temperature": 93,
+          "flowRate": 3.0,
+          "pattern": 2,
+          "pausing": 12,
+          "vibBefore": false,
+          "vibAfter": true
+        },
+        {
+          "volume": 65,
+          "temperature": 93,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 1,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "1437ebee594e3f7c26bed69f87c90e5da8fe6e85f386a9d269417ff91061c8cf",
+  "expected_cup_g": 231,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 52,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": "风味与酸甜可以；尾端有一点杂（非涩，余韵不清爽）",
+  "drain": {
+    "duration_machine_s": 303.6,
+    "duration_last_drip_s": 303.6,
+    "weight_frames": 729,
+    "weight_last_g": {
+      "uint16_le": 2457.6
+    },
+    "weight_last_raw": "5802074B9E10000000C100000000FD32",
+    "stable": false
+  },
+  "duration_machine_s": 172,
+  "duration_machine_note": "用户报机器显示 2:52"
+}

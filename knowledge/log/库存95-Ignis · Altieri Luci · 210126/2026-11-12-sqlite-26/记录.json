@@ -1,0 +1,52 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 26,
+  "brew_date": "2026-11-12",
+  "bean_snapshot": {
+    "id": 95,
+    "bean_name": "Ignis · Altieri Luci · 210126",
+    "roaster": "Ignis",
+    "origin": "巴拿马",
+    "process": "Dry Fermentation Natural（干式发酵日晒）",
+    "plot": "",
+    "batch": "",
+    "estate": "Altieri",
+    "roast_date": "2026-10-14",
+    "country": "巴拿马",
+    "region": "Boquete",
+    "producer": "Altieri",
+    "lot_info": "",
+    "variety_name": "Geisha",
+    "storage_state": "冷冻",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {},
+    "technique": {
+      "grinder": "ZP6",
+      "grind_size": "4.8",
+      "water_temperature": "91℃"
+    },
+    "tasting": {},
+    "improvement": {}
+  },
+  "created_at": "2026-11-12T09:37:19",
+  "updated_at": "2026-11-12T09:37:19",
+  "personal_tastings": [
+    {
+      "person_id": 1,
+      "person_name": "胡琪",
+      "feedback": {
+        "taste": "过分的干净，风味清晰，酸度有点高，复杂度还是在线的，香气中等，鼻后嗅觉还不错，但是也不够那么炸裂。个人推测：可能与冷冻过有关，尚未验证。\n补充反馈：香气虽然不够炸裂，但是非常悠长，感觉接近一个小时仍能感受到；这一点非常赞。",
+        "next": "下一杯改用 C40；具体研磨刻度及其他参数尚未确定。",
+        "overall": 8.5,
+        "sweetness": 7,
+        "acidity": 9,
+        "aroma": 8
+      },
+      "revision": 3
+    }
+  ],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

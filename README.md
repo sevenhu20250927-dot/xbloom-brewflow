@@ -4,6 +4,8 @@
 
 An agent skill for xBloom Studio: plan recipes, brew over Bluetooth, capture reports, and refine with tasting feedback.
 
+内置一一完整经验库、六层拟方方法，以及发布者的机冲／手冲与个人反馈，支持有案例可查的冷启动。入口见[知识与案例](knowledge/README.md)。
+
 一个独立的Agent技能：从豆子信息拟定配方，经人审核并明确授权后操作xBloom Studio，自动生成原始日志、逐杯HTML／SVG报告和本地总账，再根据品饮反馈修方。
 
 ```text
@@ -44,12 +46,13 @@ python3 -m venv .venv
 ## 包含什么
 
 - `SKILL.md`：Agent入口与授权边界。
-- `references/`：拟方依据、参数合同、操作与记录口径；按阶段读取。
+- `references/`：一一的拟方／修方与知识审核流程、类型模板、参数合同和操作口径。
+- `knowledge/`：完整来源经验、总账、按豆案例、个人偏好和迁入证据；无需原库存数据库即可阅读。
 - `scripts/xbloom_bridge/`：配方校验、BLE编码与状态处理、追加日志、报告和指定目录的总账。
 - `examples/`：无个人信息的格式示例，均需按具体豆子审核。
 - `tests/`：离线回归与发布包适配用例，使用模拟设备与临时数据。
 
-没有库存数据库、网页服务器、账户、定时器或AI API依赖。反馈由Agent写入本地Markdown，总账只读取调用者指定的日志目录。原始通知可能含设备序列号和地址，分享时由使用者选择范围，不自动上传。
+无库存数据库、网页服务器、账户、定时器或AI API运行依赖。随包数据是公开的冷启动快照，不连接作者数据库。反馈由Agent写入本地Markdown，总账只读取调用者指定的日志目录。原始通知可能含设备序列号和地址，分享时由使用者选择范围，不自动上传。
 
 ## 可靠性与范围
 
@@ -75,6 +78,6 @@ PYTHONPATH=scripts python3 -B -m unittest discover -s tests -v
 
 将本目录内容作为独立仓库根目录；不把上层咖啡项目一起上传。保留 `LICENSE`、`NOTICE.md` 与协议许可证。`.gitignore`排除本地环境、运行日志、反馈记录和常见数据库；它不替代提交前逐项检查。
 
-公开仓库：[sevenhu20250927-dot/xbloom-brewflow](https://github.com/sevenhu20250927-dot/xbloom-brewflow)。后续修改应完成相应离线验证并如实保留硬件验证范围。使用者的豆子记录与反馈在个人工作目录中维护，不作为技能更新覆盖。
+公开仓库：[sevenhu20250927-dot/xbloom-brewflow](https://github.com/sevenhu20250927-dot/xbloom-brewflow)。后续修改应完成相应离线验证并如实保留硬件验证范围。使用者的新豆子记录与反馈在个人工作目录中维护，不作为技能更新覆盖。公开的历史种子数据已获提供者同意，新增记录是否公开仍由使用者决定。
 
 本项目为非官方社区工具。协议来源、归属与方法参考见[NOTICE.md](NOTICE.md)。

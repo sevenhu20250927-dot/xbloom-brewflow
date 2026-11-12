@@ -1,0 +1,70 @@
+{
+  "ts": "2026-11-05T14:14:42",
+  "outcome": "completed",
+  "pours_observed": 3,
+  "pours_planned": 3,
+  "duration_s": 48.2,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 5,
+    "recipe": {
+      "grinderSize": 0,
+      "rpm": 90,
+      "grandWater": 100,
+      "pours": [
+        {
+          "volume": 34,
+          "temperature": 60,
+          "flowRate": 3.0,
+          "pattern": 0,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 33,
+          "temperature": 60,
+          "flowRate": 3.0,
+          "pattern": 0,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 33,
+          "temperature": 60,
+          "flowRate": 3.0,
+          "pattern": 0,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "5f3dffe7bf0bda839d735a477eefeeca721002704423f2540d8aef5f3f381d70",
+  "expected_cup_g": 96,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 52,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": "秤重帧 20501 出杯验证（只出水 100ml）",
+  "drain": {
+    "duration_machine_s": 56.3,
+    "duration_last_drip_s": 48.3,
+    "weight_final_g": 87.63,
+    "weight_peak_g": 87.8,
+    "weight_frames": 40,
+    "stable": true,
+    "trace": [
+      [
+        48.3,
+        87.8
+      ]
+    ]
+  }
+}

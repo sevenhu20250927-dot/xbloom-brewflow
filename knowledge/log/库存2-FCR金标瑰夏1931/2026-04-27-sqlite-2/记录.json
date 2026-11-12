@@ -1,0 +1,82 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 2,
+  "brew_date": "2026-04-27",
+  "bean_snapshot": {
+    "id": 2,
+    "bean_name": "FCR金标瑰夏1931",
+    "roaster": "fcr",
+    "origin": "埃塞",
+    "process": "日晒",
+    "plot": "",
+    "batch": "",
+    "estate": "瑰夏村庄园",
+    "roast_date": "2026-04-08",
+    "country": "埃塞",
+    "region": "非洲",
+    "producer": "瑰夏村庄园",
+    "lot_info": "SURMA地块 / Lot119",
+    "variety_name": "瑰夏原生种",
+    "storage_state": "常温",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "water_type": "Auacode",
+    "water_tds": "85",
+    "water_mg_ca": "2.7",
+    "grinder": "C40#24",
+    "dripper": "Origami",
+    "filter_paper": "v60",
+    "kettle": "Cocinare",
+    "dose": "15",
+    "yield": "225&bypass15",
+    "ratio": "16",
+    "grind_size": "C40#24",
+    "water_temperature": "92",
+    "recommended_grind": "C40",
+    "used_grind": "24",
+    "flow_judgement": [
+      "偏快"
+    ],
+    "coffee_bed": [
+      "平整"
+    ],
+    "acidity_style": "锐",
+    "sweetness_style": "弱",
+    "clarity_style": "清晰",
+    "finish_style": "微苦",
+    "grind_notes": "",
+    "bloom": "40g/40s",
+    "pour_method": "绕圈注水",
+    "total_time": "2min",
+    "extraction_observation": [
+      "流速稳定",
+      "咖啡床平整"
+    ],
+    "extraction_notes": "",
+    "score": "7",
+    "flavor_direction": [
+      "花香"
+    ],
+    "flavor_description": "",
+    "structure_acidity": "4.5",
+    "structure_sweetness": "3",
+    "structure_body": "2",
+    "structure_cleanliness": "1.5",
+    "structure_clarity": "3.5",
+    "structure_balance": "0.5",
+    "aftertaste_length": "2",
+    "aftertaste_type": "无",
+    "retronasal": "无",
+    "defects": "酸度尖锐了一些，并且苦味高了一些",
+    "next_adjustment": "92度或许高了点，auqacode的水可能把酸度提取过度了，下一次考虑使用90度和tww的水",
+    "roast_degree": "2",
+    "storage_method": "常温",
+    "warming_time": "0"
+  },
+  "created_at": "2026-04-27T10:57:11",
+  "updated_at": "2026-04-27T10:58:42",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

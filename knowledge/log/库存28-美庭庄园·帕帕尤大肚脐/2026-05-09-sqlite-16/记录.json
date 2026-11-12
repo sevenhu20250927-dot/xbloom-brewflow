@@ -1,0 +1,87 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 16,
+  "brew_date": "2026-05-09",
+  "bean_snapshot": {
+    "id": 28,
+    "bean_name": "美庭庄园·帕帕尤大肚脐",
+    "roaster": "fcr",
+    "origin": "哥伦比亚",
+    "process": "日晒",
+    "plot": "",
+    "batch": "",
+    "estate": "美庭庄园",
+    "roast_date": "2026-04-27",
+    "country": "哥伦比亚",
+    "region": "中美洲",
+    "producer": "美庭庄园",
+    "lot_info": "考卡地块#BOC#3批次",
+    "variety_name": "帕帕尤大肚脐",
+    "storage_state": "常温",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "1",
+      "warming_time": "1"
+    },
+    "technique": {
+      "grind_size": "zp6#4.7",
+      "roaster_recommended_grind": "/",
+      "dose": "15",
+      "yield": "240",
+      "ratio": "16",
+      "water_temperature": "93",
+      "bloom": "30g#30s",
+      "pour_method": "30/120/180/240",
+      "total_time": "1分45",
+      "water_type": "tww",
+      "water_tds": "/",
+      "water_mg_ca": "/",
+      "grinder": "zp6",
+      "dripper": "kalita",
+      "filter_paper": "蛋糕纸",
+      "kettle": "c",
+      "flow_judgement": [
+        "偏快"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "速度太快，研磨度其实不算粗，同等研磨度前一天的流速是2分45；磨的时候感觉豆子很疏松，怀疑生豆老了。",
+      "grind_notes": ""
+    },
+    "tasting": {
+      "acidity_style": "一般",
+      "sweetness_style": "还行",
+      "clarity_style": "丰富",
+      "finish_style": "无",
+      "score": 5,
+      "flavor_direction": [
+        "柑橘"
+      ],
+      "flavor_description": "风味丰富，但是整体木质味太强，不怎么预约，只是细分辨之下能感觉到豆子是好豆子",
+      "structure_acidity": 3,
+      "structure_sweetness": 2,
+      "structure_body": 2,
+      "structure_cleanliness": 1,
+      "structure_clarity": 2,
+      "structure_balance": 2,
+      "aftertaste_length": "、",
+      "aftertaste_type": "、",
+      "retronasal": "、",
+      "defects": "木质味太强了"
+    },
+    "improvement": {
+      "next_adjustment": "仅一支，算了"
+    }
+  },
+  "created_at": "2026-05-11T07:25:58",
+  "updated_at": "2026-05-11T07:25:58",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

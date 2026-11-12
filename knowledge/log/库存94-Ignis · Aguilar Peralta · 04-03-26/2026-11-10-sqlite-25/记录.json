@@ -1,0 +1,89 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 25,
+  "brew_date": "2026-11-10",
+  "bean_snapshot": {
+    "id": 94,
+    "bean_name": "Ignis · Aguilar Peralta · 04/03/26",
+    "roaster": "Ignis",
+    "origin": "巴拿马",
+    "process": "水洗",
+    "plot": "",
+    "batch": "",
+    "estate": "Aguilar Peralta",
+    "roast_date": "2026-10-14",
+    "country": "巴拿马",
+    "region": "",
+    "producer": "Aguilar Peralta",
+    "lot_info": "",
+    "variety_name": "Geisha",
+    "storage_state": "冷冻",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "3",
+      "warming_time": "8h"
+    },
+    "technique": {
+      "grind_size": "zp6#4.7",
+      "roaster_recommended_grind": "/",
+      "dose": "12.5",
+      "yield": "210",
+      "ratio": "17",
+      "water_temperature": "91",
+      "bloom": "40g30s",
+      "pour_method": "40/120/160/200/220",
+      "total_time": "/",
+      "water_type": "农夫",
+      "water_tds": "/",
+      "water_mg_ca": "/",
+      "grinder": "zp6",
+      "dripper": "kalita",
+      "filter_paper": "蛋糕纸",
+      "kettle": "F",
+      "flow_judgement": [
+        "正常"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "萃取速度没什么问题，风味清晰度还是比较不错的，但是略苦，似乎可以更粗点？细品之下，没有粘稠感，可能需要C40试试。",
+      "grind_notes": ""
+    },
+    "tasting": {
+      "acidity_style": "3",
+      "sweetness_style": "4",
+      "clarity_style": "4",
+      "finish_style": "4",
+      "score": 4,
+      "flavor_direction": [
+        "巧克力",
+        "花香",
+        "甘蔗糖"
+      ],
+      "flavor_description": "烘焙度略深，但是风味层次还是可以的。",
+      "structure_acidity": 3,
+      "structure_sweetness": 4,
+      "structure_body": 3.5,
+      "structure_cleanliness": 4,
+      "structure_clarity": 4,
+      "structure_balance": 4,
+      "aftertaste_length": "15",
+      "aftertaste_type": "",
+      "retronasal": "",
+      "defects": "略有水感和苦涩，水感其实主要是因为研磨度4.7细了，15的粉水比有点苦，然后萃取到18左右，放了2份，实际上是17的粉水比"
+    },
+    "improvement": {
+      "next_adjustment": "C40#22+V60，这个方案试试"
+    }
+  },
+  "created_at": "2026-11-10T16:33:33",
+  "updated_at": "2026-11-10T16:33:33",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

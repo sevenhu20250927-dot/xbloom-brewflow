@@ -1,0 +1,87 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 7,
+  "brew_date": "2026-04-30",
+  "bean_snapshot": {
+    "id": 3,
+    "bean_name": "FCR红标瑰夏1931",
+    "roaster": "fcr",
+    "origin": "埃塞",
+    "process": "日晒",
+    "plot": "",
+    "batch": "",
+    "estate": "瑰夏村庄园",
+    "roast_date": "2026-04-08",
+    "country": "埃塞",
+    "region": "非洲",
+    "producer": "瑰夏村庄园",
+    "lot_info": "GAYLEE地块 / Lot030",
+    "variety_name": "瑰夏原生种",
+    "storage_state": "常温",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "2",
+      "warming_time": "0"
+    },
+    "technique": {
+      "grind_size": "C40#24",
+      "roaster_recommended_grind": "/",
+      "dose": "16",
+      "yield": "256",
+      "ratio": "16",
+      "water_temperature": "91",
+      "bloom": "45g/30s",
+      "pour_method": "2.5/8/12/15/bypass1",
+      "total_time": "2min30s",
+      "water_type": "aquacode",
+      "water_tds": "85",
+      "water_mg_ca": "2.7",
+      "grinder": "C40",
+      "dripper": "kalita",
+      "filter_paper": "蛋糕纸",
+      "kettle": "c",
+      "flow_judgement": [
+        "正常"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "2min30秒，属于正常稍慢",
+      "grind_notes": ""
+    },
+    "tasting": {
+      "acidity_style": "不错",
+      "sweetness_style": "中上",
+      "clarity_style": "一半",
+      "finish_style": "微微苦",
+      "score": 8.5,
+      "flavor_direction": [
+        "柑橘"
+      ],
+      "flavor_description": "基本满意，考虑到价格，算是比较满意的水平，但是风味不够丰富（比74158丰富不少），尾段微微苦，考虑下次用tww",
+      "structure_acidity": 3,
+      "structure_sweetness": 3.48,
+      "structure_body": 4,
+      "structure_cleanliness": 3,
+      "structure_clarity": 3,
+      "structure_balance": 4,
+      "aftertaste_length": "15min",
+      "aftertaste_type": "无",
+      "retronasal": "无",
+      "defects": "风味还是不够丰富，价钱所限"
+    },
+    "improvement": {
+      "next_adjustment": "基本很好了，下次试试tww的水"
+    }
+  },
+  "created_at": "2026-04-30T10:18:30",
+  "updated_at": "2026-04-30T10:18:52",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

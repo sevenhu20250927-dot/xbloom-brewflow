@@ -1,0 +1,67 @@
+{
+  "ts": "2026-11-03T13:31:20",
+  "outcome": "completed_no_signal",
+  "pours_observed": 4,
+  "pours_planned": 4,
+  "duration_s": 153.3,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 15,
+    "recipe": {
+      "grinderSize": 52,
+      "rpm": 100,
+      "grandWater": 240,
+      "pours": [
+        {
+          "volume": 45,
+          "temperature": 93,
+          "flowRate": 3.0,
+          "pattern": 2,
+          "pausing": 12,
+          "vibBefore": false,
+          "vibAfter": true
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 91,
+          "flowRate": 3.5,
+          "pattern": 1,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "1d667c581bb0b40685a3d8332017a32ffa180e86299e19c007ae559990e31704",
+  "expected_cup_g": 231,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 48,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": "高温尾韵苦、酸甜在线、风味清晰可鉴、浓度适中；中温苦降、轻微涩出现；低温仍涩 → 涩贯穿三个温段，确认持续性尾段过萃（52 对这支偏细，日晒细粉迁移压实）。研磨 52→54；若仍涩则 56 + 收尾降温/缩短尾段。",
+  "duration_machine_reported_s": 157,
+  "duration_note": "脚本计时 153.3s 止于第4段注水结束；机器显示 2:37 含尾段下水，两者终点定义不同"
+}

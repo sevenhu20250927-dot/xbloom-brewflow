@@ -1,0 +1,86 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 11,
+  "brew_date": "2026-05-04",
+  "bean_snapshot": {
+    "id": 23,
+    "bean_name": "水洗马森秋",
+    "roaster": "BigSur",
+    "origin": "埃塞",
+    "process": "水洗",
+    "plot": "",
+    "batch": "",
+    "estate": "西达摩/阿贝格纳",
+    "roast_date": "2026-04-20",
+    "country": "埃塞",
+    "region": "非洲",
+    "producer": "西达摩/阿贝格纳",
+    "lot_info": "Yaye处理站/马森秋",
+    "variety_name": "74158",
+    "storage_state": "常温",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "1",
+      "warming_time": "0"
+    },
+    "technique": {
+      "grind_size": "C40#25",
+      "roaster_recommended_grind": "0",
+      "dose": "15g",
+      "yield": "240g",
+      "ratio": "16",
+      "water_temperature": "94",
+      "bloom": "40g/40s",
+      "pour_method": "40/120/180/240(大概，记忆有点模糊）",
+      "total_time": "3min",
+      "water_type": "tww",
+      "water_tds": "无",
+      "water_mg_ca": "无",
+      "grinder": "c40",
+      "dripper": "Origami",
+      "filter_paper": "蛋糕纸",
+      "kettle": "c",
+      "flow_judgement": [
+        "偏慢"
+      ],
+      "coffee_bed": [],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "萃取速度偏慢，研磨度并不算细，但是水流很慢，到达3min才流完。原因未明，但是口感倒是没有苦涩，非常干净。",
+      "grind_notes": "待定，需探索"
+    },
+    "tasting": {
+      "acidity_style": "略显尖锐",
+      "sweetness_style": "中等",
+      "clarity_style": "略微融合，但是酸质突出",
+      "finish_style": "无",
+      "score": 8,
+      "flavor_direction": [
+        "花香",
+        "浆果"
+      ],
+      "flavor_description": "整体还是满意的，非常干净，这点很大的优点；但是明显的不平衡，萃取参数搞得不太好。",
+      "structure_acidity": 4,
+      "structure_sweetness": 3,
+      "structure_body": 3,
+      "structure_cleanliness": 4.8,
+      "structure_clarity": 3.5,
+      "structure_balance": 3,
+      "aftertaste_length": "无",
+      "aftertaste_type": "无",
+      "retronasal": "无",
+      "defects": "酸质突出了"
+    },
+    "improvement": {
+      "next_adjustment": "换zp6"
+    }
+  },
+  "created_at": "2026-05-06T10:21:51",
+  "updated_at": "2026-05-06T10:21:51",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

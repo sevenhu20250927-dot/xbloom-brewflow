@@ -1,0 +1,88 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 19,
+  "brew_date": "2026-06-17",
+  "bean_snapshot": {
+    "id": 39,
+    "bean_name": "Alo混合水洗",
+    "roaster": "猫叔",
+    "origin": "埃塞",
+    "process": "混合水洗",
+    "plot": "",
+    "batch": "",
+    "estate": "alo",
+    "roast_date": "2026-06-02",
+    "country": "埃塞",
+    "region": "埃塞",
+    "producer": "alo",
+    "lot_info": "混合水洗",
+    "variety_name": "74158",
+    "storage_state": "常温",
+    "roaster_recommendation": "0"
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "浅烘",
+      "warming_time": ""
+    },
+    "technique": {
+      "grind_size": "C40#24",
+      "roaster_recommended_grind": "/",
+      "dose": "16",
+      "yield": "256",
+      "ratio": "16",
+      "water_temperature": "93",
+      "bloom": "32g/30s",
+      "pour_method": "32/90/130/180/210/256",
+      "total_time": "2min",
+      "water_type": "tww",
+      "water_tds": "/",
+      "water_mg_ca": "/",
+      "grinder": "c40",
+      "dripper": "v60",
+      "filter_paper": "v60",
+      "kettle": "c",
+      "flow_judgement": [
+        "正常"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "感觉速度偏快，可能是V60的功劳",
+      "grind_notes": "感觉差不多合适"
+    },
+    "tasting": {
+      "acidity_style": "6",
+      "sweetness_style": "9",
+      "clarity_style": "7",
+      "finish_style": "7",
+      "score": 8,
+      "flavor_direction": [
+        "浆果",
+        "甘蔗糖"
+      ],
+      "flavor_description": "感觉还是甜感高，但是层次不清晰，涩感依旧",
+      "structure_acidity": 3,
+      "structure_sweetness": 4,
+      "structure_body": 4,
+      "structure_cleanliness": 3,
+      "structure_clarity": 3,
+      "structure_balance": 3,
+      "aftertaste_length": "3",
+      "aftertaste_type": "3",
+      "retronasal": "3",
+      "defects": "74158涩感依旧，至于冲煮能调整的，无非调整浓度或者酸甜配比"
+    },
+    "improvement": {
+      "next_adjustment": ""
+    }
+  },
+  "created_at": "2026-06-18T07:40:50",
+  "updated_at": "2026-06-18T07:40:50",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

@@ -1,0 +1,87 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 23,
+  "brew_date": "2026-11-09",
+  "bean_snapshot": {
+    "id": 70,
+    "bean_name": "危地马拉（竞标批次）",
+    "roaster": "",
+    "origin": "危地马拉",
+    "process": "",
+    "plot": "",
+    "batch": "",
+    "estate": "",
+    "roast_date": "",
+    "country": "危地马拉",
+    "region": "",
+    "producer": "",
+    "lot_info": "",
+    "variety_name": "",
+    "storage_state": "待补",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "2",
+      "warming_time": "2"
+    },
+    "technique": {
+      "water_type": "农夫",
+      "water_tds": "/",
+      "water_mg_ca": "/",
+      "grinder": "C40",
+      "dripper": "V60",
+      "filter_paper": "mola",
+      "kettle": "F",
+      "dose": "15",
+      "yield": "225",
+      "ratio": "15",
+      "grind_size": "C40#22",
+      "water_temperature": "93",
+      "roaster_recommended_grind": "/",
+      "flow_judgement": [
+        "正常"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "grind_notes": "",
+      "bloom": "50g30s",
+      "pour_method": "50/150/225",
+      "total_time": "2min",
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": ""
+    },
+    "tasting": {
+      "acidity_style": "9",
+      "sweetness_style": "8",
+      "clarity_style": "9",
+      "finish_style": "9",
+      "score": 9,
+      "flavor_direction": [
+        "柑橘"
+      ],
+      "flavor_description": "",
+      "structure_acidity": 5,
+      "structure_sweetness": 3.91,
+      "structure_body": 4,
+      "structure_cleanliness": 5,
+      "structure_clarity": 4.5,
+      "structure_balance": 4.5,
+      "aftertaste_length": "10",
+      "aftertaste_type": "30",
+      "retronasal": "短",
+      "defects": "现在想来，这杯强度异常的高，但是余韵和复杂度确实缺了点。"
+    },
+    "improvement": {
+      "next_adjustment": "就一杯"
+    }
+  },
+  "created_at": "2026-11-09T20:45:21",
+  "updated_at": "2026-11-09T20:51:41",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

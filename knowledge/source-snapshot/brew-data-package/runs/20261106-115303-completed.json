@@ -1,0 +1,193 @@
+{
+  "ts": "2026-11-06T11:53:03",
+  "outcome": "completed",
+  "pours_observed": 4,
+  "pours_planned": 4,
+  "duration_s": 147.2,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 15,
+    "recipe": {
+      "grinderSize": 52,
+      "rpm": 100,
+      "grandWater": 240,
+      "pours": [
+        {
+          "volume": 45,
+          "temperature": 93,
+          "flowRate": 3.0,
+          "pattern": 2,
+          "pausing": 12,
+          "vibBefore": false,
+          "vibAfter": true
+        },
+        {
+          "volume": 55,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 55,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 85,
+          "temperature": 91,
+          "flowRate": 3.0,
+          "pattern": 1,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "53bc9c69f4d74f06bdc443e8f345c6b8efcbf6d074a5e27a242b9a13c4811ed5",
+  "expected_cup_g": 231,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 52,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": null,
+  "bean": "埃塞 花魁 日晒 AG75（屏显变速标定第2杯·末段85ml）",
+  "events_seen": [
+    {
+      "t": -0.1,
+      "code": 8100
+    },
+    {
+      "t": 0.5,
+      "code": 8023
+    },
+    {
+      "t": 1.4,
+      "code": 11511
+    },
+    {
+      "t": 2.4,
+      "code": 8023
+    },
+    {
+      "t": 4.2,
+      "code": 8102
+    },
+    {
+      "t": 5.0,
+      "code": 8104
+    },
+    {
+      "t": 5.8,
+      "code": 8001
+    },
+    {
+      "t": 6.2,
+      "code": 8023
+    },
+    {
+      "t": 9.5,
+      "code": 8002
+    },
+    {
+      "t": 9.6,
+      "code": 40502
+    },
+    {
+      "t": 10.0,
+      "code": 8023
+    },
+    {
+      "t": 12.7,
+      "code": 8023
+    },
+    {
+      "t": 12.7,
+      "code": 40506
+    },
+    {
+      "t": 34.8,
+      "code": 40507
+    },
+    {
+      "t": 35.3,
+      "code": 8023
+    },
+    {
+      "t": 37.8,
+      "code": 8023
+    },
+    {
+      "t": 38.3,
+      "code": 40510
+    },
+    {
+      "t": 71.5,
+      "code": 40510
+    },
+    {
+      "t": 94.5,
+      "code": 40510
+    },
+    {
+      "t": 118.5,
+      "code": 40510
+    },
+    {
+      "t": 147.2,
+      "code": 40511
+    },
+    {
+      "t": 169.7,
+      "code": 40512
+    },
+    {
+      "t": 174.2,
+      "code": 8023
+    }
+  ],
+  "drain": null,
+  "dispense": {
+    "pours": [
+      {
+        "start_s": 38.8,
+        "end_s": 53.6,
+        "ml": 44.6
+      },
+      {
+        "start_s": 71.9,
+        "end_s": 87.5,
+        "ml": 54.3
+      },
+      {
+        "start_s": 95.2,
+        "end_s": 110.8,
+        "ml": 54.2
+      },
+      {
+        "start_s": 119.4,
+        "end_s": 147.2,
+        "ml": 84.2
+      }
+    ],
+    "program_end_s": 147.2,
+    "total_ml": 240.0
+  },
+  "screen_auto_s": 131.4,
+  "first_stage_s": 38.3,
+  "done_event_s": 169.7,
+  "valve_close_s": 147.2,
+  "screen_time_s": 132,
+  "screen_note": "用户 11:54 读屏 2:12；自动值 131.4，差 0.6 秒（三杯定案）"
+}

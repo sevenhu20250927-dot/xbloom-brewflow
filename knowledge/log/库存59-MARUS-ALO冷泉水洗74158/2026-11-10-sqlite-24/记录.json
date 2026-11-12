@@ -1,0 +1,79 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 24,
+  "brew_date": "2026-11-10",
+  "bean_snapshot": {
+    "id": 59,
+    "bean_name": "ALO 冷泉水洗 74158",
+    "roaster": "MARUS",
+    "origin": "埃塞俄比亚",
+    "process": "冷泉水洗",
+    "plot": "",
+    "batch": "",
+    "estate": "",
+    "roast_date": "",
+    "country": "埃塞俄比亚",
+    "region": "西达摩 / 班莎",
+    "producer": "",
+    "lot_info": "",
+    "variety_name": "74158",
+    "storage_state": "待补",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "",
+      "warming_time": ""
+    },
+    "technique": {
+      "water_type": "",
+      "water_tds": "",
+      "water_mg_ca": "",
+      "grinder": "",
+      "dripper": "",
+      "filter_paper": "",
+      "kettle": "",
+      "dose": "",
+      "yield": "",
+      "ratio": "",
+      "grind_size": "",
+      "water_temperature": "",
+      "roaster_recommended_grind": "",
+      "flow_judgement": [],
+      "coffee_bed": [],
+      "grind_notes": "",
+      "bloom": "",
+      "pour_method": "",
+      "total_time": "",
+      "extraction_observation": [],
+      "extraction_notes": ""
+    },
+    "tasting": {
+      "acidity_style": "",
+      "sweetness_style": "",
+      "clarity_style": "",
+      "finish_style": "",
+      "score": "",
+      "flavor_direction": [],
+      "flavor_description": "",
+      "structure_acidity": "",
+      "structure_sweetness": "",
+      "structure_body": "",
+      "structure_cleanliness": "",
+      "structure_clarity": "",
+      "structure_balance": "",
+      "aftertaste_length": "",
+      "aftertaste_type": "",
+      "retronasal": "",
+      "defects": ""
+    },
+    "improvement": {
+      "next_adjustment": ""
+    }
+  },
+  "created_at": "2026-11-10T09:53:24",
+  "updated_at": "2026-11-10T09:53:24",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

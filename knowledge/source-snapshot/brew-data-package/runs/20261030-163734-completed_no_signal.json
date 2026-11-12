@@ -1,0 +1,56 @@
+{
+  "ts": "2026-10-30T16:37:34",
+  "outcome": "completed_no_signal",
+  "pours_observed": 3,
+  "pours_planned": 3,
+  "duration_s": 133.9,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 15,
+    "recipe": {
+      "grinderSize": 50,
+      "rpm": 100,
+      "grandWater": 225,
+      "pours": [
+        {
+          "volume": 45,
+          "temperature": 93,
+          "flowRate": 3.0,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": true
+        },
+        {
+          "volume": 90,
+          "temperature": 93,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 6,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 90,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 1,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "610acf946b7a98ecc410ea5db504298a5b34cd3b84d759a04a28e4c9a5539b64",
+  "expected_cup_g": 217,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 50,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": "负面味道不大（老豆方案方向正确），但太浓。用户方法论：老豆改用 1:14 粉水比压缩萃取，最后加 bypass 水稀释到合适浓度。下一杯：1:14（210ml 过粉）+ bypass 40ml @92℃。"
+}

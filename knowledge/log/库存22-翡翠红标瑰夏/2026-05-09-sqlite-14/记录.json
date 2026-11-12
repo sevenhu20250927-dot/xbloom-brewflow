@@ -1,0 +1,87 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 14,
+  "brew_date": "2026-05-09",
+  "bean_snapshot": {
+    "id": 22,
+    "bean_name": "翡翠红标瑰夏",
+    "roaster": "BigSur",
+    "origin": "巴拿马",
+    "process": "日晒",
+    "plot": "",
+    "batch": "",
+    "estate": "翡翠庄园",
+    "roast_date": "2026-04-20",
+    "country": "巴拿马",
+    "region": "中美洲",
+    "producer": "翡翠庄园",
+    "lot_info": "Jaramilo农场/Noria地块/3NB批次（26产季）",
+    "variety_name": "瑰夏",
+    "storage_state": "常温",
+    "roaster_recommendation": "94度水，12g一次，v60"
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "2",
+      "warming_time": "0"
+    },
+    "technique": {
+      "grind_size": "zp6#4.7",
+      "roaster_recommended_grind": "c40#20-24",
+      "dose": "15g",
+      "yield": "240",
+      "ratio": "16",
+      "water_temperature": "94",
+      "bloom": "30g/30s",
+      "pour_method": "30/120/190/240",
+      "total_time": "3min",
+      "water_type": "tww",
+      "water_tds": "/",
+      "water_mg_ca": "/",
+      "grinder": "zp6",
+      "dripper": "Origami",
+      "filter_paper": "蛋糕纸",
+      "kettle": "c",
+      "flow_judgement": [
+        "偏慢"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "过萃了，body够，但是明显感觉到流速慢了很多，然后苦味能喝出来，风味还是在，但是被压制了。",
+      "grind_notes": ""
+    },
+    "tasting": {
+      "acidity_style": "不明显",
+      "sweetness_style": "还行",
+      "clarity_style": "豆子好，没冲好也能喝出来",
+      "finish_style": "强",
+      "score": 7,
+      "flavor_direction": [
+        "巧克力"
+      ],
+      "flavor_description": "高温区不够愉悦，苦味较为明显；中低温区，好喝多了。但是苦味还是在，但是整体的层次还是体现出来了。尾韵很长很不错。",
+      "structure_acidity": 3,
+      "structure_sweetness": 3.5,
+      "structure_body": 4.5,
+      "structure_cleanliness": 4.5,
+      "structure_clarity": 4,
+      "structure_balance": 3,
+      "aftertaste_length": "30min",
+      "aftertaste_type": "/",
+      "retronasal": "/",
+      "defects": "苦味出来了，温度高+研磨度细+Origami蛋糕纸流速极大的减慢，导致效果不好。"
+    },
+    "improvement": {
+      "next_adjustment": "这一套研磨度应该用4.8甚至5.0。最后一杯想用c40#22试试，感觉可以用Origami+v60"
+    }
+  },
+  "created_at": "2026-05-09T13:02:47",
+  "updated_at": "2026-05-09T13:06:22",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

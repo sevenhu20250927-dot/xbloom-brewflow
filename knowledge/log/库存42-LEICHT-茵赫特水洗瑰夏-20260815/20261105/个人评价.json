@@ -1,0 +1,20 @@
+{
+  "source": "personal_tastings",
+  "cup": "BREW_RECORD_2026-11-05_INJERTO",
+  "personal_tastings": [
+    {
+      "person_id": 1,
+      "person_name": "胡琪",
+      "feedback": {
+        "overall": 7,
+        "sweetness": 7.5,
+        "acidity": 7,
+        "aroma": 6.5,
+        "taste": "机冲的效果不错",
+        "next": "调整粉水比为1比15"
+      },
+      "revision": 2
+    }
+  ],
+  "note": "Later personal feedback is preserved alongside the original Markdown; neither overwrites the other."
+}

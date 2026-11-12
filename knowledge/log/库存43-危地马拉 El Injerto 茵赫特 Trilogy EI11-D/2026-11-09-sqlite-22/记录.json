@@ -1,0 +1,103 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 22,
+  "brew_date": "2026-11-09",
+  "bean_snapshot": {
+    "id": 43,
+    "bean_name": "危地马拉 El Injerto 茵赫特 Trilogy EI11-D",
+    "roaster": "oma",
+    "origin": "危地马拉",
+    "process": "水洗",
+    "plot": "",
+    "batch": "",
+    "estate": "",
+    "roast_date": "2026-10-28",
+    "country": "危地马拉",
+    "region": "Huehuetenango",
+    "producer": "",
+    "lot_info": "",
+    "variety_name": "Geisha",
+    "storage_state": "待补",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "2",
+      "warming_time": "0"
+    },
+    "technique": {
+      "water_type": "农夫",
+      "water_tds": "",
+      "water_mg_ca": "",
+      "grinder": "C40",
+      "dripper": "V60",
+      "filter_paper": "mola",
+      "kettle": "F",
+      "dose": "15",
+      "yield": "225",
+      "ratio": "15",
+      "grind_size": "C40#22",
+      "water_temperature": "95",
+      "roaster_recommended_grind": "/",
+      "flow_judgement": [
+        "正常"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "grind_notes": "",
+      "bloom": "50g30秒",
+      "pour_method": "50/120/180/225",
+      "total_time": "2min15",
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "无特殊"
+    },
+    "tasting": {
+      "acidity_style": "8",
+      "sweetness_style": "9",
+      "clarity_style": "8.5",
+      "finish_style": "8",
+      "score": 8.5,
+      "flavor_direction": [
+        "柑橘",
+        "花香",
+        "甘蔗糖"
+      ],
+      "flavor_description": "",
+      "structure_acidity": 4,
+      "structure_sweetness": 4.5,
+      "structure_body": 4,
+      "structure_cleanliness": 4.5,
+      "structure_clarity": 4,
+      "structure_balance": 4,
+      "aftertaste_length": "10",
+      "aftertaste_type": "花香",
+      "retronasal": "还行",
+      "defects": "余韵可能不够长"
+    },
+    "improvement": {
+      "next_adjustment": "zp6，尝试一下分离度"
+    }
+  },
+  "created_at": "2026-11-09T20:36:48",
+  "updated_at": "2026-11-09T20:45:14",
+  "personal_tastings": [
+    {
+      "person_id": 1,
+      "person_name": "胡琪",
+      "feedback": {
+        "overall": 8.5,
+        "sweetness": 9,
+        "acidity": 8,
+        "aroma": 8,
+        "taste": "强度比另一个批次稍低，比翡翠红标强度高，算是正常好豆子的强度，而另一半韩国烘焙商的强度绝对超过普通豆子。当然，这杯的有点是甜感有了，整体更圆润，也属于非常不错的豆子，当然，如果论复杂度还是稍差。我想起来冲浪板这种豆子，复杂度显著差，强度差不多。而另一杯，与冲浪板比的话，强度胜，复杂度输，性价比胜。",
+        "next": "这个是C40冲的，下一杯可以考虑用zp6"
+      },
+      "revision": 1
+    }
+  ],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

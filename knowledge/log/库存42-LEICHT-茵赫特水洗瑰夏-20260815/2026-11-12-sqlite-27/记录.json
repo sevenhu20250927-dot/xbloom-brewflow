@@ -1,0 +1,92 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 27,
+  "brew_date": "2026-11-12",
+  "bean_snapshot": {
+    "id": 42,
+    "bean_name": "危地马拉茵赫特水洗瑰夏",
+    "roaster": "LEICHT",
+    "origin": "危地马拉",
+    "process": "水洗",
+    "plot": "",
+    "batch": "",
+    "estate": "El Injerto",
+    "roast_date": "2026-08-15",
+    "country": "危地马拉",
+    "region": "Huehuetenango",
+    "producer": "El Injerto / Arturo Aguirre",
+    "lot_info": "",
+    "variety_name": "Legendary Geisha",
+    "storage_state": "已取出冷冻",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "",
+      "warming_time": ""
+    },
+    "technique": {
+      "water_type": "",
+      "water_tds": "",
+      "water_mg_ca": "",
+      "grinder": "",
+      "dripper": "",
+      "filter_paper": "",
+      "kettle": "",
+      "dose": "",
+      "yield": "",
+      "ratio": "",
+      "grind_size": "",
+      "water_temperature": "",
+      "roaster_recommended_grind": "",
+      "flow_judgement": [],
+      "coffee_bed": [],
+      "grind_notes": "",
+      "bloom": "",
+      "pour_method": "",
+      "total_time": "",
+      "extraction_observation": [],
+      "extraction_notes": ""
+    },
+    "tasting": {
+      "acidity_style": "",
+      "sweetness_style": "",
+      "clarity_style": "",
+      "finish_style": "",
+      "score": "",
+      "flavor_direction": [],
+      "flavor_description": "",
+      "structure_acidity": "",
+      "structure_sweetness": "",
+      "structure_body": "",
+      "structure_cleanliness": "",
+      "structure_clarity": "",
+      "structure_balance": "",
+      "aftertaste_length": "",
+      "aftertaste_type": "",
+      "retronasal": "",
+      "defects": ""
+    },
+    "improvement": {
+      "next_adjustment": ""
+    }
+  },
+  "created_at": "2026-11-12T10:43:11",
+  "updated_at": "2026-11-12T10:43:11",
+  "personal_tastings": [
+    {
+      "person_id": 2,
+      "person_name": "湧哥",
+      "feedback": {
+        "overall": 8.5,
+        "sweetness": 8,
+        "acidity": 9,
+        "aroma": 8,
+        "taste": "湧哥觉得蓝莓味非常具象，他老婆喜欢"
+      },
+      "revision": 1
+    }
+  ],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

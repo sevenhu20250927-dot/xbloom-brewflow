@@ -1,0 +1,65 @@
+{
+  "ts": "2026-10-30T14:35:22",
+  "outcome": "completed_no_signal",
+  "pours_observed": 4,
+  "pours_planned": 4,
+  "duration_s": 155.5,
+  "recipe": {
+    "cupType": "xdripper",
+    "doseGrams": 15,
+    "recipe": {
+      "grinderSize": 50,
+      "rpm": 100,
+      "grandWater": 240,
+      "pours": [
+        {
+          "volume": 45,
+          "temperature": 92,
+          "flowRate": 3.0,
+          "pattern": 2,
+          "pausing": 15,
+          "vibBefore": false,
+          "vibAfter": true
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 92,
+          "flowRate": 3.5,
+          "pattern": 2,
+          "pausing": 8,
+          "vibBefore": false,
+          "vibAfter": false
+        },
+        {
+          "volume": 65,
+          "temperature": 91,
+          "flowRate": 3.5,
+          "pattern": 1,
+          "pausing": 0,
+          "vibBefore": false,
+          "vibAfter": false
+        }
+      ]
+    }
+  },
+  "fingerprint": "f770f75035cc8c58d31091e1d6b62ef3ff3e1c62083f9ac3ea4232a1f040d3a0",
+  "expected_cup_g": 231,
+  "machine": {
+    "firmware": "V12.0D.500",
+    "water_ok": false,
+    "water_source": "自来水",
+    "grind_reported": 52,
+    "mode": "Pro"
+  },
+  "mode_before": "Pro",
+  "taste_note": "总体风味不错，有一点点轻微的苦。下一杯按 2 步规矩研磨 50→52（用户原提议粗 1 格，按技能默认 2 步执行）。"
+}

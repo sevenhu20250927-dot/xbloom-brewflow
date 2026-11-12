@@ -1,0 +1,87 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 9,
+  "brew_date": "2026-05-01",
+  "bean_snapshot": {
+    "id": 4,
+    "bean_name": "25拉马斯特家族·全球竞标瑰夏",
+    "roaster": "fcr",
+    "origin": "巴拿马",
+    "process": "暗室水洗",
+    "plot": "",
+    "batch": "",
+    "estate": "驴子庄园",
+    "roast_date": "2026-04-08",
+    "country": "巴拿马",
+    "region": "中美洲",
+    "producer": "驴子庄园",
+    "lot_info": "波奎特 / 25拉马斯特家族·全球竞标",
+    "variety_name": "瑰夏",
+    "storage_state": "常温",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "2",
+      "warming_time": "0"
+    },
+    "technique": {
+      "grind_size": "C40#25",
+      "roaster_recommended_grind": "无",
+      "dose": "15",
+      "yield": "240",
+      "ratio": "16",
+      "water_temperature": "98",
+      "bloom": "30s",
+      "pour_method": "秤显示不准，依旧三段式",
+      "total_time": "2min",
+      "water_type": "aquacode",
+      "water_tds": "85",
+      "water_mg_ca": "2.7",
+      "grinder": "c40",
+      "dripper": "kalita",
+      "filter_paper": "蛋糕纸",
+      "kettle": "c",
+      "flow_judgement": [
+        "正常"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "extraction_observation": [
+        "流速稳定"
+      ],
+      "extraction_notes": "好豆子，用98度+略微降低研磨度来暴力提取风味物质；但是感觉结果一般，口味不是很平衡。",
+      "grind_notes": "无"
+    },
+    "tasting": {
+      "acidity_style": "微酸",
+      "sweetness_style": "还不错",
+      "clarity_style": "高（本身好豆子的底子）",
+      "finish_style": "强，长，复杂香气",
+      "score": 7.5,
+      "flavor_direction": [
+        "浆果"
+      ],
+      "flavor_description": "有点忘记了，但是感觉风味物质丰富，但是没冲好",
+      "structure_acidity": 3,
+      "structure_sweetness": 3,
+      "structure_body": 3,
+      "structure_cleanliness": 4,
+      "structure_clarity": 4,
+      "structure_balance": 3,
+      "aftertaste_length": "2h",
+      "aftertaste_type": "无",
+      "retronasal": "无",
+      "defects": "豆子似乎不新鲜，20天开的，以及在aquacode+98度水的萃取下，风味没有特别炸裂，感觉豆子本身一般。以及这种冲煮手法下，没有表现的特别好。"
+    },
+    "improvement": {
+      "next_adjustment": "就一杯，下次我会选择Origami+zp6，或许这才是最好的风味诠释器"
+    }
+  },
+  "created_at": "2026-05-02T07:20:35",
+  "updated_at": "2026-05-02T07:20:35",
+  "personal_tastings": [],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

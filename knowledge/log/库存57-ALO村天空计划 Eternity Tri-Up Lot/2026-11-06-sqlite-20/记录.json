@@ -1,0 +1,115 @@
+{
+  "source": "local SQLite brew_records",
+  "source_record_id": 20,
+  "brew_date": "2026-11-06",
+  "bean_snapshot": {
+    "id": 57,
+    "bean_name": "ALO村天空计划 Eternity Tri-Up Lot",
+    "roaster": "NAI ZUI COFFEE ROASTERS",
+    "origin": "埃塞俄比亚",
+    "process": "Eternity Washed",
+    "plot": "",
+    "batch": "",
+    "estate": "",
+    "roast_date": "2026-09-15",
+    "country": "埃塞俄比亚",
+    "region": "ALO Village, Bensa, Sidama",
+    "producer": "",
+    "lot_info": "",
+    "variety_name": "74158",
+    "storage_state": "待补",
+    "roaster_recommendation": ""
+  },
+  "snapshot_note": "Bean metadata read on 2026-11-12; not guaranteed to describe storage or roast metadata at brew time. Historical record contents take precedence.",
+  "record": {
+    "bean_context": {
+      "roast_degree": "1",
+      "warming_time": "/"
+    },
+    "technique": {
+      "water_type": "农夫山泉",
+      "water_tds": "无",
+      "water_mg_ca": "无",
+      "grinder": "C40",
+      "dripper": "kalita",
+      "filter_paper": "蛋糕纸",
+      "kettle": "F",
+      "dose": "16.5",
+      "yield": "250",
+      "ratio": "15",
+      "grind_size": "C40#23",
+      "water_temperature": "93",
+      "roaster_recommended_grind": "无",
+      "flow_judgement": [
+        "偏慢"
+      ],
+      "coffee_bed": [
+        "平整"
+      ],
+      "grind_notes": "无，研磨度正好，尽管水流有点堵，但是即时截掉后，也没有杂味；",
+      "bloom": "50/120/180/250",
+      "pour_method": "无",
+      "total_time": "2分30",
+      "extraction_observation": [
+        "有堵塞趋势"
+      ],
+      "extraction_notes": "有点堵塞，大概是第二段注水搅动较多，细分迁移，以及粉量为16.5比平时厚；尾端15g我单独尝了下，确实有不愉悦的风味，截流是正确的。"
+    },
+    "tasting": {
+      "acidity_style": "7",
+      "sweetness_style": "8",
+      "clarity_style": "7",
+      "finish_style": "6",
+      "score": 8,
+      "flavor_direction": [
+        "柑橘",
+        "花香"
+      ],
+      "flavor_description": "",
+      "structure_acidity": 3.5,
+      "structure_sweetness": 4,
+      "structure_body": 3,
+      "structure_cleanliness": 3.5,
+      "structure_clarity": 3,
+      "structure_balance": 4,
+      "aftertaste_length": "5min",
+      "aftertaste_type": "花香",
+      "retronasal": "少",
+      "defects": "余韵少，但是正面风味非常不错，甜感不错，总体平衡感很好，风味复杂度在同样的alo里算是好的，但是本身豆子是天空计划的，价格也高，只能说是正常价格"
+    },
+    "improvement": {
+      "next_adjustment": "没豆子了，但是C40+kalita适合奶嘴的极浅烘焙"
+    }
+  },
+  "created_at": "2026-11-06T14:31:45",
+  "updated_at": "2026-11-06T14:37:53",
+  "personal_tastings": [
+    {
+      "person_id": 1,
+      "person_name": "胡琪",
+      "feedback": {
+        "overall": 8,
+        "sweetness": 8,
+        "acidity": 7,
+        "aroma": 7,
+        "taste": "甜感不错，总体平衡感很好，层次在埃塞里算不错了，但是余韵短了点，复杂度一般",
+        "next": "无"
+      },
+      "revision": 1
+    },
+    {
+      "person_id": 2,
+      "person_name": "湧哥",
+      "feedback": {
+        "overall": 8,
+        "sweetness": 8,
+        "acidity": 7.5,
+        "aroma": 7,
+        "taste": "无花果，认为不错",
+        "next": "没豆子了，结束。"
+      },
+      "revision": 2
+    }
+  ],
+  "evidence_note": "User-entered record, not automatically measured. Preserve missing values, score scales, units and unexecuted next_adjustment; no new causal certification."
+}

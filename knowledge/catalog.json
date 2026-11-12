@@ -1,0 +1,1265 @@
+{
+  "format": "brewflow-source-manifest-v1",
+  "imported_on": "2026-11-12",
+  "policy": "Preserve source claims and feedback; rewrite links, remove device identifiers/absolute paths and raw packets; extract local sessions without filtering numeric weights. Not knowledge certification.",
+  "sources": [
+    {
+      "path": "knowledge/certificated/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/certificated/索引.md",
+      "source_sha256": "00ac449496654efe8a76489f298a41ed2deee8dbd1388b9b20e55231bdef4bf2",
+      "published_sha256": "42fd6f2249ee08adebdb3007fe5698d8767a4fe44e2c3047ddbbd328e0eff323",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/LEICHT-橙波旁/20261109/实冲/20261109T011219Z-a731559837e8.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "ble_runs/20261109T011219Z-a731559837e8.jsonl",
+      "source_sha256": "3ba8c04dfc8e27540ebf7fdbc706e03811a557449a1f7b229a993b1fa05ab5ba",
+      "published_sha256": "f9ca08995a60d1fd8ecd820c5561818f905733d66956b3fb4c30fbdfefce5ea5",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/LEICHT-橙波旁/20261109/实冲/20261109T011407Z-7e4bebe9a964.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "ble_runs/20261109T011407Z-7e4bebe9a964.jsonl",
+      "source_sha256": "b90a78cfe5f7b472b879d984818fe2b06372968da0146eb8cd58b2d1c4f15fdc",
+      "published_sha256": "dd0a4a6d4f193b6309b35dc2ea74832a5e23ad5b2a0e960e6e601d4d422fe2dd",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/LEICHT-橙波旁/20261109/记录.md",
+      "source_scope": "local-coffee-project",
+      "source_path": "BREW_RECORD_2026-11-09_ORANGE_BOURBON.md",
+      "source_sha256": "d500aef38aa506620c333228701f8c39b143a630680a9c0be2a7b449c0ff0540",
+      "published_sha256": "61ddf5f4fd053334ba22e6fa99bd6238c11caa275c26f9ab5360efb6d1a79f20",
+      "kind": "local-tasting-record"
+    },
+    {
+      "path": "knowledge/log/Murago-74158-日晒-AG85/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/Murago-74158-日晒-AG85/索引.md",
+      "source_sha256": "1782659a28741e4693993bf83f48e445a02f7386cfb8185bc5c2f28781c2e4c7",
+      "published_sha256": "14b279b5f2d74ada52c4ad0cda4ecfbf5e2cfe6bc783b9c71d60bf97ba770b9c",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/_设备验证-未关联咖啡豆/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/_设备验证-未关联咖啡豆/索引.md",
+      "source_sha256": "42bfb12c49bc5c9f0d8dc92a3b1b6cd41ceb780e031f88232646621d7f62d84b",
+      "published_sha256": "0eea19a130abaabb4d6f87edb629499b3178e443b781fe2bd3c1e64e2bf56425",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/古兹曼-水洗瑰夏-AG78/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/古兹曼-水洗瑰夏-AG78/索引.md",
+      "source_sha256": "e2ead92ed922fa8d866fb7dff10f5ccb0c7227fea2ecfa4af1f789cd2a22a15c",
+      "published_sha256": "e6e9b861578cdc1e43a1f9ccc58355244efd3418c65ae1a81f4fadaad1e09d8f",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261105/实冲/20261105T091331Z-fa9741755c8c.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "ble_runs/20261105T091331Z-fa9741755c8c.jsonl",
+      "source_sha256": "a9509f33fcad5ca519c0c63bfe94535f3fd99526fd052af1550b85fcdc6f0071",
+      "published_sha256": "4608e21a67bc23f5bce703d13e4167f679b5eea45480d68f7a2df75c8a6eea89",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261105/记录.md",
+      "source_scope": "local-coffee-project",
+      "source_path": "BREW_RECORD_2026-11-05_INJERTO.md",
+      "source_sha256": "e95f3bd00b3c22df9d479b409e8f9533580972f45e3529a9dc935b69540b0280",
+      "published_sha256": "36bc6d7d55d108d86f26faf56bef626956e34cd1d048ba7f8c369902347d0a83",
+      "kind": "local-tasting-record"
+    },
+    {
+      "path": "knowledge/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261111-16g拟方/实冲/20261111T054120Z-a8a47f566770.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261111-16g拟方/实冲/20261111T054120Z-a8a47f566770.jsonl",
+      "source_sha256": "a2fd1c9e94a95e405b2a366f0372c6c21023306d6d56945fb91ede252de01da8",
+      "published_sha256": "7032231e78328d7e024595a48d145a2c24e7b9c3e5a53f304d4012db2da82c99",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261111-16g拟方/方案-v1.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261111-16g拟方/方案-v1.json",
+      "source_sha256": "4824ed19eb768a39a2e8296888ee5eb489f6adfc6f1959d995a1a831f307d954",
+      "published_sha256": "cfb1ce83a4243c662b1ecb3527ef9b8b89c39e778b42ba6d7eca345e46c627e8",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261111-16g拟方/记录.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261111-16g拟方/记录.md",
+      "source_sha256": "e50f288a4c1d2025cd8ac51448a8485b72371111da9c1743413b3841e80d33ce",
+      "published_sha256": "a4210749f6ead0ab2ec054d1b8f5aa6b7befe71cf959fcc0fe739ef34fc0f7c8",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/实冲-v3/20261110T053846Z-06f58fa51a7e.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/实冲-v3/20261110T053846Z-06f58fa51a7e.jsonl",
+      "source_sha256": "e4c518c89387054fc21d57dbddbef4e41885faa3a4f5212fd82793b3bbcdc08d",
+      "published_sha256": "accf173973d531bc85aec825e2b5026cc0cee80c6102ab6d35dcf65ca771390f",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/实冲-v3/20261110T054103Z-c5d18df1e250.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/实冲-v3/20261110T054103Z-c5d18df1e250.jsonl",
+      "source_sha256": "8ce35b85dddc8c16df43ccc44f4f2c479c4287cd7eb875ad0d596648db13344e",
+      "published_sha256": "14dbd0e0d1f08031aeef116dd032913eb8bb23d864f5f3bc7dc4332125b3a2db",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/实冲-v3/20261110T054219Z-7c5410e80224.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/实冲-v3/20261110T054219Z-7c5410e80224.jsonl",
+      "source_sha256": "b7c2288d26de274b30a1ce69ecad014d23409b52e2568fff397346d60d247ec3",
+      "published_sha256": "fb26ac3d71567fc3d933edfe698c18e1a7164f17af2ba9c6636ebdbae4dd11af",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/实冲/20261110T014334Z-81923c417b2f.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/实冲/20261110T014334Z-81923c417b2f.jsonl",
+      "source_sha256": "939bdeb407ae970e50b017611b17e4325c010858bdc3f2a823fc60fea0819546",
+      "published_sha256": "0007a9b0c9e0811f54b314837acca4f22134726036bb54eed18d64fd965f2832",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/方案-v2-bypass.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/方案-v2-bypass.json",
+      "source_sha256": "f502aeb6758cf6abdff91482b0367bfbedc11294ff478f8640f17bdab4490094",
+      "published_sha256": "28f6cf73b3b9597018bec6a13fe48da556f472964f35819c6d647df6bb8cd6fb",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/方案-v2.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/方案-v2.md",
+      "source_sha256": "c89ea16621364c18777d3e540c6b740a2e9d9e3e0ba4cfc14eb09fdd40f107c8",
+      "published_sha256": "931fcfe7f9d914159cc46ebfeffd26208d7935108cd4ba91c720952cab3a5172",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/方案-v3-bypass.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/方案-v3-bypass.json",
+      "source_sha256": "67da71b76ef286dd3806310b2b2d6c4652c19bfda5331455deb83b6637103451",
+      "published_sha256": "c1090db7c60d70e63fb52b9e5d6b60d6b5cee07c3f5d82e1a3eed668ac43d81f",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/方案-v3.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/方案-v3.md",
+      "source_sha256": "9e7bc46ad220948b12e310c13682df30b6756abb825cff49306cc81a5daf0075",
+      "published_sha256": "9acfba246fac245ad94cfa7cd35507350b2bbc6d5e8dfc9b422652199d6ca095",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/记录.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/20261110-首次拟方/记录.md",
+      "source_sha256": "f6fa191e8f2c92f7f95cc7fad18f1f545e62889f753315ea2b877b3bafb26fe9",
+      "published_sha256": "0aa816c9320aebdd4665c84d2e68dfeba2922d78179abf167b4b171808bda5fe",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存59-MARUS-ALO冷泉水洗74158/索引.md",
+      "source_sha256": "65b85a7ed76cf5c70effbba063754ccab6d98e142fb8c4ef646b109a2ddf5b4e",
+      "published_sha256": "70270eee06e431f4500a527596600ec5bf0ba717799839389ca4919122c31f5f",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/实冲/20261112T012256Z-623ae3c3daf3.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/实冲/20261112T012256Z-623ae3c3daf3.jsonl",
+      "source_sha256": "d8959c947ea664c65c1e6bad33e2dea84618ed759335b5cf0cf91b251815b500",
+      "published_sha256": "ba85b17c7c377b918b1d3dc42ab4f3b36c6afbe1558b027ed1888506bc90d0d7",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/实冲/20261112T012440Z-3be4a7e752aa.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/实冲/20261112T012440Z-3be4a7e752aa.jsonl",
+      "source_sha256": "2990bc0054f219c86f54ba918888ed13d70ffbe861b895aa179a047a564cc8d2",
+      "published_sha256": "c669dd52dbaa376f866f35c3aa7dba20546d361decb53b1fa68d0ad361b64f22",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-A-降温.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-A-降温.json",
+      "source_sha256": "7060b2cb1028612f1db4cf52ada37632fb9323e5e885569edfa2adff244e7ffa",
+      "published_sha256": "9f957162eff64dfdb19deb0e19b62abf5fc1dc2f8f00718841953410e04df69b",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-B-稍粗.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-B-稍粗.json",
+      "source_sha256": "1f240e8fb9f24a6308140c496b036c4ef87d8fbdc8e4fb3caf47ca403ba6ce47",
+      "published_sha256": "f5e6443d648b964c77ed2dcc21282bda70ac0fc97a4de200d262f5c1cc3cf840",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-C-尾段旁通.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-C-尾段旁通.json",
+      "source_sha256": "ee634ecf098033ddcf4d05b636c85c2ec18b05c22e07c81a9fd2f491d0492628",
+      "published_sha256": "cc8615fd28b870747ae0d96b345ba01a0e5b3512e4e5f23b5fe30626060da44a",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-D-v2.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-D-v2.json",
+      "source_sha256": "c5b4166d9084a774bc9bce339f7b18f1798d6348653be2d8e77262227f66ec5b",
+      "published_sha256": "1591e95c6e49dd79b87449807c7ea1dd73beeca7396d5592bb3668f10150d500",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-D-一一经验版.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/方案-D-一一经验版.json",
+      "source_sha256": "8177cd34786ccdca69a1b44d680bf88363704e5164f9420d93b04d50a391ecca",
+      "published_sha256": "3c9b5d4644edc5defe7842d56cc037f79ef6b3924be5672ab184eaad4e73ebc8",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/记录.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/记录.md",
+      "source_sha256": "d34e432ef2dba6d4fbe765523b0f88dfd6b553fd9e80ac1138f6388ed0aaaf25",
+      "published_sha256": "c82105d17847c39f8d321a399071f13312d27cb1c0a05b2ae437785d092f0924",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/实冲/20261112T054634Z-420d45cf11a5.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/实冲/20261112T054634Z-420d45cf11a5.jsonl",
+      "source_sha256": "646591ad1c0934c177ed7e7a8f52dbbf92e72104785053e68ccc809378927868",
+      "published_sha256": "388c45fcbc5c18824a63a7d61a0f124c5e91b78332ab44a7ccb8eedfcfed3f5a",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/实冲/20261112T054729Z-a9507959c23f.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/实冲/20261112T054729Z-a9507959c23f.jsonl",
+      "source_sha256": "238099690fd4715e90615f869c437bcb7d31dd20b6234e36c1b49d156499d293",
+      "published_sha256": "ffd1cc6c862247dbb8b66f9a0822c18b3c2bad1e6c8b17cfc73f00a31f63d381",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/方案-v1.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/方案-v1.json",
+      "source_sha256": "971b605730462df6d72c97e775436a5145488ae87f806733ce89ebb792961a4e",
+      "published_sha256": "2e79d3818c19512fcac497b518d2ef2e1d7428764563cd3e8d2a9a70371e5479",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/记录.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/记录.md",
+      "source_sha256": "30bdaced800dd6d8ef5502a7c1e4a9e8934a9b75cb4a2eaf76dddcc920c58ab5",
+      "published_sha256": "ae68b74c56529002a334d2c0bbe1821191a5d0c09b3c5d5e477ea0beaf249669",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/特斯提原生种水洗/20261102/记录.md",
+      "source_scope": "local-coffee-project",
+      "source_path": "BREW_RECORD_2026-11-02_TESTI.md",
+      "source_sha256": "991902d79bbfb8da9dd364c2b72478ec35f9af7d9486224335e0b09348a68bfe",
+      "published_sha256": "a017ae1b0ec7df3d424251b216153171c035de3801b392160ee5cae9d5468747",
+      "kind": "local-tasting-record"
+    },
+    {
+      "path": "knowledge/log/瑰夏村红标戈里/20261109/实冲/20261109T110323Z-fb59fa4f68c6.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "ble_runs/20261109T110323Z-fb59fa4f68c6.jsonl",
+      "source_sha256": "8585e61c445f9e77073edbfcb3ff64344e167eb61aa3551db80caa23f382a2ae",
+      "published_sha256": "c50626c9dfe4da9f65e206ee2b4f6a16a552f8419353e005d8e527b40829ea48",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/瑰夏村红标戈里/20261109/记录.md",
+      "source_scope": "local-coffee-project",
+      "source_path": "BREW_RECORD_2026-11-09_GESHA_RED_GORI.md",
+      "source_sha256": "4ac48e604841fe258f004b8704bfab7690fec32fd777d3f65a5083a2b1374ad9",
+      "published_sha256": "623a3ced5d81f5334e5eeb691b7aecef63e2f12c6180b8a0dcc927ba0d7d9d63",
+      "kind": "local-tasting-record"
+    },
+    {
+      "path": "knowledge/log/瑰夏村金标144/20261109/实冲/20261109T054505Z-181e27e9b051.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "ble_runs/20261109T054505Z-181e27e9b051.jsonl",
+      "source_sha256": "d70ab47822f7db0ad45f8a64ab03a83eb71bb1c8103ddebbe8aa6d13c97fc9bf",
+      "published_sha256": "022a5368d378c21dac0f2fafbe80efbf0e6df6c78773cacbb5a50a2480230185",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/瑰夏村金标144/20261109/记录.md",
+      "source_scope": "local-coffee-project",
+      "source_path": "BREW_RECORD_2026-11-09_GESHA_GOLD_144.md",
+      "source_sha256": "b4b763ca6f22aaefacb4f549ac6d3f442d6aab0bdd78204a63ca6bb7cd66b401",
+      "published_sha256": "225a54310e5ce10317369afc16e2473a80d9cf50c166e92e1d2b2c305bff215c",
+      "kind": "local-tasting-record"
+    },
+    {
+      "path": "knowledge/log/甜水-日晒瑰夏-AG80/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/甜水-日晒瑰夏-AG80/索引.md",
+      "source_sha256": "b4183e0d07282ac6cd6d2b8944cf8af7102a90f3586533a2ab6f84223a7c8dbf",
+      "published_sha256": "147a8b910c4f53073f816a40943139218306957f1de7836973c1e94214655c07",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/索引.md",
+      "source_sha256": "f3c5f593da1cbe75f3e74393fe8477f88aefb55c036a26845aad8e6273be3a77",
+      "published_sha256": "9da9fce88bb6a889075cebce9faf2299638b5bbd47893fecdaf8817758339da5",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/20261109-V60/实冲/20261109T075733Z-c51e2edaff8d.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "ble_runs/20261109T075733Z-c51e2edaff8d.jsonl",
+      "source_sha256": "9cf4c648d1de14ea74dbff0e630bba8825e7ff4569ccd233d9ab1d33c33f83ce",
+      "published_sha256": "bdd4a40fecba4649c51f523604c6dc40e77cc34b43f1651ca5a76f6631db852f",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/20261110-090355-复冲/实冲/20261110T010409Z-abc2784f15c1.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/20261110-090355-复冲/实冲/20261110T010409Z-abc2784f15c1.jsonl",
+      "source_sha256": "d9be0f46737eb6c5707af231869590acfbce90f39f7b60be27046e53a93673a2",
+      "published_sha256": "c0b7cd0fb3583972703bb4a9ce452c752a7e5434d1073f95ad4a975890888b68",
+      "kind": "session-extract"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/20261110-090355-复冲/记录.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/20261110-090355-复冲/记录.md",
+      "source_sha256": "665cbc2f6d4f95e651522f34507c55130211d03110fc8df67ea8d6886f7b03c9",
+      "published_sha256": "2b14e484ae0f4e2da0ab04a7d8b8c2510d2807ec90dbf5742760d73eff360674",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/20261110-090355-复冲/配方-v1.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/20261110-090355-复冲/配方-v1.json",
+      "source_sha256": "24c8ba2e76212c9a13eae81f5f088abfe7fd635d8598a513b2a546bd86c0a8b9",
+      "published_sha256": "24c8ba2e76212c9a13eae81f5f088abfe7fd635d8598a513b2a546bd86c0a8b9",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/对比-20261109-075733-20261110-010409.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/对比-20261109-075733-20261110-010409.md",
+      "source_sha256": "cfc20907ce7dffd0d1707b053422e8763c379f7b24673ae3a95df5fe2d0eba67",
+      "published_sha256": "2de6255420060f87614ddcc496cae97e17c606aee43197618daf79e73931a4aa",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/对比-相对萃取-v0.1-20261109-20261110.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/对比-相对萃取-v0.1-20261109-20261110.md",
+      "source_sha256": "22acdeccc011b3bc3ace387c04e8f529a2cdc710e79cb5495df89fc66f9905d4",
+      "published_sha256": "f6bcd7474a46329aa282f25d6400cb7cea21cec4ad31d1e8b6a4b57d4c9c0d77",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/滞留量估算-20261109-20261110.csv",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/滞留量估算-20261109-20261110.csv",
+      "source_sha256": "8b0351f7d2aeef409920bc91dc72852e73c9d2488c83b5dbeeb7b15f9b69f2cf",
+      "published_sha256": "b65779c5bef3bbd235c381d2e833c6f6c68ce43f66d2b5133dbf21fdc8661d36",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/滞留量估算-20261109-20261110.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/滞留量估算-20261109-20261110.md",
+      "source_sha256": "49296be9c2d342b0d5035fe8db9cbe92f049cd0224326a0c94ed519ba84db1db",
+      "published_sha256": "6cfee728e8fbdd108f82152becf554efbf696e3e4bc64d5e781d2f022f85f20b",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/相对萃取-v0.1-20261109-20261110.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/相对萃取-v0.1-20261109-20261110.json",
+      "source_sha256": "9a2e238eb18a1e6eb8fd6fc8299b647469a821005534a27a47c61dbbaf469419",
+      "published_sha256": "508c3420c042bc6edd3a62ff184bec6a041f6ff6e032cf696b6df63890c24ff5",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/红尾巴-实验日晒-AG82/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/红尾巴-实验日晒-AG82/索引.md",
+      "source_sha256": "cd2f62a68dd6c8212a7ab385983923a86d3656c092d60833cfb197db8b3f37f6",
+      "published_sha256": "ac19156ef70ffc18e231b89994f24e6a9262c13e55b8da2b559e9f38a94ceb5e",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/花魁-日晒-AG75/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/花魁-日晒-AG75/索引.md",
+      "source_sha256": "2b7ca721edca2734b35252b011d9292cebc175ae8120a39b6cc74d1558bd8669",
+      "published_sha256": "adf761234802d11afd436b25e5926d22d0f470824c6d708e26bc90b03beac4a0",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/log/莎朵-水洗瑰夏/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/log/莎朵-水洗瑰夏/索引.md",
+      "source_sha256": "c9cfe42822e6a5bd7159d1ab2b9c916b12604c9dcd212e27a3cb4650b1b3f904",
+      "published_sha256": "281e93787fa18bb4c9c4bea3a89434f54b23498a3ad3ab5c687ebd7f785ffc6d",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/profiles/历史配方规则.md",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/README.md",
+      "source_sha256": "9fca0f9e1a2470aa90f6156e0c5953f3f728d6c3a133614c8b324a91828c5a75",
+      "published_sha256": "27b1a6d6e50e04e48f377d14f4ab6fa9a07f17c0a162ae308593f278f23b9ef2",
+      "kind": "profile-history"
+    },
+    {
+      "path": "knowledge/profiles/本地工作区规则.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "WORKSPACE.md",
+      "source_sha256": "b7c839abed12884713b8d66673a39db055f3254d0a1814c843192c282ae13b64",
+      "published_sha256": "541d994750eae85b06bd2f6be2f85ce571a810c7e7e9f4621f46787d17dabe84",
+      "kind": "profile-history"
+    },
+    {
+      "path": "knowledge/raw/浓度梯度与液体交换模型-待校准.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/raw/浓度梯度与液体交换模型-待校准.md",
+      "source_sha256": "a1e3699b62343bf7705320ee85c3d479fba15619e2343e7926b8c17bdb1e4d06",
+      "published_sha256": "2ede6f5d9c78f067e256cb0bcc478222545b4e39b2132c8cfc4737eae3a04bc5",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/raw/相对萃取模型-v0.1.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/raw/相对萃取模型-v0.1.md",
+      "source_sha256": "dace5d911877e50561a2d71105269d45d4b21fb88a77e19721fa56fec1d3423b",
+      "published_sha256": "eb7393b5d1a85b5568f491212cbdb7e991f4f461f1862019b756f184845b14a5",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/raw/相对萃取模型-v0.1.py",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/raw/相对萃取模型-v0.1.py",
+      "source_sha256": "cd12ecbbcd83894def786b79b0569b4d6dcf966a8ee1f5c49f8ce1db87bc52aa",
+      "published_sha256": "cd12ecbbcd83894def786b79b0569b4d6dcf966a8ee1f5c49f8ce1db87bc52aa",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/raw/索引.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/raw/索引.md",
+      "source_sha256": "2a6357b37b87695a02932c610e91fe595e618e8ba6fb5b81cf4b4603f25126f2",
+      "published_sha256": "76b87304751e3397a7adbfe94a88a039bb87fb7b5d28107b0fef5f7aae1a6b21",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/recipes/gesha-village-gold-144-v1.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/gesha-village-gold-144-v1.recipe.json",
+      "source_sha256": "f201132e0a98c600f07fa9302171894e8e279234ad279fb340678556b201ea54",
+      "published_sha256": "0df64717187f0fb65533b76fb550738c1adc3f7e8bba739fecbf7f3393256b9f",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/recipes/gesha-village-gold-144-v2.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/gesha-village-gold-144-v2.recipe.json",
+      "source_sha256": "7060b2cb1028612f1db4cf52ada37632fb9323e5e885569edfa2adff244e7ffa",
+      "published_sha256": "9f957162eff64dfdb19deb0e19b62abf5fc1dc2f8f00718841953410e04df69b",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/recipes/gesha-village-gold-144-v3.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/gesha-village-gold-144-v3.recipe.json",
+      "source_sha256": "2251a682a5181f2552d7fe0635f702ca0efb4aba6d7c2b18b3f9d1261b309850",
+      "published_sha256": "6f42162ea5f707f7cfe180702768d0f6e58ca8cc486770544e30c77b26dff191",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/recipes/la-aldea-orange-bourbon-v1.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/la-aldea-orange-bourbon-v1.recipe.json",
+      "source_sha256": "646cbed5059bef445f49723d0db787b811c89478ac20bf65fc34de7f06b44c40",
+      "published_sha256": "b1d0468f48f22738dd8f80ae695140965d0f859a14ac0d512ee67dc3a7aee43b",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/recipes/la-aldea-orange-bourbon-v2.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/la-aldea-orange-bourbon-v2.recipe.json",
+      "source_sha256": "3ebfecab5d2f34e8af3be5e5ed7788a86c83beac513aa86986026911aef93f04",
+      "published_sha256": "41de8d64a91c2cf51b18c2957dd5bd4a403f962f99c185e55ae051f1a3a8b34a",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/recipes/marus-alo-cold-spring-washed-20261029-v1.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/marus-alo-cold-spring-washed-20261029-v1.recipe.json",
+      "source_sha256": "1e2286cd643a6bfeceed5b48f01fc62501e66c6a57272762a10d1e8607072d10",
+      "published_sha256": "1e2286cd643a6bfeceed5b48f01fc62501e66c6a57272762a10d1e8607072d10",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/recipes/testi-washed-light-v1.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/testi-washed-light-v1.recipe.json",
+      "source_sha256": "9c681e3fdfa9787acc7686d9639142756441a2d53e5bd60dc280b4c7eb008480",
+      "published_sha256": "9c681e3fdfa9787acc7686d9639142756441a2d53e5bd60dc280b4c7eb008480",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/recipes/yiyi-aged-bean-bypass.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "咖啡师校准/花炉咖啡-一一/解包/skill-sync-1.6.0/optional/recipes/aged-bean-bypass.json",
+      "source_sha256": "945e76807f82f7f7172e8b338505f8fec9461f77ce0c737f051ac52420e45ec8",
+      "published_sha256": "8a856d7874a939f57f5d827d09d9c27838e9cd5f2029c4a83304ad7503d63104",
+      "kind": "source-recipe"
+    },
+    {
+      "path": "knowledge/recipes/水洗浅烘.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/水洗浅烘.recipe.json",
+      "source_sha256": "06e8e01f92deb40f3171fe5ddeb633b4c065ea190fe37fba177aba5d1f569c98",
+      "published_sha256": "06e8e01f92deb40f3171fe5ddeb633b4c065ea190fe37fba177aba5d1f569c98",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/recipes/茵赫特水洗瑰夏-20260815-v1.recipe.json",
+      "source_scope": "local-coffee-project",
+      "source_path": "recipes/茵赫特水洗瑰夏-20260815-v1.recipe.json",
+      "source_sha256": "9c681e3fdfa9787acc7686d9639142756441a2d53e5bd60dc280b4c7eb008480",
+      "published_sha256": "9c681e3fdfa9787acc7686d9639142756441a2d53e5bd60dc280b4c7eb008480",
+      "kind": "recipe-history"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/DATA_GUIDE.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/DATA_GUIDE.md",
+      "source_sha256": "b58b0956fa4681c138085227273cd1f752c639ff92b99442f8c68a68a99f6f4d",
+      "published_sha256": "b7bd5a6be048a3fdf5575d3217bd11dcc4acc9048d448097bc0e1bce0955c190",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/reference/冲煮经验库.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/reference/冲煮经验库.md",
+      "source_sha256": "879d3d91187703f32e5516192dbcdbef158e10ce63822617a8b243006fc19a93",
+      "published_sha256": "874e0b4d830c7f2f0abe8bb03720799477e9285ddc4bbc548f0dfee8e8de68b6",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/reference/咖啡冲煮总账.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/reference/咖啡冲煮总账.md",
+      "source_sha256": "3902951a58f97a2a6cd84b84f645465b4eb33ad7f2282e5eca5c3b1676b30a8f",
+      "published_sha256": "cbc2511e5f3f06660a8e5cc017e2d56454d6509a9abcf35ebc687b9e88850efc",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261030-143522-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261030-143522-completed_no_signal.json",
+      "source_sha256": "13a2c02685327ffcc57f555aad103af76d82d6d88d3e983407cb82a6e19a62c4",
+      "published_sha256": "ec71f5fa1aec2577fb7a3801d4ad4be8281775add0137c33d3f6dd2be1675009",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261030-162440-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261030-162440-completed_no_signal.json",
+      "source_sha256": "cf0b32d130bac489716eff32cc4540f1bd2c2d1110a07ef20a5c6915335ee5f9",
+      "published_sha256": "2ad8691eabecb11d51221513ed765ff0e61f52c2999e3189d6ee3c81dbf80261",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261030-163734-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261030-163734-completed_no_signal.json",
+      "source_sha256": "eb821cf6fae565c5592d9176afec69c7ea0e9efb088c2c0fff245edb6ba2383f",
+      "published_sha256": "709eb645169c53386b6a1db62db6a35ea547d9b40359a9b097c55f7233f64bf1",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261031-001148-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261031-001148-completed_no_signal.json",
+      "source_sha256": "d11b7e38b5d269ee37f54c2f6e964a0f91c2442c257552d6ec99f1bf4f206de0",
+      "published_sha256": "42ab330c95e979d5da42f0384214eff1ba1ed66892063257fc9917dbdf3eb398",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261031-001455-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261031-001455-completed.json",
+      "source_sha256": "60efa65524c8953228f96efb8538b8aa0584834ced7e9c9daa4ec42b5047f28a",
+      "published_sha256": "ca90d2b292a6ffcb75a5110689b421ad0257ce5e4f73fcd598c794c5b5ec76dc",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261102-135048-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261102-135048-completed_no_signal.json",
+      "source_sha256": "64761fd8f7c5ca670c19f6f9c8be0e5e3f319a448c9f791984068fe81b8f2fa3",
+      "published_sha256": "d309bc56c1309616b88bcc3714ea2e44609519e6fdb242f600c87cabc8cef2e9",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261102-143754-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261102-143754-completed_no_signal.json",
+      "source_sha256": "fcd0c89088e4e587fa1fa350f31fc9c6fef399f74731ee5a543fb7cbbf6aaacc",
+      "published_sha256": "546a119b11b5c8812a0a59e46267db40da0b95fee909895757e38a71affec15e",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261103-133120-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261103-133120-completed_no_signal.json",
+      "source_sha256": "bcc25c5e24ea2f06db5e1f19b536de2eee6fb77fc4825e14f6a892a87cf31f66",
+      "published_sha256": "5d89e871683cdbc5ebe7fe1959c603d13af6a98376bc24d124b9c77a6088fed8",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261104-151622-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261104-151622-completed_no_signal.json",
+      "source_sha256": "e0846f5a742bd10ef23d0e0b50cf043fcc3820d45f5531bf8336ac8d2c019027",
+      "published_sha256": "7d3d969a76bf9b38a13fe0671e676767863f0a247242d162915e9eef0dfa00ed",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261105-134447-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261105-134447-completed_no_signal.json",
+      "source_sha256": "d91661b8ff854a051a66755eecad0c4828c288c9a079ea645324ac572084fada",
+      "published_sha256": "64aa874a02c31f924bf6def8bbaf36b2ad6710a8ad5846b8b1267921f6afdd39",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261105-141442-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261105-141442-completed.json",
+      "source_sha256": "d2638cb3ab69cd71a7920155ea3ed5c499df8cea67d82a03015660243d0f18f9",
+      "published_sha256": "70aacedbe18feec25511753ce347f4ebebd3e19023dfc07f5d27c0a6c1c598b8",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261105-141634-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261105-141634-completed.json",
+      "source_sha256": "321035212b73a831ffc56d881696f4137f4668a8221f7187c885196e612f1722",
+      "published_sha256": "13165c37505183bcbe7d2cbe393a83627974fc31894961a5e83dc1662895a627",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261105-141841-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261105-141841-completed.json",
+      "source_sha256": "9d224e624e13de0766f81dae31c4e7df839ade55bb49fd9c60bd08201cff5e14",
+      "published_sha256": "cf74dbdb23660f7cbbfd706a6c8b9ae68bf2c19afdf04f4c317348be24bcab4c",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261105-214927-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261105-214927-completed_no_signal.json",
+      "source_sha256": "34dc4e2d4eacbe0b0e38ec73aecbb63899b5b87727f0b7aafba55b8b9332c6ce",
+      "published_sha256": "16e8ba56926f99d71822288f5ae5e569d0e10254571f5ee58be67d8ba1ea10fd",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-110655-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-110655-completed_no_signal.json",
+      "source_sha256": "4c8222b083048e777ee94475470fd25f41d64d42f9edf89949072419c9fae177",
+      "published_sha256": "f6143bbca25ea73c36136057c8d43a633faa2403a38660d9bd6ce45bf9f7ff24",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-111923-completed_no_signal.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-111923-completed_no_signal.json",
+      "source_sha256": "56ac88106ba622e524e905eef4500b24304773e31f93c80b375a35ba544871fd",
+      "published_sha256": "d3e14bf5c2db4a6dd5897d9100171637bdcca415e85b20b7951b114ff1f8c6ef",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-114214-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-114214-completed.json",
+      "source_sha256": "c6dbd61cc9da714644327b49592a08ee3d5ccd6637db77572a33438d3ed9886c",
+      "published_sha256": "8bff625e93610fe7d876015bccc57041324f88777ba8510819d2464c1df729be",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-115303-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-115303-completed.json",
+      "source_sha256": "c75b01598f0baa6f65848b6592a4ff887ae27b1c764d95f97e57310364b0829a",
+      "published_sha256": "669c4331d8eefef102b231c22b007dde95c22734283e52fef3c7bf26dc7c44fb",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-121217-timeout.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-121217-timeout.json",
+      "source_sha256": "ce9ce4af956c682a2f6c02e8bffe234b15dcfe523891edc66b09902c1e40418b",
+      "published_sha256": "008634312f68cccc5272ab73ee313045f91c968648f7e2237b917cdc72e73eef",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-124502-timeout.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-124502-timeout.json",
+      "source_sha256": "37ff80439362ae91b104d1784f8296d820c6c11ac1b7255aba65fa54e4ab5a51",
+      "published_sha256": "709f925337f9f099d78c920d71509879a1521d66c547a0bea6227f0cd95d4970",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-125203-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-125203-completed.json",
+      "source_sha256": "a839f0babbf9052ab8aaf5d383418a6da01449fea116fed48162731aaf9dcb86",
+      "published_sha256": "1cf1cd7290beced7d3effb8ac6b044ab5cc592b92356b928289985270d560c23",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-130635-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-130635-completed.json",
+      "source_sha256": "d365f4ec9123938f91a9a4937fe232613861276cd95e77594a3e8d8f93b10c21",
+      "published_sha256": "ffa16ca49972033e29c32a7100e3b532a08f348c287a5b6eea4ad05cac5bba46",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-131332-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-131332-completed.json",
+      "source_sha256": "2f8109050e2589c526cc4a5a0421bc85c031d71d1dee0e7bdf7e33c34214494b",
+      "published_sha256": "3ac0f5eede5d21ec3c4b77cc7fa711270c8539b305bff62947f6588cfd47cc3a",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-141646-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-141646-completed.json",
+      "source_sha256": "b2b0e788bf49cde8a425c6eadefd3c79c75ce8b03931dc937071a92b3a748f28",
+      "published_sha256": "08a3a4aee13e4c190024af7f1ee50c684c943123f9e8cf4e99cba887fdad554c",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/brew-data-package/runs/20261106-211152-completed.json",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/brew-data-package/runs/20261106-211152-completed.json",
+      "source_sha256": "5de0dbb7cdc4f2074737eb97992ce280c206eb0ef8186a7dd91755226e9242ad",
+      "published_sha256": "ffa96b1f13a7f2b1b011e8049a095e987df8505a98d6e9b1572098b3539a05db",
+      "kind": "source-record"
+    },
+    {
+      "path": "knowledge/source-snapshot/品鉴反馈卡.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "data/source-snapshot/品鉴反馈卡.md",
+      "source_sha256": "850651426923c70514f44b383974ddad495a6804948011c1809de5f032cdc8cb",
+      "published_sha256": "fd063b7172364ebc81f54c6042d00c48831d361467a01ea037232bc74cbe9277",
+      "kind": "source-record"
+    },
+    {
+      "path": "references/yiyi/knowledge-loop.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "skill/yiyi-coffee-calibration/references/knowledge-loop.md",
+      "source_sha256": "602a2fb0f22cca200dc8e5f1acaa933b4f57c0631e085da4b93dcc70d78ba183",
+      "published_sha256": "cce47bb0fab46b4f1efd22f7601b8fae15c4114ff23c2e32bda9ae7841b2a3ea",
+      "kind": "method"
+    },
+    {
+      "path": "references/yiyi/records.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "skill/yiyi-coffee-calibration/references/records.md",
+      "source_sha256": "55e20e91b40b6101aa2449784cbc68a27df0afbaffd4d3b6211face3c9fcceaa",
+      "published_sha256": "3f15c5335443e4f7a8b1c79bf90cfe4c9a616d320bb443aebf07fe03a907b012",
+      "kind": "method"
+    },
+    {
+      "path": "references/yiyi/type-templates.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "skill/yiyi-coffee-calibration/references/type-templates.md",
+      "source_sha256": "21ee22939c2c9b65894304d9a818e3f183b93da0cf2a84c934711f7316486577",
+      "published_sha256": "21ee22939c2c9b65894304d9a818e3f183b93da0cf2a84c934711f7316486577",
+      "kind": "method"
+    },
+    {
+      "path": "references/yiyi/workflow.md",
+      "source_scope": "yiyi-workspace",
+      "source_path": "skill/yiyi-coffee-calibration/SKILL.md",
+      "source_sha256": "59587ba211b3a0a937ef3e2b4e13b0ccf2f3a7be1d2dfc927281f3d4ee446e33",
+      "published_sha256": "99a6481ac22cc09c5a6d4880fa09114e23df9a6186b8c65de8d7e181b1d9e4fc",
+      "kind": "method"
+    },
+    {
+      "path": "knowledge/log/库存2-FCR金标瑰夏1931/2026-04-27-sqlite-2/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/2",
+      "published_sha256": "6a1df6bb65ba39edd2fd1cc863da09a75d8b989ee5d901d46e1653b6938e077a",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存2-FCR金标瑰夏1931/2026-04-28-sqlite-5/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/5",
+      "published_sha256": "8e26a517b016a857f71f0210abdfb7b370819b917b5c9505c05e45fbf5942091",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存2-FCR金标瑰夏1931/2026-04-29-sqlite-6/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/6",
+      "published_sha256": "3004cb8f1a1627d62f2bd2651d2609135f18622c9425430dbd72c059e2c722fa",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存3-FCR红标瑰夏1931/2026-04-30-sqlite-7/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/7",
+      "published_sha256": "c77bec8ac0b09153d018e692abefe9c166b3cf427b88829baa105f9afc414b14",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存3-FCR红标瑰夏1931/2026-05-02-sqlite-8/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/8",
+      "published_sha256": "47bb31e406659bcf92a77cb6b8cd6a04bec2190f3b9982e11ea64553992a3d53",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存4-25拉马斯特家族·全球竞标瑰夏/2026-05-01-sqlite-9/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/9",
+      "published_sha256": "e862989f1ba2785b309fdd2f053fef1b459b764de5bb59fea0b269824fca737f",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存21-黛博拉·萨维奇·唐爱德华多庄园贵啊/2026-04-26-sqlite-4/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/4",
+      "published_sha256": "c0588518d7ce8b7f7e93df907c354a844082323dbafade2c2e17164c9f7c7df6",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存22-翡翠红标瑰夏/2026-05-07-sqlite-12/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/12",
+      "published_sha256": "c280e5f0e259bed87d8505a5079bef311d540bc052dcd56b08d7656194abfdda",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存22-翡翠红标瑰夏/2026-05-08-sqlite-13/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/13",
+      "published_sha256": "759ee748086647bd0625ba36d3db14c61343bebb9f658219c79ae28714970bd6",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存22-翡翠红标瑰夏/2026-05-09-sqlite-14/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/14",
+      "published_sha256": "e28032ef48c87cae8f289a0d2984b349e2a95c58b547066263128581ba466220",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存23-水洗马森秋/2026-05-04-sqlite-11/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/11",
+      "published_sha256": "4d6bde71a8eaaf003f86eb1f7abfe65f563e0fa6f77cb41a45aecccd500a7a7d",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存23-水洗马森秋/2026-05-06-sqlite-10/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/10",
+      "published_sha256": "b96b0f614041bae7c90743898400d42a15997c5410c29225f6adb1f2c70d3992",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存23-水洗马森秋/2026-05-14-sqlite-17/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/17",
+      "published_sha256": "35e3ec1b50fbbcbe30f92c83bf0f963952a09e6450a6063b02e9085824e4a971",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存24-科佩山庄园瑰夏/2026-05-15-sqlite-18/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/18",
+      "published_sha256": "01bde069723d068ab7d5fcc91f6bbfbadfafca43ddb027b14fdef3fd5c1da77e",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存25-艾丽达庄园日晒瑰夏/2026-05-10-sqlite-15/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/15",
+      "published_sha256": "9f065b77c5239321491e2c1c9dea006291e4c3d57069f4edbbd062b9a024160f",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存28-美庭庄园·帕帕尤大肚脐/2026-05-09-sqlite-16/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/16",
+      "published_sha256": "d2ae2967164b3eae930b38360aae930a6eb342fb47968809873469689f3715ac",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存39-Alo混合水洗/2026-06-17-sqlite-19/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/19",
+      "published_sha256": "8eed71d9f912348dc77d4331d52657407c75d60d25a4ae66cfa2f68f60529638",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/2026-11-12-sqlite-27/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/27",
+      "published_sha256": "e7f405631a534703360e1793cbd381bd9511da650706d01b6394b00927552030",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存43-危地马拉 El Injerto 茵赫特 Trilogy EI11-D/2026-11-09-sqlite-22/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/22",
+      "published_sha256": "19c37dfd3863c1de81131aee8d428f0b0969a4d247ae5ed7e1a7c72f3f764166",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存57-ALO村天空计划 Eternity Tri-Up Lot/2026-11-06-sqlite-20/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/20",
+      "published_sha256": "f5fd8ebec09d53d75b6c0fcddffe2e8992ad4614a3297cbe4e4419ae92b419a1",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/2026-11-10-sqlite-24/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/24",
+      "published_sha256": "4083800d1deed0fc28e8dcafdf03a30f6421729dbab2a1a0a501c0a8d0d817f0",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存64-玻利维亚 Takesi 水洗瑰夏/2026-11-12-sqlite-28/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/28",
+      "published_sha256": "6f5022e0a15dda222fa64f50068af8e7b6ae5efd15d2aa8d68d30ee2fa351b53",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存70-危地马拉（竞标批次）/2026-11-09-sqlite-21/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/21",
+      "published_sha256": "08e8f6945d31160e8b6f39396645a4b8c8c95d73770e6c1008fb6e85658de95c",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存70-危地马拉（竞标批次）/2026-11-09-sqlite-23/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/23",
+      "published_sha256": "c0b2153d60578602182f5cee3feb8d225e46bd0d6a0265e8ae6bd7ef5e735d3c",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存94-Ignis · Aguilar Peralta · 04-03-26/2026-11-10-sqlite-25/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/25",
+      "published_sha256": "dd9fc0d3ae730d0c885bf506cb7bbfa0d3d3ab1f98cb89dccb1ddb99fc789a74",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存95-Ignis · Altieri Luci · 210126/2026-11-12-sqlite-26/记录.json",
+      "source_scope": "sqlite-export",
+      "source_path": "brew_records/26",
+      "published_sha256": "ce5dcca5f3c924447bd600edd318b4652307f25dd434fc6543db971a16984149",
+      "kind": "sqlite-record"
+    },
+    {
+      "path": "knowledge/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/20261105/个人评价.json",
+      "source_scope": "sqlite-export",
+      "source_path": "personal_tastings/BREW_RECORD_2026-11-05_INJERTO",
+      "published_sha256": "74afd43aeb04477d3c2757a1d3da75f20b8018c393652c4f894d13a8302e9be0",
+      "kind": "sqlite-record"
+    }
+  ],
+  "unbundled_references": [
+    {
+      "document": "knowledge/log/库存63-Karamo延长发酵水洗/20261112-首次拟方/记录.md",
+      "source_reference": "图3.jpg"
+    },
+    {
+      "document": "knowledge/log/库存65-HYTTE-茵赫特全水洗瑰夏/20261112-首次拟方/记录.md",
+      "source_reference": "库存整理.md"
+    },
+    {
+      "document": "knowledge/log/瑰夏村金标144/20261109/记录.md",
+      "source_reference": "库存整理.md"
+    },
+    {
+      "document": "knowledge/profiles/历史配方规则.md",
+      "source_reference": "库存整理.md"
+    },
+    {
+      "document": "knowledge/profiles/历史配方规则.md",
+      "source_reference": "README.md"
+    },
+    {
+      "document": "knowledge/profiles/历史配方规则.md",
+      "source_reference": "test_xbloom_recipe.py"
+    },
+    {
+      "document": "knowledge/profiles/历史配方规则.md",
+      "source_reference": "xbloom_recipes.py"
+    },
+    {
+      "document": "knowledge/profiles/历史配方规则.md",
+      "source_reference": "test_xbloom_recipes_web.py"
+    },
+    {
+      "document": "knowledge/profiles/历史配方规则.md",
+      "source_reference": "README.md"
+    }
+  ],
+  "sqlite_snapshot": {
+    "date": "2026-11-12",
+    "brew_records": 26,
+    "personal_tastings": 8,
+    "records": [
+      {
+        "path": "knowledge/log/库存2-FCR金标瑰夏1931/2026-04-27-sqlite-2/记录.json",
+        "id": 2,
+        "bean_id": 2,
+        "bean": "FCR金标瑰夏1931",
+        "date": "2026-04-27",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存2-FCR金标瑰夏1931/2026-04-28-sqlite-5/记录.json",
+        "id": 5,
+        "bean_id": 2,
+        "bean": "FCR金标瑰夏1931",
+        "date": "2026-04-28",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存2-FCR金标瑰夏1931/2026-04-29-sqlite-6/记录.json",
+        "id": 6,
+        "bean_id": 2,
+        "bean": "FCR金标瑰夏1931",
+        "date": "2026-04-29",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存3-FCR红标瑰夏1931/2026-04-30-sqlite-7/记录.json",
+        "id": 7,
+        "bean_id": 3,
+        "bean": "FCR红标瑰夏1931",
+        "date": "2026-04-30",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存3-FCR红标瑰夏1931/2026-05-02-sqlite-8/记录.json",
+        "id": 8,
+        "bean_id": 3,
+        "bean": "FCR红标瑰夏1931",
+        "date": "2026-05-02",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存4-25拉马斯特家族·全球竞标瑰夏/2026-05-01-sqlite-9/记录.json",
+        "id": 9,
+        "bean_id": 4,
+        "bean": "25拉马斯特家族·全球竞标瑰夏",
+        "date": "2026-05-01",
+        "process": "暗室水洗"
+      },
+      {
+        "path": "knowledge/log/库存21-黛博拉·萨维奇·唐爱德华多庄园贵啊/2026-04-26-sqlite-4/记录.json",
+        "id": 4,
+        "bean_id": 21,
+        "bean": "黛博拉·萨维奇·唐爱德华多庄园贵啊",
+        "date": "2026-04-26",
+        "process": "氮气浸渍水洗"
+      },
+      {
+        "path": "knowledge/log/库存22-翡翠红标瑰夏/2026-05-07-sqlite-12/记录.json",
+        "id": 12,
+        "bean_id": 22,
+        "bean": "翡翠红标瑰夏",
+        "date": "2026-05-07",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存22-翡翠红标瑰夏/2026-05-08-sqlite-13/记录.json",
+        "id": 13,
+        "bean_id": 22,
+        "bean": "翡翠红标瑰夏",
+        "date": "2026-05-08",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存22-翡翠红标瑰夏/2026-05-09-sqlite-14/记录.json",
+        "id": 14,
+        "bean_id": 22,
+        "bean": "翡翠红标瑰夏",
+        "date": "2026-05-09",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存23-水洗马森秋/2026-05-04-sqlite-11/记录.json",
+        "id": 11,
+        "bean_id": 23,
+        "bean": "水洗马森秋",
+        "date": "2026-05-04",
+        "process": "水洗"
+      },
+      {
+        "path": "knowledge/log/库存23-水洗马森秋/2026-05-06-sqlite-10/记录.json",
+        "id": 10,
+        "bean_id": 23,
+        "bean": "水洗马森秋",
+        "date": "2026-05-06",
+        "process": "水洗"
+      },
+      {
+        "path": "knowledge/log/库存23-水洗马森秋/2026-05-14-sqlite-17/记录.json",
+        "id": 17,
+        "bean_id": 23,
+        "bean": "水洗马森秋",
+        "date": "2026-05-14",
+        "process": "水洗"
+      },
+      {
+        "path": "knowledge/log/库存24-科佩山庄园瑰夏/2026-05-15-sqlite-18/记录.json",
+        "id": 18,
+        "bean_id": 24,
+        "bean": "科佩山庄园瑰夏",
+        "date": "2026-05-15",
+        "process": "暗屋静置水洗"
+      },
+      {
+        "path": "knowledge/log/库存25-艾丽达庄园日晒瑰夏/2026-05-10-sqlite-15/记录.json",
+        "id": 15,
+        "bean_id": 25,
+        "bean": "艾丽达庄园日晒瑰夏",
+        "date": "2026-05-10",
+        "process": "冷发酵日晒"
+      },
+      {
+        "path": "knowledge/log/库存28-美庭庄园·帕帕尤大肚脐/2026-05-09-sqlite-16/记录.json",
+        "id": 16,
+        "bean_id": 28,
+        "bean": "美庭庄园·帕帕尤大肚脐",
+        "date": "2026-05-09",
+        "process": "日晒"
+      },
+      {
+        "path": "knowledge/log/库存39-Alo混合水洗/2026-06-17-sqlite-19/记录.json",
+        "id": 19,
+        "bean_id": 39,
+        "bean": "Alo混合水洗",
+        "date": "2026-06-17",
+        "process": "混合水洗"
+      },
+      {
+        "path": "knowledge/log/库存42-LEICHT-茵赫特水洗瑰夏-20260815/2026-11-12-sqlite-27/记录.json",
+        "id": 27,
+        "bean_id": 42,
+        "bean": "危地马拉茵赫特水洗瑰夏",
+        "date": "2026-11-12",
+        "process": "水洗"
+      },
+      {
+        "path": "knowledge/log/库存43-危地马拉 El Injerto 茵赫特 Trilogy EI11-D/2026-11-09-sqlite-22/记录.json",
+        "id": 22,
+        "bean_id": 43,
+        "bean": "危地马拉 El Injerto 茵赫特 Trilogy EI11-D",
+        "date": "2026-11-09",
+        "process": "水洗"
+      },
+      {
+        "path": "knowledge/log/库存57-ALO村天空计划 Eternity Tri-Up Lot/2026-11-06-sqlite-20/记录.json",
+        "id": 20,
+        "bean_id": 57,
+        "bean": "ALO村天空计划 Eternity Tri-Up Lot",
+        "date": "2026-11-06",
+        "process": "Eternity Washed"
+      },
+      {
+        "path": "knowledge/log/库存59-MARUS-ALO冷泉水洗74158/2026-11-10-sqlite-24/记录.json",
+        "id": 24,
+        "bean_id": 59,
+        "bean": "ALO 冷泉水洗 74158",
+        "date": "2026-11-10",
+        "process": "冷泉水洗"
+      },
+      {
+        "path": "knowledge/log/库存64-玻利维亚 Takesi 水洗瑰夏/2026-11-12-sqlite-28/记录.json",
+        "id": 28,
+        "bean_id": 64,
+        "bean": "玻利维亚 Takesi 水洗瑰夏",
+        "date": "2026-11-12",
+        "process": "水洗"
+      },
+      {
+        "path": "knowledge/log/库存70-危地马拉（竞标批次）/2026-11-09-sqlite-21/记录.json",
+        "id": 21,
+        "bean_id": 70,
+        "bean": "危地马拉（竞标批次）",
+        "date": "2026-11-09",
+        "process": ""
+      },
+      {
+        "path": "knowledge/log/库存70-危地马拉（竞标批次）/2026-11-09-sqlite-23/记录.json",
+        "id": 23,
+        "bean_id": 70,
+        "bean": "危地马拉（竞标批次）",
+        "date": "2026-11-09",
+        "process": ""
+      },
+      {
+        "path": "knowledge/log/库存94-Ignis · Aguilar Peralta · 04-03-26/2026-11-10-sqlite-25/记录.json",
+        "id": 25,
+        "bean_id": 94,
+        "bean": "Ignis · Aguilar Peralta · 04/03/26",
+        "date": "2026-11-10",
+        "process": "水洗"
+      },
+      {
+        "path": "knowledge/log/库存95-Ignis · Altieri Luci · 210126/2026-11-12-sqlite-26/记录.json",
+        "id": 26,
+        "bean_id": 95,
+        "bean": "Ignis · Altieri Luci · 210126",
+        "date": "2026-11-12",
+        "process": "Dry Fermentation Natural（干式发酵日晒）"
+      }
+    ]
+  }
+}

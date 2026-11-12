@@ -14,3 +14,7 @@ reports/
 CoffeeWorkspace/
 preferences.md
 record.md
+
+# Curated historical source runs are deliberately distributed.
+!knowledge/source-snapshot/brew-data-package/runs/
+!knowledge/source-snapshot/brew-data-package/runs/*.json
