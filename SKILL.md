@@ -22,6 +22,8 @@ metadata:
 
 使用六层框架检查目标、浓度／萃取与均匀性、参数因果网络、类型模板、个人偏好、三温段反馈；按[知识闭环规则](references/yiyi/knowledge-loop.md)留下可审核的输入、证据、候选分支、取舍及验证点。用[拟方指南](references/brewing.md)核对来源冲突与当前约束。发布者的[60 RPM等偏好](knowledge/profiles/maintainer.md)只适用于该档案，不自动覆盖新使用者；历史配方保留原转速。
 
+使用外磨粉时，按[配方合同](references/recipe.md)设置 `grindEnabled: false`，预览应显示 `recipe_no_grind`。经当杯授权后可按同一份配方装载、开始。
+
 输出粉量、过粉水、旁通水、比例、研磨、RPM及每段水量／温度／流速／路径／停顿／振动。说明依据、主要取舍及下杯观察点；区分实喝结果、建议与推测。用户偏好优先；不把本包示例、某人的60 RPM或C40映射当成普遍最优。
 
 将完整可执行参数存为新版本JSON，并用 `preview --recipe 文件` 校验。格式见[配方合同](references/recipe.md)。展示预览指纹并将其与审核版本绑定。数值变化后重做预览与审核；程序拒绝不能精确编码的配比，不许凑水量或降级校验。

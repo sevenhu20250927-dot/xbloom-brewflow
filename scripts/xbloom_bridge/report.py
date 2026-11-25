@@ -224,8 +224,9 @@ def render_svg(data, *, title=None, brewer=None):
         text(max(x0, px-92), y0-7, f'候选 {duration(data["candidate"])}', 11, '#937b62')
     if not coffee and not water:
         text(310, 440, '暂无可绘制的冲煮采样', 20, '#937b62')
-    fields = [('研磨（设定）', display(settings.get('grinderSize'), ' 档')),
-              ('磨豆转速（设定）', display(settings.get('rpm'), ' RPM')),
+    grinder_off = settings.get('grindEnabled') is False
+    fields = [('研磨（设定）', 'OFF' if grinder_off else display(settings.get('grinderSize'), ' 档')),
+              ('磨豆转速（设定）', '不适用' if grinder_off else display(settings.get('rpm'), ' RPM')),
               ('注水事件 / 过粉段数' if bypass_enabled else '注水事件 / 配方段数', f'{len(stages)} / {len(pours)}'),
               ('首段至停止事件', duration(data['stop']))]
     for i, (label, value) in enumerate(fields):

@@ -2,11 +2,11 @@
 
 权威校验入口是`scripts/xbloom_bridge/protocol.py`的`load_recipe`、`build_recipe_frames`。这描述本包支持范围，不等同厂家全部物理限制，也不是已验证的官方App导入格式。JSON仅存机器参数，豆名、理由与评分进入record.md。
 
-根必填`cupType`、`doseGrams`、`recipe`；可选`bypassMl`、`bypassTempC`必须成对。`recipe`必填`grinderSize`、`rpm`、`grandWater`、`pours`。每段必填`volume`、`temperature`、`flowRate`、`pattern`、`pausing`、`vibBefore`、`vibAfter`。未知字段、重复键、缺字段均拒绝。
+根必填`cupType`、`doseGrams`、`recipe`；可选`bypassMl`、`bypassTempC`必须成对。机磨配方填写 `grinderSize`、`rpm`、`grandWater`、`pours`。使用外磨粉时，保留 `grandWater`、`pours`，将机磨的两个字段替换为 `"grindEnabled": false`。两种形式可搭配同一对旁通字段；预览、装载和开始必须使用同一份文件。每段必填`volume`、`temperature`、`flowRate`、`pattern`、`pausing`、`vibBefore`、`vibAfter`。未知字段、重复键、缺字段均拒绝。
 
 | 字段 | 本包约束 |
 | --- | --- |
-| cupType | 仅`xdripper`，机磨＋标准滤杯路径 |
+| cupType | 仅`xdripper`，标准滤杯，可用机磨或外磨粉 |
 | doseGrams | JSON整数5–18g |
 | grinderSize | 整数1–80，数字越小越细 |
 | rpm | 60–120，以10为步长 |

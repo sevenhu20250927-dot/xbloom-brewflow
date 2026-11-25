@@ -293,7 +293,7 @@ def _integer(value, name: str, minimum: int, maximum: int) -> int:
 def build_recipe_frames(recipe: dict) -> list[tuple[str, bytes]]:
     """Encode reviewed legacy recipe JSON without silently adjusting any value.
 
-    The supported initial scope is ground-on-machine, Omni dripper, integer
+    Supports grinder-off and legacy grinder-on recipes, Omni dripper, integer
     dose and volumes. Cup 110/90 is preserved as the first source's Omni range,
     NOT labeled preheat temperature. Unsupported recipes fail before writes.
     Returns only dose/cup/recipe; no mode, home, handshake, start or preset write.
@@ -314,11 +314,18 @@ def build_recipe_frames(recipe: dict) -> list[tuple[str, bytes]]:
             bypass_temp = _integer(recipe["bypassTempC"], "bypassTempC",
                                    40 if bypass_volume else 0, 95 if bypass_volume else 0)
         r = recipe["recipe"]
-        _exact_keys(r, ("grinderSize", "rpm", "grandWater", "pours"), "$.recipe")
-        grind = _integer(r["grinderSize"], "grinderSize", 1, 80)
-        rpm = _integer(r["rpm"], "rpm", 60, 120)
-        if rpm % 10:
-            raise ProtocolError("rpm must be in 10 RPM steps")
+        grinder_off = isinstance(r, dict) and r.get("grindEnabled") is False
+        if grinder_off:
+            _exact_keys(r, ("grindEnabled", "grandWater", "pours"), "$.recipe")
+            # Match the captured OFF frame, including its first-pour timing byte.
+            grind, rpm, command = 0xFE, 60, 8004
+        else:
+            _exact_keys(r, ("grinderSize", "rpm", "grandWater", "pours"), "$.recipe")
+            grind = _integer(r["grinderSize"], "grinderSize", 1, 80)
+            rpm = _integer(r["rpm"], "rpm", 60, 120)
+            command = 8001
+            if rpm % 10:
+                raise ProtocolError("rpm must be in 10 RPM steps")
         pours = r["pours"]
         if type(pours) is not list or not 1 <= len(pours) <= 9:
             raise ProtocolError("pours must contain 1..9 entries")
@@ -367,6 +374,6 @@ def build_recipe_frames(recipe: dict) -> list[tuple[str, bytes]]:
         dose_frame = _command(8102, struct.pack("<ffi", bypass_volume, bypass_temp, dose))
         return [("bypass+dose" if bypass_volume else "dose", dose_frame),
                 ("cup", _command(8104, struct.pack("<ff", 110.0, 90.0))),
-                ("recipe", _command(8001, blob))]
+                ("recipe_no_grind" if grinder_off else "recipe", _command(command, blob))]
     except (KeyError, TypeError, AttributeError, OverflowError) as exc:
         raise ProtocolError(f"invalid recipe shape: {exc}") from exc

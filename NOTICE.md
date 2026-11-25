@@ -1,5 +1,7 @@
 # 来源与许可
 
+项目作者包括花炉咖啡·尹壹壹。
+
 本包从testCoffee中已使用的独立xBloom桥接模块抽取，保留协议、会话与日志核心。提取只做发布所需的路径解耦、指定目录总账和文档整理；发布版报告补充了缺40512时采用ready的显式候选口径。
 
 - 命令编码参考 [ryunana/xbloom-studio-recipe-skill](https://github.com/ryunana/xbloom-studio-recipe-skill) 1.3.2 的 `scripts/xbloom_proto.py`，MIT，Copyright 2026 chengway.wang。

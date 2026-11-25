@@ -251,6 +251,29 @@ class BridgeTests(unittest.IsolatedAsyncioTestCase):
             await self.session.load(synthetic_recipe(), timeout=.001)
         self.assertEqual(self.client.writes, [])
 
+    async def test_external_grinder_and_bypass_load_then_reviewed_start(self):
+        recipe = synthetic_recipe()
+        recipe.update(bypassMl=10, bypassTempC=90)
+        settings = recipe['recipe']
+        del settings['grinderSize'], settings['rpm']
+        settings['grindEnabled'] = False
+        self.client.emit(state(1))
+
+        def reply(packet):
+            if int.from_bytes(packet[3:5], 'little') == 8004:
+                self.client.emit(state(0x1f))
+            elif packet == p.start_frame():
+                self.client.emit(state(0x22))
+
+        self.client.on_write = reply
+        await self.session.load(recipe, timeout=.05)
+        self.assertEqual([int.from_bytes(raw[3:5], 'little') for _, raw, _ in self.client.writes],
+                         [8102, 8104, 8004])
+        with self.assertRaises(BridgeError):
+            await self.session.start(recipe_digest(recipe), authorized=False)
+        await self.session.start(recipe_digest(recipe), authorized=True, timeout=.05)
+        self.assertEqual(self.client.writes[-1][1], p.start_frame())
+
     async def test_bypass_load_records_native_parameters_without_starting(self):
         recipe = synthetic_recipe()
         recipe.update(bypassMl=10, bypassTempC=90)
