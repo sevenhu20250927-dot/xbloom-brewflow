@@ -462,7 +462,7 @@ class BrewRunner:
         paths = [*root.glob("*.jsonl"), *root.glob("retry-*/*.jsonl")]
         return {p.stem: p for p in sorted(paths, key=lambda p: p.name) if p.resolve().is_relative_to(root)}
 
-    def start(self, brew_id, data):
+    def start(self, brew_id, data, *, rinse=False):
         if not self.enabled:
             raise ProductError(409, self.unavailable_reason or "自动冲煮未启用；可记录人工制作，配置蓝牙解释器后再使用自动入口")
         address = data.get("address")
@@ -470,18 +470,49 @@ class BrewRunner:
             raise ValueError("请填写明确的 xBloom 蓝牙地址（Mac UUID 或设备地址）")
         # The claim validates the same reviewed digest and persists start intent
         # before either writing a recipe or constructing a machine subprocess.
-        proof = self.retry_details(self.store.get_brew(brew_id)) if "retry_of" in data else None
-        claimed = self.store.claim_start(brew_id, data, retry_proof=proof)
+        if rinse:
+            claimed = self.store.claim_rinse(brew_id, data)
+        else:
+            proof = self.retry_details(self.store.get_brew(brew_id)) if "retry_of" in data else None
+            claimed = self.store.claim_start(brew_id, data, retry_proof=proof)
         if claimed["dispatch"]:
-            thread = threading.Thread(target=self._capture, args=(brew_id, data), daemon=True)
+            thread = threading.Thread(target=self._rinse if rinse else self._capture, args=(brew_id, data), daemon=True)
             with self.lock:
                 self.threads.add(thread)
             try:
                 thread.start()
             except BaseException as exc:
-                self.store.finish_capture(brew_id, None, None, error=str(exc))
+                with self.lock:
+                    self.threads.discard(thread)
+                if rinse:
+                    self.store.finish_rinse(brew_id, str(exc))
+                else:
+                    self.store.finish_capture(brew_id, None, None, error=str(exc))
                 raise
         return claimed["brew"]
+
+    def _rinse(self, brew_id, data):
+        error = None
+        try:
+            directory = self.output / "rinses" / f"brew-{brew_id}"
+            directory.mkdir(parents=True, exist_ok=False)
+            args = [self.python, "-m", "xbloom_bridge", "rinse", "--address", data["address"],
+                    "--volume", str(data["volume_ml"]), "--confirm-rinse", "--output", str(directory)]
+            result = subprocess.run(args, cwd=ROOT, capture_output=True, text=True)
+            if result.returncode:
+                error = result.stderr.strip()[-2000:] or f"润纸进程退出码 {result.returncode}"
+                try:
+                    error = json.loads(error.splitlines()[-1])["error"] or error
+                except (ValueError, KeyError, TypeError):
+                    pass
+        except Exception as exc:
+            error = f"{type(exc).__name__}: {exc}"
+        finally:
+            try:
+                self.store.finish_rinse(brew_id, error)
+            finally:
+                with self.lock:
+                    self.threads.discard(threading.current_thread())
 
     def _capture(self, brew_id, data):
         journal = report = None
@@ -504,7 +535,7 @@ class BrewRunner:
                     "--report-title", recipe["title"]]
             if data.get("brewer"):
                 args += ["--brewer", data["brewer"]]
-            # No preheat, reconnect, retry, cancellation or parameter repair here.
+            # Rinse, when requested, ran separately before the user authorized this brew.
             with (directory / "capture.log").open("x", encoding="utf-8") as output:
                 proc = subprocess.Popen(args, cwd=ROOT, stdout=subprocess.PIPE,
                                         stderr=subprocess.STDOUT, text=True, encoding="utf-8")
@@ -779,6 +810,8 @@ class Handler(CoffeeInventoryHandler):
                 result = self.ai_runner.start(data)
             elif path == "/api/product/ai/recommend":
                 result = self.ai_runner.start(data, kind="recommendation")
+            elif path == "/api/product/settings/rinse":
+                result = self.store.save_rinse_setting(data)
             elif path == "/api/product/preferences":
                 result = self.store.save_preference(data)
             elif path == "/api/product/suggest":
@@ -809,9 +842,11 @@ class Handler(CoffeeInventoryHandler):
                 result = self.store.save_feedback(data)
             elif path == "/api/product/experiences":
                 result = self.store.create_experience(data)
-            elif match := re.fullmatch(r"/api/product/brews/([1-9][0-9]*)/(start|record)", path):
+            elif match := re.fullmatch(r"/api/product/brews/([1-9][0-9]*)/(start|rinse|record)", path):
                 bid = int(match[1])
-                if match[2] == "start":
+                if match[2] == "rinse":
+                    result = self._view_brew(self.runner.start(bid, data, rinse=True))
+                elif match[2] == "start":
                     result = self._view_brew(self.runner.start(bid, data))
                 else:
                     result = self._view_brew(self.store.record_brew(bid, data))

@@ -18,7 +18,7 @@ python3 -m coffee_product.server --db coffee_inventory.db
 
 ## AI 与配方依据
 
-在 [AI 设置](http://127.0.0.1:8765/studio?view=ai)选择主用模型和备用模型。Codex 使用本机登录，可选择型号、推理强度及 Fast；DeepSeek 支持在本机保存凭据、查看 token 使用量和费用估算，也可以配置 Ollama。
+在[全局设置](http://127.0.0.1:8765/studio?view=ai)选择主用模型和备用模型。Codex 使用本机登录，可选择型号、推理强度及 Fast；DeepSeek 支持在本机保存凭据、查看 token 使用量和费用估算，也可以配置 Ollama。
 
 拟方读取当前豆卡、同豆历史、饮用人的反馈，以及随仓库发布的一一拟方流程、六层方法、冲煮经验库与总账。每份建议列出可核对的原文。若本机已取得 v1.9.4 可在 `coffee_product/knowledge/yiyi-v1.9.4/references/` 放入 `AGENT.md` 和 `萃取框架.md` 两份原文，重启后用这两份材料取代公开流程与方法摘要。库存、品鉴和所选资料会随拟方请求发送给当前选用的模型服务。
 
@@ -32,6 +32,8 @@ python3 -m coffee_product.server --db coffee_inventory.db
 ../.venv/bin/python -m coffee_product.server --db coffee_inventory.db \
   --enable-bluetooth --device-address '你的设备地址'
 ```
+
+全机器模式下，可在研磨前勾选「先预热滤杯并打湿滤纸」，再点「先放水润纸」。机器按 92 ℃ 单独放水，默认 50 ml，水量可在「全局设置 → 预热与润纸」修改。放水停止后，倒掉润纸水，把空杯放回秤上，点「继续研磨冲煮」才会启动当杯配方。润纸水单独记录。
 
 网页全机模式在当杯确认后启动。机器明确报缺水时会显示补水提示；能确认尚未发送启动指令时可按原方重试。分段注水、杯中液重和根据相邻采样算出的流速使用同一时间轴。采集收到结束信号或满足无更新条件后固定曲线；机器屏显时间和人工核对保留独立记录。
 

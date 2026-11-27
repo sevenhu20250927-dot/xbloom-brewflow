@@ -54,10 +54,12 @@
   function statusPill(item, kind) {
     const status = item.status;
     const style = status === 'completed' ? 'green' : ['failed', 'unconfirmed'].includes(status) ? 'red' : ['running', 'starting', 'needs_review'].includes(status) ? 'warn' : '';
-    const node = pill(STATUSES[status] || status || '状态未知', style);
+    const rinseStage = status === 'prepared' && item.rinse && brewStage(item);
+    const node = pill(rinseStage || STATUSES[status] || status || '状态未知', rinseStage ? 'warn' : style);
     node.dataset.statusKind = kind;
     node.dataset.itemId = item.id;
     node.dataset.status = status || '';
+    node.dataset.rinse = item.rinse?.state || '';
     return node;
   }
   function field(label, control, hint) {
@@ -684,6 +686,11 @@
       updateBrewStatus();
       pollBrew();
     }
+    if (/^\/api\/product\/brews\/\d+\/rinse$/.test(path) && result.id) {
+      app.data.brews = app.data.brews.map(b => sameId(b.id, result.id) ? result : b);
+      updateBrewStatus();
+      pollBrew();
+    }
     if (path === `${API}/recipes`) loadDraft(result);
     if (path === `${API}/brews` && result.id) {
       app.brew = result.id;
@@ -720,7 +727,7 @@
     document.querySelectorAll('[data-view]').forEach(link => {
       if (link.dataset.view === app.view) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });
-    document.title = `${app.view === 'menu' ? '今日豆单' : app.view === 'studio' ? '制作台' : app.view === 'records' ? '冲煮记录' : app.view === 'ai' ? 'AI 设置' : '经验'} · 日常咖啡`;
+    document.title = `${app.view === 'menu' ? '今日豆单' : app.view === 'studio' ? '制作台' : app.view === 'records' ? '冲煮记录' : app.view === 'ai' ? '全局设置' : '经验'} · 日常咖啡`;
     if (!app.data) return;
     $('main').replaceChildren(app.view === 'menu' ? renderMenu() : app.view === 'studio' ? renderStudio() : app.view === 'records' ? renderRecords() : app.view === 'ai' ? renderAISettingsPage() : renderExperiences());
     updateRecipeProgress();
@@ -972,7 +979,15 @@
   }
   function renderAISettingsPage() {
     const body = el('div', { class: 'ai-settings-page' }, el('p', {}, '正在读取 AI 设置…'));
-    const root = el('div', {}, intro('AI SETTINGS', '先配好 AI，再安心做咖啡。', '在这里选择谁来拟方、配置账号，并查看当前状态。配置好后，回到制作台选豆即可使用。'), app.data.database_label?.includes('临时') && el('p', { class: 'inline-note ai-preview-note' }, '你正在使用临时预览。这里保存的模型选择与密钥只属于预览环境，正式工作台需单独配置。'), body);
+    const volume = input(app.data.rinse_ml, {type:'number', min:1, max:500, step:1, required:true});
+    const rinseSettings = panel('预热与润纸', field('92 ℃ 润纸水量 / ml', volume),
+      button('保存水量', event => run('rinse-setting', event.currentTarget, async () => {
+        if (!volume.reportValidity()) return;
+        const result = await write('rinse-setting', `${API}/settings/rinse`, {volume_ml:volume.valueAsNumber}, '保存润纸水量');
+        app.data.rinse_ml = result.volume_ml;
+        announce(`润纸水量已保存为 ${result.volume_ml} ml。`);
+      }), 'secondary'));
+    const root = el('div', {}, intro('SETTINGS', '全局设置', '在制作前选择是否润纸。AI 配置用于拟方与推荐。'), rinseSettings, app.data.database_label?.includes('临时') && el('p', { class: 'inline-note ai-preview-note' }, '你正在使用临时预览。这里保存的模型选择与密钥只属于预览环境，正式工作台需单独配置。'), body);
     async function load() {
       try {
         const settings = await api(`${API}/ai/settings`);
@@ -1368,7 +1383,7 @@
   }
   function renderBrewStatus(brew) {
     const recipe = getRecipe(brew.recipe_id);
-    const canEdit = brew.recipe_id && brew.status !== 'cancelled' && brew.capture_state !== 'running';
+    const canEdit = brew.recipe_id && !(brew.status === 'prepared' && brew.rinse) && brew.status !== 'cancelled' && brew.capture_state !== 'running';
     const edit = canEdit && button('修改冲煮结果', () => {
       const form = $('brew-result-form');
       if (!form) return;
@@ -1389,6 +1404,7 @@
     } else if (brew.mode !== 'xbloom') {
       status.append(el('p', {}, '本路线由人实际制作，网页不派发设备命令。'));
     }
+    if (brew.rinse) facts.append(el('p', {}, `预热润纸 · 92 ℃ / ${brew.rinse.volume_ml} ml · ${{running:'执行中', done:'收到停止信号', unconfirmed:'停止信号未确认'}[brew.rinse.state]}`));
     if (recipe?.sha256) facts.append(el('p', { class: 'tiny' }, `审核版本 ${recipe.sha256.slice(0, 16)}…`));
     const alert = brewAlert(brew);
     if (alert && brew.capture_state !== 'running') status.append(el('div', { class: 'pending-box', role: 'alert' },
@@ -1429,7 +1445,7 @@
     for (const badge of document.querySelectorAll('[data-status-kind]')) {
       const kind = badge.dataset.statusKind;
       const item = kind === 'brew' ? getBrew(badge.dataset.itemId) : getOrder(badge.dataset.itemId);
-      if (item && badge.dataset.status !== (item.status || '')) badge.replaceWith(statusPill(item, kind));
+      if (item && (badge.dataset.status !== (item.status || '') || badge.dataset.rinse !== (item.rinse?.state || ''))) badge.replaceWith(statusPill(item, kind));
     }
     const host = $('brew-live');
     const brew = app.data && getBrew(app.view === 'records' ? app.recordBrew : app.brew);
@@ -1472,6 +1488,9 @@
   }
   function brewStage(brew) {
     if (brew.capture_state === 'running' || ['starting', 'running'].includes(brew.status)) return '冲煮中';
+    if (brew.status === 'prepared' && brew.rinse) {
+      return {running:'正在预热润纸', done:'倒掉润纸水', unconfirmed:'核对润纸结果'}[brew.rinse.state];
+    }
     if (brew.status === 'prepared') return brew.mode === 'xbloom' ? '准备冲煮' : '手动制作';
     if (brew.status === 'needs_review' && waterHeading(brew)) return waterHeading(brew);
     if (brew.status === 'needs_review') return '确认出杯';
@@ -1495,8 +1514,10 @@
     }
     if (!records && brew.mode === 'xbloom' && brew.status === 'prepared') {
       const capability = app.data.capabilities?.bluetooth_start === true;
-      const address = input(app.data.capabilities?.default_address || '', { placeholder: '填写本次连接的机器地址', autocomplete: 'off' });
-      const currentBrewer = app.pending[`start:${brew.id}`]?.payload?.brewer || brewerOverrides.get(brew.id) || brew.observations?.brewer || defaultBrewer;
+      const rinse = brew.rinse;
+      const rinseMl = app.data.rinse_ml;
+      const address = input(rinse?.address || app.data.capabilities?.default_address || '', { placeholder: '填写本次连接的机器地址', autocomplete: 'off' });
+      const currentBrewer = app.pending[`start:${brew.id}`]?.payload?.brewer || brewerOverrides.get(brew.id) || brew.rinse?.brewer || brew.observations?.brewer || defaultBrewer;
       const brewer = input(currentBrewer, { placeholder: defaultBrewer, maxLength: 200 });
       brewer.setAttribute('list', 'brew-drippers');
       const brewerSummary = el('summary', {}, `本杯滤杯 · ${currentBrewer}`);
@@ -1507,29 +1528,59 @@
       };
       const brewerDetails = el('details', { class: 'flow-extra' }, brewerSummary, field('更换本杯滤杯', brewer),
         el('datalist', { id: 'brew-drippers' }, [defaultBrewer, 'V60', 'Origami'].map(value => el('option', { value }))));
-      const confirm = input('', { type: 'checkbox', checked: false });
+      const confirm = input('', { type: 'checkbox' });
+      const optIn = input('', { type:'checkbox' });
       const settings = recipe?.payload?.recipe;
-      children.push(settings && el('p', { class: 'brew-spec' }, `${recipe.payload.doseGrams} g · ${waterSummary(recipe.payload)} · 研磨 ${settings.grinderSize} · ${settings.rpm} RPM`),
-        el('details', { class: 'flow-extra', open: !address.value }, el('summary', {}, '连接的机器'), field('蓝牙地址', address)), brewerDetails, el('label', { class: 'confirmation' }, confirm, el('span', {}, '我已核对本杯配方，豆子、滤杯、杯子与水都已准备好；现在开始会真实研磨、出水。')), button('已准备，按此配方开始', event => run(`start:${brew.id}`, event.currentTarget, async () => {
-        if (!confirm.checked) throw new Error('请先确认本杯配方与实物准备，再明确开始。');
-        if (!address.value.trim()) throw new Error('请填写机器地址。');
-        if (!recipe?.sha256) throw new Error('缺少已保存配方的校验值，无法启动。');
-        const endpoint = `${API}/brews/${brew.id}/start`;
-        try {
-          const result = await write(`start:${brew.id}`, endpoint, { reviewed_sha256: recipe.sha256, confirm_start: true, address: address.value.trim(), brewer: brewer.value.trim() || defaultBrewer }, `开始当杯 #${brew.id}`);
-          adoptResult(endpoint, result);
-        } catch (error) {
-          if (sameId(brewNotice?.id, brew.id)) {
-            brewNotice.error = app.pending[`start:${brew.id}`] ? '启动回执未收到，机器可能已启动。正在核对本杯状态。' : error.message;
-            updateBrewProgress();
-          }
-          return;
+      if (settings) children.push(el('p', { class:'brew-spec' },
+        `${recipe.payload.doseGrams} g · ${waterSummary(recipe.payload)} · 研磨 ${settings.grinderSize} · ${settings.rpm} RPM`));
+      if (rinse?.state === 'running') {
+        children.push(el('p', {class:'pending-box', role:'status'}, `正在执行 92 ℃、${rinse.volume_ml} ml 润纸。请保持接水杯就位，结束后再倒水。`));
+      } else {
+        if (!rinse) children.push(el('details', {class:'flow-extra', open:!address.value}, el('summary', {}, '连接的机器'), field('蓝牙地址', address)));
+        children.push(brewerDetails);
+        if (rinse) {
+          const uncertain = rinse.state === 'unconfirmed';
+          children.push(el('p', {class:'pending-box', role:'status'}, uncertain
+            ? `润纸结束信号未确认。请在机器旁核对，需要时手动润纸。确认出水已停止后，倒掉润纸水并放回空杯。 ${rinse.error || ''}`
+            : `92 ℃、${rinse.volume_ml} ml 润纸程序已结束。请倒掉润纸水，把空杯放回秤上。`));
+        } else {
+          children.push(el('label', {class:'confirmation'}, optIn, el('span', {}, `先预热滤杯并打湿滤纸 · 92 ℃ / ${rinseMl} ml`)),
+            el('label', {class:'confirmation'}, confirm, el('span', {}, '我已核对本杯配方，豆子、滤杯、滤纸、接水杯与水均已就位。')));
         }
-      }), 'danger', !capability), !capability && el('p', { class: 'inline-note' }, app.data.capabilities?.bluetooth_unavailable_reason || '当前服务未开放蓝牙开始能力，可保留配方并人工记录。'));
-      const start = children.find(node => node?.tagName === 'BUTTON' && node.classList.contains('danger'));
-      if (start) { start.id = 'start-brew'; start.disabled ||= Boolean(app.pending[`start:${brew.id}`]); }
+        const start = button(rinse ? '已停止出水、倒水并放回空杯，继续研磨冲煮' : '已准备，按此配方开始', event => {
+          const rinsing = !rinse && optIn.checked;
+          const phase = rinsing ? 'rinse' : 'start';
+          const key = `${phase}:${brew.id}`;
+          return run(key, event.currentTarget, async () => {
+            if (!rinse && !confirm.checked) throw new Error('请先核对配方与实物准备。');
+            if (!address.value.trim() || !recipe?.sha256) throw new Error('请核对机器地址与已保存配方。');
+            const endpoint = `${API}/brews/${brew.id}/${phase}`;
+            const payload = {reviewed_sha256:recipe.sha256, address:address.value.trim(), brewer:brewer.value.trim() || defaultBrewer};
+            if (rinsing) Object.assign(payload, {volume_ml:rinseMl, confirm_rinse:true});
+            else Object.assign(payload, {confirm_start:true}, rinse && {confirm_rinse_discarded:true});
+            try {
+              const result = await write(key, endpoint, payload, rinsing ? `第 ${brew.id} 杯预热润纸` : `开始当杯 #${brew.id}`);
+              adoptResult(endpoint, result);
+            } catch (error) {
+              if (!rinsing && sameId(brewNotice?.id, brew.id)) {
+                brewNotice.error = app.pending[key] ? '启动回执未收到，请核对当杯状态。' : error.message;
+                updateBrewProgress();
+              }
+              throw error;
+            }
+          });
+        }, 'danger', !capability || Boolean(app.pending[`start:${brew.id}`] || app.pending[`rinse:${brew.id}`]));
+        start.id = 'start-brew';
+        optIn.onchange = () => { start.textContent = optIn.checked ? '先放水润纸' : '已准备，按此配方开始'; };
+        children.push(start);
+        if (rinse) children.push(button('结束本次准备，不研磨', event => run(`end-prep:${brew.id}`, event.currentTarget, async () => {
+          await write(`end-prep:${brew.id}`, `${API}/brews/${brew.id}/record`, {status:'failed'}, '结束本次准备');
+          await refresh();
+        }), 'quiet'));
+        if (!capability) children.push(el('p', {class:'inline-note'}, app.data.capabilities?.bluetooth_unavailable_reason || '当前服务未开放蓝牙开始能力。'));
+      }
     }
-    if (records && stage === '准备冲煮') children.push(button('去制作台准备', () => {
+    if (records && brew.status === 'prepared' && brew.mode === 'xbloom') children.push(button('去制作台准备', () => {
       app.brew = brew.id; app.bean = brew.bean_id; app.order = brew.order_id || ''; navigate('studio');
     }));
     if (stage === '冲煮中') {
@@ -1561,7 +1612,7 @@
           ? el('div', { id: 'brew-feedback' }, el('h3', {}, '各自喝到什么'), feedback) :
           el('details', { id: 'brew-feedback', class: 'flow-extra' }, el('summary', {}, '查看或补充品饮反馈'), feedback));
       }
-      const result = brew.recipe_id ? renderRecordForm(brew) : null;
+      const result = brew.recipe_id && !(brew.status === 'prepared' && brew.rinse) ? renderRecordForm(brew) : null;
       if (result) result.open = stage === '手动制作';
       if (stage === '品饮反馈') {
         children.push(el('details', { class: 'flow-extra' }, el('summary', {}, '冲煮详情与报告'), live, result));
@@ -1719,7 +1770,7 @@
   async function pollBrew() {
     if (document.hidden || !app.data || app.brewPolling) return;
     const selected = getBrew(app.view === 'records' ? app.recordBrew : app.brew);
-    const isActive = b => b && (b.capture_state === 'running' || ['starting','running'].includes(b.status));
+    const isActive = b => b && (b.rinse?.state === 'running' || b.capture_state === 'running' || ['starting','running'].includes(b.status));
     const active = isActive(selected) ? selected : app.data.brews.find(isActive);
     const current = active || (brewNotice && app.pending[`start:${brewNotice.id}`] && getBrew(brewNotice.id));
     if (!current) return;
@@ -1727,7 +1778,7 @@
     try {
       const {brew, telemetry} = await api(`${API}/brews/${current.id}/live`);
       if (getBrew(current.id) !== current) return;
-      const changed = brew.status !== current.status || brew.capture_phase !== current.capture_phase || brew.capture_state !== current.capture_state;
+      const changed = brew.rinse?.state !== current.rinse?.state || brew.status !== current.status || brew.capture_phase !== current.capture_phase || brew.capture_state !== current.capture_state;
       app.data.brews = app.data.brews.map(b => sameId(b.id, brew.id) ? brew : b);
       if (brewNotice) brewNotice.syncError = false;
       updateBrewProgress();

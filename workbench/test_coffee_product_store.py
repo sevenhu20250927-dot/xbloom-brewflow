@@ -116,6 +116,51 @@ class ProductDataFlow(unittest.TestCase):
         return dict(request_id=self.key(), reviewed_sha256=recipe["sha256"], confirm_start=True,
                     address="database-only-no-device", brewer="制作人样例")
 
+    def test_rinse_and_coffee_are_separate_idempotent_steps(self):
+        recipe = self.recipe()
+        bid = self.brew(recipe)["id"]
+        other = self.brew(recipe)["id"]
+        start = self.start_data(recipe)
+        rinse = dict(request_id=self.key(), volume_ml=50, address=start["address"], brewer="V60",
+                     reviewed_sha256=recipe["sha256"], confirm_rinse=True)
+        self.assertEqual(self.store.state()["rinse_ml"], 50)
+        self.store.save_rinse_setting(dict(request_id=self.key(), volume_ml=75))
+        self.error(409, self.store.claim_rinse, bid, rinse)
+        rinse["volume_ml"] = 75
+        self.assertTrue(self.store.claim_rinse(bid, rinse)["dispatch"])
+        self.assertFalse(self.store.claim_rinse(bid, rinse)["dispatch"])
+        self.error(409, self.store.claim_rinse, bid, dict(rinse, request_id=self.key()))
+        confirmed = dict(start, confirm_rinse_discarded=True)
+        self.error(409, self.store.claim_start, bid, confirmed)
+        self.error(409, self.store.claim_start, other, start)
+        self.error(409, self.record, self.store.get_brew(bid))
+        self.store.finish_rinse(bid, None)
+        self.store.save_rinse_setting(dict(request_id=self.key(), volume_ml=50))
+        brew = self.store.get_brew(bid)
+        self.assertEqual((brew["status"], brew["rinse"]["state"], brew["rinse"]["volume_ml"]),
+                         ("prepared", "done", 75))
+        self.assertEqual(brew["rinse"]["brewer"], "V60")
+        self.assertIsNone(brew["consumption_g"])
+        self.assertEqual(self.store.get_bean(1)["net_weight"], 100)
+        self.error(409, self.store.claim_start, bid, start)
+        self.error(409, self.store.claim_start, bid, dict(confirmed, address="different"))
+        self.assertTrue(self.store.claim_start(bid, confirmed)["dispatch"])
+        self.assertFalse(self.store.claim_start(bid, confirmed)["dispatch"])
+
+    def test_lost_rinse_worker_needs_manual_check(self):
+        recipe = self.recipe()
+        bid = self.brew(recipe)["id"]
+        start = self.start_data(recipe)
+        self.store.claim_rinse(bid, dict(request_id=self.key(), volume_ml=50, address=start["address"], brewer="V60",
+                                        reviewed_sha256=recipe["sha256"], confirm_rinse=True))
+        reopened = Store(self.db_path)
+        self.assertEqual(reopened.get_brew(bid)["rinse"]["state"], "unconfirmed")
+        self.error(409, reopened.claim_start, bid, start)
+        self.store.finish_rinse(bid, "模拟采集中断")
+        self.assertEqual(reopened.get_brew(bid)["rinse"]["state"], "unconfirmed")
+        self.assertIsNone(reopened.get_brew(bid)["journal"])
+        self.assertTrue(reopened.claim_start(bid, dict(start, confirm_rinse_discarded=True))["dispatch"])
+
     def test_prestart_retry_requires_complete_evidence_and_dispatches_once(self):
         from coffee_product.server import BrewRunner
         runner = BrewRunner(self.store, self.validation_root / self._testMethodName, "python3", False)

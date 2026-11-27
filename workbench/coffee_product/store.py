@@ -13,7 +13,7 @@ import sqlite3
 import uuid
 from zoneinfo import ZoneInfo
 
-from xbloom_bridge.protocol import ProtocolError, parse_recipe
+from xbloom_bridge.protocol import ProtocolError, parse_recipe, rinse_recipe
 from xbloom_bridge.recording import recipe_digest
 
 
@@ -156,6 +156,12 @@ class Store:
                 status TEXT NOT NULL, observations TEXT NOT NULL DEFAULT '{}',
                 capture_owner TEXT, capture_state TEXT, start_request_id TEXT,
                 journal TEXT, report TEXT, capture_error TEXT)""",
+            """CREATE TABLE IF NOT EXISTS product_rinse_settings (
+                singleton INTEGER PRIMARY KEY CHECK(singleton=1), volume_ml INTEGER NOT NULL)""",
+            """CREATE TABLE IF NOT EXISTS product_rinses (
+                brew_id INTEGER PRIMARY KEY REFERENCES product_brews(brew_id),
+                volume_ml INTEGER NOT NULL, address TEXT NOT NULL, brewer TEXT NOT NULL, owner TEXT NOT NULL,
+                state TEXT NOT NULL, error TEXT)""",
             """CREATE TABLE IF NOT EXISTS product_consumption (
                 brew_id INTEGER PRIMARY KEY REFERENCES product_brews(brew_id),
                 grams REAL NOT NULL CHECK(grams >= 0), confirmed_at TEXT NOT NULL)""",
@@ -244,12 +250,22 @@ class Store:
     def _brew(self, db, brew_id):
         row = db.execute("""SELECT r.id,r.bean_id,r.created_at,r.brew_date,r.data_json,
             p.order_id,p.recipe_id,p.mode,p.status,p.observations,
-            p.capture_owner,p.capture_state,p.journal,p.report,p.capture_error,c.grams AS consumption_g
+            p.capture_owner,p.capture_state,p.journal,p.report,p.capture_error,c.grams AS consumption_g,
+            rinse.state AS rinse_state,rinse.owner AS rinse_owner,rinse.address AS rinse_address,
+            rinse.volume_ml AS rinse_ml,rinse.error AS rinse_error,rinse.brewer AS rinse_brewer
             FROM brew_records r LEFT JOIN product_brews p ON p.brew_id=r.id
-            LEFT JOIN product_consumption c ON c.brew_id=r.id WHERE r.id=?""", (brew_id,)).fetchone()
+            LEFT JOIN product_consumption c ON c.brew_id=r.id
+            LEFT JOIN product_rinses rinse ON rinse.brew_id=r.id WHERE r.id=?""", (brew_id,)).fetchone()
         if row is None:
             raise ProductError(404, "冲煮记录不存在")
         brew = dict(row)
+        state, owner = brew.pop("rinse_state"), brew.pop("rinse_owner")
+        rinse = {key: brew.pop("rinse_" + column) for key, column in
+                 (("volume_ml", "ml"), ("address", "address"), ("error", "error"), ("brewer", "brewer"))}
+        if state == "running" and owner != self.capture_owner:
+            state = "unconfirmed"
+            rinse["error"] = "服务已重启，请到机器旁核对润纸是否已经停止"
+        brew["rinse"] = dict(rinse, state=state) if state else None
         original = json.loads(brew.pop("data_json") or "{}")
         if brew["recipe_id"] is None:
             brew["legacy_data"] = original
@@ -285,6 +301,7 @@ class Store:
     def state(self):
         with self._connection() as db:
             return {
+                "rinse_ml": self._rinse_ml(db),
                 "beans": [self._bean(db, r[0]) for r in db.execute("SELECT id FROM beans ORDER BY id DESC").fetchall()],
                 "people": [dict(r) for r in db.execute("SELECT id,name FROM tasters ORDER BY id")],
                 "preferences": [dict(r) for r in db.execute(
@@ -427,6 +444,8 @@ class Store:
                 FROM product_brews p LEFT JOIN product_consumption c ON c.brew_id=p.brew_id
                 WHERE p.order_id=?""", (order_id,)).fetchone()
             if brew:
+                if self._brew(db, brew["brew_id"])["rinse"]:
+                    raise ProductError(409, "本杯已请求润纸，请在当杯制作台核对")
                 if (brew["status"] != "prepared" or any(brew[key] is not None for key in
                     ("capture_state", "start_request_id", "journal", "report", "grams"))
                         or json.loads(brew["observations"]) != {}):
@@ -502,6 +521,8 @@ class Store:
                 raise ProductError(409, "历史杯只能填写品鉴，不能通过新工作台补扣耗豆")
             if brew["status"] == "cancelled":
                 raise ProductError(409, "本杯已取消，不能记录制作结果或扣豆；请另建订单")
+            if brew["rinse"] and brew["rinse"]["state"] == "running":
+                raise ProductError(409, "正在润纸，请等待放水结束")
             if brew["capture_state"] == "running":
                 raise ProductError(409, "本杯仍在采集执行中，先核对机器与采集状态，再记录结果或扣量")
             observations = data.get("observations", brew["observations"])
@@ -626,9 +647,64 @@ class Store:
             return self._experience(db, experience_id)
         return self._write(f"evaluate:{experience_id}", data, action)[0]
 
+    @staticmethod
+    def _rinse_ml(db):
+        row = db.execute("SELECT volume_ml FROM product_rinse_settings WHERE singleton=1").fetchone()
+        return row[0] if row else 50
+
+    def save_rinse_setting(self, data):
+        _fields(data, {"request_id", "volume_ml"})
+        rinse_recipe(data["volume_ml"])
+
+        def action(db):
+            db.execute("""INSERT INTO product_rinse_settings VALUES (1,?)
+                ON CONFLICT(singleton) DO UPDATE SET volume_ml=excluded.volume_ml""", (data["volume_ml"],))
+            return {"volume_ml": data["volume_ml"]}
+        return self._write("rinse-setting", data, action)[0]
+
+    @staticmethod
+    def _check_machine_available(db, brew_id):
+        pending = db.execute("""SELECT p.brew_id FROM product_brews p
+            LEFT JOIN product_rinses r ON r.brew_id=p.brew_id
+            WHERE p.brew_id<>? AND ((p.capture_state IS NOT NULL AND p.status IN ('running','needs_review'))
+                OR (p.status='prepared' AND r.brew_id IS NOT NULL)) LIMIT 1""", (brew_id,)).fetchone()
+        if pending:
+            raise ProductError(409, f"第 {pending[0]} 杯仍在执行或等待核对，请先处理该杯")
+
+    def claim_rinse(self, brew_id, data):
+        _id(brew_id, "brew_id")
+        _fields(data, {"request_id", "reviewed_sha256", "address", "brewer", "volume_ml", "confirm_rinse"})
+        if data["confirm_rinse"] is not True:
+            raise ProductError(400, "请先明确授权本杯放水润纸")
+        _text(data["address"], "address", limit=200)
+        _text(data["brewer"], "brewer", limit=200)
+        rinse_recipe(data["volume_ml"])
+
+        def action(db):
+            brew = self._brew(db, brew_id)
+            if (brew["mode"] != "xbloom" or brew["status"] != "prepared" or brew["rinse"]
+                    or brew["capture_state"] is not None):
+                raise ProductError(409, "本杯已操作或当前模式不支持机器润纸，请刷新核对")
+            if self._recipe(db, brew["recipe_id"])["sha256"] != data["reviewed_sha256"]:
+                raise ProductError(409, "本杯配方与审核版本不符")
+            if self._rinse_ml(db) != data["volume_ml"]:
+                raise ProductError(409, "全局润纸水量已修改，请刷新后核对")
+            self._check_machine_available(db, brew_id)
+            db.execute("""INSERT INTO product_rinses(brew_id,volume_ml,address,brewer,owner,state)
+                VALUES (?,?,?,?,?,'running')""", (brew_id, data["volume_ml"], data["address"], data["brewer"], self.capture_owner))
+            return {"dispatch": True}
+        _, replayed = self._write(f"rinse:{brew_id}", data, action)
+        return {"dispatch": not replayed, "brew": self.get_brew(brew_id)}
+
+    def finish_rinse(self, brew_id, error):
+        with self._connection(write=True) as db:
+            db.execute("""UPDATE product_rinses SET state=?,error=?
+                WHERE brew_id=? AND owner=? AND state='running'""",
+                       ("unconfirmed" if error else "done", error, brew_id, self.capture_owner))
+
     def claim_start(self, brew_id, data, *, retry_proof=None):
         _id(brew_id, "brew_id")
-        _fields(data, {"request_id", "reviewed_sha256", "confirm_start", "address", "brewer"}, {"retry_of"})
+        _fields(data, {"request_id", "reviewed_sha256", "confirm_start", "address", "brewer"}, {"retry_of", "confirm_rinse_discarded"})
         if data["confirm_start"] is not True:
             raise ProductError(400, "本杯必须明确授权开始")
         if type(data["reviewed_sha256"]) is not str or not re.fullmatch(r"[0-9a-f]{64}", data["reviewed_sha256"]):
@@ -649,11 +725,12 @@ class Store:
                     raise ProductError(409, "这次失败已处理，或日志无法确认启动前失败。请同步当杯记录。")
             elif brew["status"] != "prepared" or brew["capture_state"] is not None:
                 raise ProductError(409, "此杯已记录或已尝试开始，不会重新派发")
-            pending = db.execute("""SELECT brew_id FROM product_brews
-                WHERE brew_id<>? AND capture_state IS NOT NULL AND status IN ('running','needs_review') LIMIT 1""",
-                (brew_id,)).fetchone()
-            if pending:
-                raise ProductError(409, f"第 {pending['brew_id']} 杯执行仍待人工核对，不能派发另一杯")
+            self._check_machine_available(db, brew_id)
+            rinse = brew["rinse"]
+            if rinse and (rinse["state"] == "running" or
+                          rinse["address"].lower() != data["address"].lower() or
+                          ("retry_of" not in data and data.get("confirm_rinse_discarded") is not True)):
+                raise ProductError(409, "请先确认原机器已停止润纸，倒掉润纸水并放回接液杯，再继续研磨")
             recipe = self._recipe(db, brew["recipe_id"])
             if recipe["sha256"] != data["reviewed_sha256"]:
                 raise ProductError(409, "审核摘要与本杯配方不一致")

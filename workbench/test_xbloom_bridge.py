@@ -256,6 +256,27 @@ class BridgeTests(unittest.IsolatedAsyncioTestCase):
             await self.session.cancel(timeout=.001)
         self.assertEqual(self.client.writes, [])
 
+    async def test_rinse_sends_only_reviewed_grinder_off_pour(self):
+        recipe = p.rinse_recipe(50)
+        with self.assertRaises(p.ProtocolError):
+            p.build_recipe_frames(recipe)
+        with self.assertRaises(p.ProtocolError):
+            p.rinse_recipe(50.5)
+        self.client.emit(state(1))
+        def reply(packet):
+            if int.from_bytes(packet[3:5], 'little') == 8004:
+                self.client.emit(state(0x1f))
+            elif packet == p.start_frame():
+                self.client.emit(state(0x22))
+        self.client.on_write = reply
+        await self.session.load(recipe, rinse=True)
+        packets = [entry[1] for entry in self.client.writes]
+        self.assertEqual([int.from_bytes(raw[3:5], 'little') for raw in packets], [8102, 8104, 8004])
+        self.assertEqual(packets[-1][11:15], bytes([50, 92, 2, 0]))
+        self.assertEqual(packets[-1][-4], 0xFE)
+        await self.session.start(recipe_digest(recipe), authorized=True)
+        self.assertEqual(self.client.writes[-1][1], p.start_frame())
+
     async def test_load_snapshots_recipe_and_never_navigates_or_starts(self):
         self.client.emit(machine_info())
         self.client.emit(state(1))

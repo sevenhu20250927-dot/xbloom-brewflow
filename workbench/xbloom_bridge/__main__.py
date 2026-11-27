@@ -24,7 +24,7 @@ def parser():
     scan = sub.add_parser('scan', help='discover xBloom advertisements only')
     scan.add_argument('--seconds', type=positive, default=8)
     scan.add_argument('--output', default='ble_runs')
-    for name in ('observe', 'load', 'brew', 'cancel'):
+    for name in ('observe', 'load', 'brew', 'cancel', 'rinse'):
         cmd = sub.add_parser(name)
         cmd.add_argument('--address', required=True, help='explicit target, never picks first machine')
         cmd.add_argument('--seconds', type=positive, default={'observe': 30, 'load': 300}.get(name),
@@ -37,6 +37,9 @@ def parser():
             cmd.add_argument('--reviewed-sha256', required=True)
             cmd.add_argument('--report-title', help='bean/title supplied by the user, saved with this run')
             cmd.add_argument('--brewer', help='actual physical brewer, not inferred from protocol cupType')
+        if name == 'rinse':
+            cmd.add_argument('--volume', type=int, required=True)
+            cmd.add_argument('--confirm-rinse', action='store_true')
         if name == 'cancel':
             cmd.add_argument('--confirm-cancel', action='store_true')
     preview = sub.add_parser('preview', help='validate/print frames offline')
@@ -96,6 +99,10 @@ async def run(args):
     if args.command == 'brew' and (not args.confirm_start or
                                    args.reviewed_sha256 != recipe_digest(recipe)):
         raise BridgeError('Reviewed recipe digest and --confirm-start required')
+    if args.command == 'rinse':
+        if not args.confirm_rinse:
+            raise BridgeError('--confirm-rinse required')
+        recipe = p.rinse_recipe(args.volume)
     if args.command == 'cancel' and not args.confirm_cancel:
         raise BridgeError('--confirm-cancel required')
     journal = Journal(args.output, operation=args.command,
@@ -133,11 +140,18 @@ async def run(args):
                         raise
                     journal.append('handshake_unconfirmed', error=str(exc))
                     # Preserve later unsolicited replies; never retry the handshake.
-                if recipe:
+                if args.command == 'rinse':
+                    await session.load(recipe, rinse=True)
+                elif recipe:
                     await session.load(recipe)
                 if args.command == 'brew':
                     await session.start(args.reviewed_sha256, authorized=True)
                     reason = await session.observe_brew(args.seconds)
+                elif args.command == 'rinse':
+                    await session.start(recipe_digest(recipe), authorized=True)
+                    reason = await session.observe_brew(args.seconds)
+                    if reason not in ('program_end', 'machine_idle'):
+                        raise BridgeError(f'润纸停止状态未确认（{reason}），请查看机器')
                 else:
                     await session.observe(args.seconds)
             journal.append('observation_ended', stop_reason=reason,
@@ -174,7 +188,7 @@ def main(argv=None):
     except Exception as exc:
         print(json.dumps({'error': str(exc), 'type': type(exc).__name__}), file=sys.stderr)
         return 1
-    if args.command in ('observe', 'load', 'brew', 'cancel'):
+    if args.command in ('observe', 'load', 'brew', 'cancel', 'rinse'):
         # Curves remain available via `summary`; do not flood a terminal at capture end.
         for key in ('water_curve', 'coffee_curve'):
             result[key + '_samples'] = len(result.pop(key))

@@ -230,7 +230,7 @@ class Session:
                 pass
         return window.reason
 
-    async def load(self, recipe, *, timeout=10):
+    async def load(self, recipe, *, timeout=10, rinse=False):
         """Load from observed idle; unknown mode/grind snapshots are diagnostics only.
 
         Armed status after configuration is the acceptance evidence. A mode field
@@ -240,7 +240,7 @@ class Session:
         if self.loaded_digest or self.start_attempted:
             raise BridgeError('This session already staged or started a recipe')
         recipe = deepcopy(recipe)
-        frames = p.build_recipe_frames(recipe)
+        frames = p.build_recipe_frames(recipe, rinse=rinse)
         infos = [e['data'] for e in self.events if e['data'].get('kind') == 'machine_info']
         mode = infos[-1].get('mode') if infos else None
         self.journal.append('load_mode_observation', mode=mode, meaning='diagnostic, not acceptance evidence')

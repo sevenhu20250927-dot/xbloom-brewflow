@@ -290,10 +290,26 @@ def _integer(value, name: str, minimum: int, maximum: int) -> int:
     return value
 
 
-def build_recipe_frames(recipe: dict) -> list[tuple[str, bytes]]:
+def rinse_recipe(volume_ml: int) -> dict:
+    """Single grinder-off pour. The firmware still requires an encodable nominal dose."""
+    _integer(volume_ml, "润纸水量（ml）", 1, 500)
+    pour = dict(volume=volume_ml, temperature=92, flowRate=3.0, pattern=2,
+                pausing=0, vibBefore=False, vibAfter=False)
+    for dose in range(5, 19):
+        recipe = dict(cupType="xdripper", doseGrams=dose,
+                      recipe=dict(grindEnabled=False, grandWater=volume_ml, pours=[pour]))
+        try:
+            build_recipe_frames(recipe, rinse=True)
+        except ProtocolError:
+            continue
+        return recipe
+    raise ProtocolError("机器无法精确执行该润纸水量，请换一个整数毫升值，例如 50 或 75")
+
+
+def build_recipe_frames(recipe: dict, *, rinse=False) -> list[tuple[str, bytes]]:
     """Encode reviewed legacy recipe JSON without silently adjusting any value.
 
-    The supported initial scope is ground-on-machine, Omni dripper, integer
+    Ordinary recipes use the grinder. Rinse uses a grinder-off pour. Both use Omni, integer
     dose and volumes. Cup 110/90 is preserved as the first source's Omni range,
     NOT labeled preheat temperature. Unsupported recipes fail before writes.
     Returns only dose/cup/recipe; no mode, home, handshake, start or preset write.
@@ -314,11 +330,18 @@ def build_recipe_frames(recipe: dict) -> list[tuple[str, bytes]]:
             bypass_temp = _integer(recipe["bypassTempC"], "bypassTempC",
                                    40 if bypass_volume else 0, 95 if bypass_volume else 0)
         r = recipe["recipe"]
-        _exact_keys(r, ("grinderSize", "rpm", "grandWater", "pours"), "$.recipe")
-        grind = _integer(r["grinderSize"], "grinderSize", 1, 80)
-        rpm = _integer(r["rpm"], "rpm", 60, 120)
-        if rpm % 10:
-            raise ProtocolError("rpm must be in 10 RPM steps")
+        if rinse:
+            _exact_keys(r, ("grindEnabled", "grandWater", "pours"), "$.recipe")
+            if r["grindEnabled"] is not False:
+                raise ProtocolError("润纸必须关闭研磨")
+            grind, rpm, command = 0xFE, 60, 8004
+        else:
+            _exact_keys(r, ("grinderSize", "rpm", "grandWater", "pours"), "$.recipe")
+            grind = _integer(r["grinderSize"], "grinderSize", 1, 80)
+            rpm = _integer(r["rpm"], "rpm", 60, 120)
+            if rpm % 10:
+                raise ProtocolError("rpm must be in 10 RPM steps")
+            command = 8001
         pours = r["pours"]
         if type(pours) is not list or not 1 <= len(pours) <= 9:
             raise ProtocolError("pours must contain 1..9 entries")
@@ -367,6 +390,6 @@ def build_recipe_frames(recipe: dict) -> list[tuple[str, bytes]]:
         dose_frame = _command(8102, struct.pack("<ffi", bypass_volume, bypass_temp, dose))
         return [("bypass+dose" if bypass_volume else "dose", dose_frame),
                 ("cup", _command(8104, struct.pack("<ff", 110.0, 90.0))),
-                ("recipe", _command(8001, blob))]
+                ("recipe_no_grind" if rinse else "recipe", _command(command, blob))]
     except (KeyError, TypeError, AttributeError, OverflowError) as exc:
         raise ProtocolError(f"invalid recipe shape: {exc}") from exc
