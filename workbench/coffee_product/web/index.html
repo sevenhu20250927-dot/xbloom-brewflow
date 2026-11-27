@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f2eb">
+  <title>日常咖啡 · 咖啡工作台</title>
+  <link rel="stylesheet" href="/product-assets/style.css">
+  <script defer src="/product-assets/brew-chart.js"></script>
+  <script defer src="/product-assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">☕</span><div><span class="brand-name">日常咖啡</span></div></div>
+    <div class="header-tools"><span class="local-label"><span id="database-label">本机工作台</span></span><a href="/inventory" class="text-link">库存管理</a><button id="refresh" class="button quiet" type="button">刷新</button></div>
+  </header>
+  <div class="page-shell">
+    <nav class="tabs" aria-label="工作区"><a href="/menu" data-view="menu">今日豆单</a><a href="/studio" data-view="studio">制作台</a><a href="/studio?view=records" data-view="records">冲煮记录</a><a href="/experiences" data-view="experiences">经验</a><a href="/studio?view=ai" data-view="ai">AI 设置</a></nav>
+    <div id="notice" role="status" aria-live="polite" hidden></div>
+    <div id="pending"></div>
+    <div id="recipe-progress" class="recipe-progress" hidden>
+      <span class="brew-pulse" aria-hidden="true"></span>
+      <span id="progress-label" role="status"></span>
+      <span id="progress-elapsed" aria-label="已用时间"></span>
+    </div>
+    <div class="brew-workspace">
+      <aside id="brew-progress" aria-label="冲煮进度" hidden>
+        <div class="brew-progress-head">
+          <strong id="brew-progress-title"></strong>
+          <button type="button" id="brew-progress-toggle" class="button quiet" aria-controls="brew-progress-body">收起</button>
+        </div>
+        <div id="brew-progress-body">
+          <p id="brew-progress-message" role="status" aria-live="polite" aria-atomic="true"></p>
+          <div class="brew-progress-track" aria-hidden="true"></div>
+          <a id="brew-progress-record" class="text-link">查看这杯记录</a>
+        </div>
+      </aside>
+      <main id="main" tabindex="-1"><div class="loading"><span class="loading-dot"></span>正在读取库存与当杯记录…</div></main>
+    </div>
+    <footer><span id="updated">正在连接本机服务</span></footer>
+  </div>
+  <noscript>此工作台需要浏览器启用 JavaScript，才能读取本机库存和保存记录。</noscript>
+</body>
+</html>

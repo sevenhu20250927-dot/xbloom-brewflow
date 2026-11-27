@@ -67,6 +67,10 @@
 
 ![接单台同时显示待接订单和可标记为已交付的订单。](docs/images/order-queue.png)
 
+## 完整制作台
+
+[启动本机工作台](workbench/README.md)，可以从 SQLite 库存点单，用 Codex、DeepSeek 或 Ollama 拟方，审核后用 xBloom 制作。冲煮时可看注水量、杯中液重和出杯流速；品饮时能回看该杯配方，并分别保存每个人的反馈。
+
 ## 第一杯怎么用
 
 让每一杯都有依据、有记录、有改进。

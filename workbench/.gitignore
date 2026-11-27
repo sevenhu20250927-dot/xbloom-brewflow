@@ -1,0 +1,7 @@
+backups/
+ble_runs/
+outputs/
+recipes/
+BREW_RECORD_*.md
+coffee_product/ai-settings.local.json*
+coffee_product/knowledge/yiyi-v1.9.4/
