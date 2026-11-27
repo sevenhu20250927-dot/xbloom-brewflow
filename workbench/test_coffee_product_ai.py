@@ -50,7 +50,8 @@ class AiPlanningTests(unittest.TestCase):
 
     def output(self, context=None):
         context = context or self.context
-        citations = [{"source_id": source_id, "quote": context["sources"][source_id]["content"][:80]}
+        catalog = ai.citation_catalog(context)
+        citations = [next(n for n, (source, _) in catalog.items() if source == source_id)
                      for source_id in context["required_citations"] + [ai.REFERENCE_IDS[2]]]
         return {"bean_id": 1, "title": "离线模拟配方", "mode": context["request"]["mode"],
                 "goal": context["request"]["goal"], "payload": copy.deepcopy(self.payload),
@@ -113,8 +114,10 @@ class AiPlanningTests(unittest.TestCase):
             lambda output: output["payload"]["recipe"].update(rpm=100),
             lambda output: output["payload"]["recipe"].update(grandWater=224),
             lambda output: output["payload"].update(bypassMl=20),
-            lambda output: output["citations"][0].update(source_id="bean:2"),
-            lambda output: output["citations"][0].update(quote="编造的原文"),
+            lambda output: output.update(citations=[*output["citations"], 999999]),
+            lambda output: output.update(citations=[*output["citations"], True]),
+            lambda output: output.update(citations=[*output["citations"], "1"]),
+            lambda output: output.update(citations=[*output["citations"], {"source_id": "bean:1", "quote": "研磨 55"}]),
             lambda output: output.update(citations=output["citations"][:1]),
         ):
             output = self.output()
@@ -157,13 +160,33 @@ class AiPlanningTests(unittest.TestCase):
         checked = ai.validate_output(json.dumps(output), self.context, provider="deepseek")
         self.assertEqual(checked["payload"], payload)
 
-    def test_error_identifies_the_quote_that_lost_its_markdown_formatting(self):
+    def test_prompt_ids_resolve_to_the_exact_snapshot_row_and_its_owner(self):
+        owner = "yiyi-experience-library"
+        row = "| 模拟条件 | 测试档位 40 / 42 | 仅适用于模拟器具 |"
+        self.context["sources"][owner]["content"] = "参考条件\n" + row
+        self.context["sources"][ai.REFERENCE_IDS[1]]["content"] = row.replace("40 / 42", "40 / 43")
+        prompt = json.loads(ai.build_prompt(self.context).split("资料 JSON：\n")[1])
+        passages = prompt["sources"][owner]["passages"]
+        selected = next(int(key) for key, text in passages.items() if text == row)
         output = self.output()
-        last = output["citations"][-1]
-        self.context["sources"][last["source_id"]]["content"] = "**触发可以用单杯判读**：是否切③"
-        last["quote"] = "触发可以用单杯判读：是否切③"
-        with self.assertRaisesRegex(ai.AiOutputError, f"第 {len(output['citations'])} 条引用.*逐字核对"):
-            ai.validate_output(json.dumps(output), self.context)
+        output["citations"][-1:] = [selected, selected]
+        snapshot = json.loads(json.dumps(self.context, sort_keys=True))
+        checked = ai.validate_output(json.dumps(output), snapshot)
+        evidence = [item for item in checked["evidence"] if item["source"] == owner]
+        self.assertEqual(len(evidence), 1)
+        self.assertEqual(evidence[0]["excerpt"], row)
+        self.assertIn(f"#{selected}", evidence[0]["title"])
+        spec = ai.output_schema(self.context)["properties"]["citations"]["items"]
+        self.assertEqual(spec, {"type": "integer", "minimum": 1, "maximum": len(ai.citation_catalog(snapshot))})
+
+    def test_long_evidence_and_markdown_emphasis_survive_numbering(self):
+        owner = ai.REFERENCE_IDS[0]
+        text = "框架\n" + "一" * 1470 + "。**模拟排版边界**：" + "二" * 500
+        self.context["sources"][owner]["content"] = text
+        excerpts = [part for source_id, part in ai.citation_catalog(self.context).values() if source_id == owner]
+        self.assertTrue(all(len(part) <= 1500 and part in text for part in excerpts))
+        self.assertEqual("".join(excerpts), text.replace("\n", ""))
+        self.assertTrue(any("**模拟排版边界**" in part for part in excerpts))
 
     def test_codex_uses_stdin_isolated_directory_no_tools_and_checks_returned_file(self):
         def fake_run(command, **kwargs):
@@ -291,6 +314,8 @@ class AiPlanningTests(unittest.TestCase):
             self.assertEqual(body["max_tokens"], 8192)
             self.assertNotIn("tools", body)
             self.assertIn("输出 JSON schema", body["messages"][0]["content"])
+            self.assertIn('"citations":[1,2]', body["messages"][0]["content"])
+            self.assertNotIn('"quote":"连续原句"', body["messages"][0]["content"])
             return io.BytesIO(json.dumps({"choices": [{"finish_reason": "stop", "message": {
                 "content": json.dumps(self.output())}}]}).encode())
         with patch.dict(ai.os.environ, {"SYNTHETIC_COFFEE_KEY": "synthetic-test-token"}):

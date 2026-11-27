@@ -222,11 +222,12 @@ class ProductDataFlow(unittest.TestCase):
         result = {key: proposal[key] for key in ("title", "mode", "goal", "payload", "rationale", "risks")}
         result["bean_id"] = 1
         source_ids = ["bean:1", "preference:1", "yiyi-experience-library"]
-        result["citations"] = [{"source_id": source_id, "quote": context["sources"][source_id]["content"][:80]}
+        catalog = ai_planning.citation_catalog(context)
+        result["citations"] = [next(n for n, (source, _) in catalog.items() if source == source_id)
                                for source_id in source_ids]
         checked = ai_planning.validate_output(json.dumps(result), context)
         self.assertTrue(any("preference:1" in evidence["title"] for evidence in checked["evidence"]))
-        result["citations"] = [item for item in result["citations"] if item["source_id"] != "preference:1"]
+        result["citations"] = [n for n in result["citations"] if catalog[n][0] != "preference:1"]
         with self.assertRaises(ai_planning.AiOutputError):
             ai_planning.validate_output(json.dumps(result), context)
 
